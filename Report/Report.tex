@@ -194,35 +194,43 @@
     \end{itemize}
 
     \subsection{Yêu cầu chức năng}
-    \begin{table}[H]
-        \begin{tabular}{ccl}
+    \begin{itemize}
+        \item \textbf{Định nghĩa ID}
+        \begin{itemize}
+            \item ID có dạng a.b
+            \item a nhận các giá trị $1, 2, 3$. $a = 1$ ám chỉ những yêu cầu chức năng liên quan đến đối tượng người dùng là \textit{khách hàng của rạp phim}, $a = 2$ ám chỉ những yêu cầu chức năng liên quan đến đối tượng người dùng là \textit{quản lý của rạp phim}, $a = 3$ ám chỉ những yêu cầu liên quan đến đối tượng người dùng là \textit{admin}
+            \item b là số thứ tự
+        \end{itemize}
+
+        \item \textbf{Chi tiết yêu cầu chức năng}
+        \begin{table}[h]
+            \begin{tabular}{|c|c|l|}
             \hline
-            \multicolumn{1}{|c|}{ID}  & \multicolumn{1}{c|}{Trọng số} & \multicolumn{1}{c|}{Yêu cầu chức năng}                                                                \\ \hline
-            \multicolumn{1}{|c|}{1.1} & \multicolumn{1}{c|}{}         & \multicolumn{1}{l|}{Hệ thống sẽ cho phép người dùng Đăng ký/Đăng nhập/Đăng xuất tài khoản của họ}     \\ \hline
-            \multicolumn{1}{|c|}{1.2} &
-                \multicolumn{1}{c|}{} &
-                \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép người dùng Đặt/Huỷ vé xem phim (chỉ huỷ được trong TH đã\\ đặt vé trước đó)\end{tabular}} \\ \hline
-            \multicolumn{1}{|c|}{1.3} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép người dùng Xem lịch chiếu của các phim được chiếu trong rạp} \\ \hline
-            \multicolumn{1}{|c|}{1.4} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép người dùng thanh toán vé đã đặt online qua ví điện tử Momo}  \\ \hline
-            \multicolumn{1}{|c|}{2.1} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép quản lý Đăng nhập/Đăng xuất tài khoản do Admin cấp}          \\ \hline
-            \multicolumn{1}{|l|}{2.2} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép quản lý quản lý lịch chiếu của phim trong rạp}               \\ \hline
-            \multicolumn{1}{|l|}{3.1} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép quản lý quản lý các chương trình khuyến mãi trong rạp}       \\ \hline
-            \multicolumn{1}{|l|}{4.1} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{Hệ thống sẽ cho phép Admin quản lý các quản lý trong rạp}                         \\ \hline
-            \multicolumn{1}{|l|}{5.1} &\multicolumn{1}{c|}{} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép Admin thực hiện các thống kê về doanh thu theo \\ phim/ngày/tháng/năm\end{tabular}} \\ \hline
-            \multicolumn{1}{l}{}      &                               &                                                                                                      
-        \end{tabular}
-        \caption{Bảng yêu cầu chức năng của hệ thống}
-    \end{table}
+            ID  & Trọng số & \multicolumn{1}{c|}{Phiên bản}                                                                                                          \\ \hline
+            1.1 &          & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng ký, Đăng nhập, Đăng xuất}\\ tài khoản của họ\end{tabular}     \\ \hline
+            1.2 &  & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đặt/Huỷ vé xem phim} (chỉ huỷ\\ được trong TH đã đặt vé trước đó)\end{tabular} \\ \hline
+            1.3 &          & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Xem thông tin của rạp phim}\\ (phim, lịch chiếu, chương trình khuyến mãi)\end{tabular} \\ \hline
+            1.4 &          & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{thanh toán} vé đã đặt online qua\\ ví điện tử Momo\end{tabular}  \\ \hline
+            2.1 &          & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng nhập, Đăng xuất} tài khoản\\ do \textit{admin} cấp\end{tabular}         \\ \hline
+            2.2 &          & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý lịch chiếu} của phim trong rạp                                                         \\ \hline
+            2.3 &          & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý các chương trình khuyến mãi} trong rạp                                                              \\ \hline
+            3.1 &          & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng nhập, Đăng xuất} tài khoản của họ                                                                        \\ \hline
+            3.2 &          & Hệ thống sẽ cho phép \textit{admin} \textbf{Quản lý các quản lý} trong rạp                                                                                \\ \hline
+            3.3 &          & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{admin} \textbf{Thực hiện các thống kê về doanh thu} theo phim,\\ ngày, tháng, năm\end{tabular}    \\ \hline
+            \end{tabular}
+            \caption{Bảng yêu cầu chức năng của hệ thống}
+        \end{table}
+    \end{itemize}
 
     \subsection{Yêu cầu phi chức năng}
     \begin{table}[H]
         \begin{tabular}{ccl} \hline
             \multicolumn{1}{|c|}{ID} & \multicolumn{1}{c|}{Trọng số} & \multicolumn{1}{c|}{Yêu cầu phi chức năng} \\ \hline
-            \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phát triển phần mềm gói   gọn trong 12 tuần (tính từ lúc viết báo cáo \\ yêu cầu đến lúc hoàn thiện phần mềm)\end{tabular}} \\ \hline
-            \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{Bảo mật về thông tin thanh toán và thông tin người dùng} \\ \hline
-            \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{3} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phản hồi của hệ thống dưới 1s trong mọi chức năng trong môi trường\\ lý tưởng (sẽ định nghĩa lại sau)\end{tabular}} \\ \hline
-            \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{2} & \multicolumn{1}{l|}{Quy trình áp dùng: phát triển dần dần + tái sử dụng}     \\ \hline
-            \multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Giao diện đảm bảo người dùng sử dụng được các chức năng cơ bản (đặt vé,\\ thanh toán online, xem lịch chiếu) trong tối đa 10p làm quen.\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phát triển phần mềm gói   gọn trong 12 tuần (tính từ lúc viết báo cáo \\ yêu cầu đến lúc hoàn thiện phần mềm)\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Hệ thống sẽ lưu thông tin về mật khẩu của người dùng trong database sau khi \\được mã hoá\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{3} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phản hồi của hệ thống dưới 1s trong mọi chức năng trong môi trường\\ lý tưởng (sẽ định nghĩa lại sau)\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{2} & \multicolumn{1}{l|}{Quy trình áp dùng: phát triển dần dần + tái sử dụng}     \\ \hline
+            \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Giao diện đảm bảo người dùng sử dụng được các chức năng cơ bản (đặt vé,\\ thanh toán online, xem lịch chiếu) trong tối đa 10p làm quen.\end{tabular}} \\ \hline
                                 &                               &                                                                             
         \end{tabular}
         \caption{Bảng yêu cầu phi chức năng của hệ thống}
