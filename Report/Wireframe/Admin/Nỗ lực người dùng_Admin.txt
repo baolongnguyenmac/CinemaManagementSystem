@@ -1,0 +1,3 @@
+Đăng nhập: Truy cập vào trang dành riêng cho Admin --> Nhập thông tin, nhấn nút đăng nhập (2 bước)
+Thêm, xóa, sửa quản lý: Đăng nhập --> Nhấn vào tab "Quản lý" --> Nhấn vào nút "thêm" hoặc "sửa" --> sửa thông tin, nhấn lưu (3 bước)
+Đăng xuất: Nhấn nút đăng xuất

@@ -1,0 +1,5 @@
+Đăng nhập: Truy cập vào trang dành riêng cho quản lý --> Nhập thông tin, nhấn nút đăng nhập (2 bước)
+Thêm, xóa, sửa lịch chiếu: Đăng nhập --> Nhấn vào tab "Lịch chiếu" --> Nhấn vào nút "thêm" hoặc "sửa" --> sửa thông tin, nhấn lưu (3 bước)
+Thêm, xóa, sửa khuyến mãi: Đăng nhập --> Nhấn vào tab "Khuyến mãi" --> Nhấn vào nút "thêm" hoặc "sửa" --> sửa thông tin, nhấn lưu (3 bước)
+Thống kê: Vào tab thống kê
+Đăng xuất: Nhấn nút đăng xuất
