@@ -3,4 +3,6 @@
 Đặt vé (Đã đăng nhập): Chọn rạp, phim, thời gian ở thanh đặt vé nhanh, nhấn đặt vé --> Chọn số lượng vé, chỉnh sửa thông tin vé (nếu cần) --> Chọn ghế --> Thanh toán (4 bước)
 Đặt vé (Chưa đăng nhập): Chọn rạp, phim, thời gian ở thanh đặt vé nhanh, nhấn đặt vé --> nhập tài khoản và mật khẩu và nhấn đăng nhập --> Chọn số lượng vé, chỉnh sửa thông tin vé (nếu cần) --> Chọn ghế --> Thanh toán (5 bước)
 Hủy vé: Chọn vé nằm trong danh sách được hủy, nhấn hủy --> Nhấn xác nhận hủy (2 bước)
-Ở mỗi bước sẽ có dưới 8 lần click chuột và nhập thông tin.
+Đăng xuất: Nhấn nút đăng xuất (1 bước)
+
+Ở mỗi bước sẽ có từ 1-8 lần click chuột và nhập thông tin.
