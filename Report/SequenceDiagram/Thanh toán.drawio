@@ -1,1 +1,78 @@
-<mxfile host="Electron" modified="2020-10-25T03:08:40.515Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.7.9 Chrome/85.0.4183.121 Electron/10.1.3 Safari/537.36" etag="b6Ob2-SFAC-h0fWg95Zi" version="13.7.9" type="device"><diagram id="PfbArisPY-YpvNoP2OnN" name="Page-1">5Vlbb6M4GP01PM6ISwjkMZdeZrcjVdNZjXZfVg44YNVgZEzTzK/fz2AIYJKmaWhXMy8RPr5gzvludgxnmTzfcJTFX1mIqWGb4bPhrAzb9vwp/EpgVwGuM6mAiJOwgqw98EB+YgWaCi1IiPPOQMEYFSTrggFLUxyIDoY4Z9vusA2j3bdmKMIa8BAgqqM/SCjiCvVdc4/fYhLF9ZstU/UkqB6sgDxGIdu2IOfKcJacMVE9Jc9LTCV3NS/VvOsDvc3GOE7FKRO+r70n6tD8yz8//o0mf/39k/xx+8mpVnlCtFAffGtcWcZiYfiepDpWrZmVRuozxK7mBr4ok49FQu/IBlOSQmuRYU4SLDCHHqrg+z222MZE4IcMBXLqFowGsFgkFFoWPIKQAsEU3rQpRVlO1uVbTUA4Dgqekyf8DeeVvUiUFUK+adnYgQR1jhRtT5gL/NyCFGc3mME++Q6GqN6J71ZTlAH7Ss7t3hoazeOWJTi1iSBlgVGz9F4keFA6vUIza6qJpknTIjRjJBXlHtyF4a56CjEuYhaxFNG2RhfgzXXMDm+WO0SczlvjL5fn7WXaDlg04oIEJEMlGdA3DwTjH2fqUgQCIWpOSZQCJphcOIf3kDT6LhsrZzqiSzhmV9oBl7Df1yPcD/CIozZ2upt0mPQ+2kdsjcgVEmiNcvx7Rn/PetHU3zv6e/8XW7dfS+aka+zWIJk6l5OxqJxoTP4ZG0vHmFtBLPdQPpuy8DEDVQfNPQQtXrbmMDDTuAcuRNemc8HZI5gmlTljlbLSTzaE0h6EVDgPgPZSh36cT0gYytcMOhFnRRri8HKm3wSjunLX1fKHYtNYaukx/qYWZUXKbUq55kWjFujjFWURi9K4PDdU4qbH/KXP+ZoJwRLowGk4l+cJiVEWPB4jGYedQ4VO8QCHHFMkIKx1FhoiUa12Lx27nZNnn3vuNe0pkbOCB1jNax8UekvBEe2lpQTiERbaUqWuzWeeL7Ve4NZS+6XU8/sv8PuVJexSUp7oPdV3H9m5c6IBKKrNz6Znzg761RttYkBI73I2MTvNJoBptGsNUwnp8KZn5uCWD+6sN942O+PhodpBb/ZukFO22eR4FJPWszaiQrPeVk11zVFyKNa3jPwCgd7yuso2SbhlkVPTHQr1Y8V6X2NLo0rVm1Vyra9mrOOZleKNOJZXO0eoT9YeuSsnrpw98k3R4JTBQ8giuSlRKVpjes9yIgiT6/Nq7FAtBgUY1KzwEYiU+mGUiy3OxTjKOqcq64+k60zTNYhx8AjVe5mnVcEVlykcnheTgVunV0Z4lmHoWoQoj8v4blXd6qbRf1Mav3h8ts/N2Xr615YaOWfXptXS9s5YTo2FWTTaVnqagkAJNkWJDGXpOs8aDd6sMiDXRO77eBr/gPpsQGv/TK09V9O6v9TYWutXaS0/fuxo/fs5dS/mnu3SvasHbaGxRdb/G4C8VRXd5ro6SrHDCrsrTeRf52jcuwC1p5aWV9/1bGzpVxmDWp3imr+ycFbvsOBM9IJo8D7vDOWguf9zr3LK/T+kztV/</diagram></mxfile>
+<mxfile host="65bd71144e" modified="2020-10-25T10:00:13.550Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="pxNw2gSSRY3X-uX0PkRR" version="13.6.5">
+    <diagram id="PfbArisPY-YpvNoP2OnN" name="Page-1">
+        <mxGraphModel dx="738" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-3" value="Hệ thống" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="485" y="80" width="100" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-16" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="150" width="10" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-1" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="80" width="20" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-15" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="Tb7vl3lsIZW_g4UYziJH-1" vertex="1">
+                    <mxGeometry x="5" y="70" width="10" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-2" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="80" width="100" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-17" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="Tb7vl3lsIZW_g4UYziJH-2" vertex="1">
+                    <mxGeometry x="45" y="180" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-4" value="Khách hàng của rạp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="50" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-5" value="Gửi yêu cầu thanh toán" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="309.5" y="160" as="sourcePoint"/>
+                        <mxPoint x="534.5" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-6" value="Gọi API Momo" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" parent="1" target="Tb7vl3lsIZW_g4UYziJH-3" edge="1">
+                    <mxGeometry x="0.0709" width="80" relative="1" as="geometry">
+                        <mxPoint x="534.5" y="170" as="sourcePoint"/>
+                        <mxPoint x="534.5" y="190" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="590" y="170"/>
+                            <mxPoint x="590" y="200"/>
+                        </Array>
+                        <mxPoint y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-7" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="175" y="210" width="605" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="175" y="310" width="605" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-9" value="checkout thành công" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="534.5" y="260" as="sourcePoint"/>
+                        <mxPoint x="309.5" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-10" value="Lưu thông tin&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="534.5" y="280" as="sourcePoint"/>
+                        <mxPoint x="759.5" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-11" value="checkout không thành công" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="535" y="360" as="sourcePoint"/>
+                        <mxPoint x="310" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-13" value="[Momo báo thành công]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="261" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="Tb7vl3lsIZW_g4UYziJH-14" value="[Momo báo không thành công]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="340" width="100" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

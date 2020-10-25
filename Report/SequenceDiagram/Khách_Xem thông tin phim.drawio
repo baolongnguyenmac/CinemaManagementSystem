@@ -1,1 +1,79 @@
-<mxfile host="app.diagrams.net" modified="2020-10-25T08:17:45.255Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36" etag="0UIrPsnZg6afjlK6kamc" version="13.8.2" type="onedrive"><diagram id="UwZ2g5ojYOJFI7yVt9XO" name="Page-1">5Vlbc5s6EP41zLQPzSAwvjz6ksZpk55Mk3N568iggCaAKAjb6a8/WhBXYZs6dpI5Jw+OtCutpN1P2k9CM+fB9irGkXfLHOJrhu5sNXOhGcZ4aIlfEDzngsHQzAVuTJ1chCrBPf1FpFCX0pQ6JGk05Iz5nEZNoc3CkNi8IcNxzDbNZo/Mb44aYZcognsb+6r0b+pwTy7L0iv5klDXK0ZGutQEuGgsBYmHHbapicxLzZzHjPG8FGznxAffFX7J+33eoS0nFpOQ9+mgD9feX39azzq13D/uKCGj6x+fZHTW2E/lguVk+XPhATHvCIpp4N/QR+LTUNRmYlxObRrhbHChm9qcxaAgMQ0IJ6K88GX7u0o223iUk/sI22BzIzAjZB4PfFFDoijiyLHoEpd138dRQlfZdHQhiYmdxgldk+8kyeEC0jWB+WB/6lM3FDLOwHAixqGh+wCVhTkUEpZymNG8hAt0Vl0pvQtWybYmkq69IkysJ34WTaTWMGWYJc7RUNY3FWoKJHg1wAwGUoglUN3SdBVLUZDh/I3QIqTE9kq7RNpspk0XNJvp3NSm0xR2T6aYatMR1LYkgB2LQw+QkLVCNpQjjwYKPmrBawdhxThngVCQ0JnCZgSZz+ynTp/vAyhxWtuU49gl+zpOusNVC8dYej4mPuYCT82zoyMc0todo2LKZeRRM/DjVjwTlsY2kX3q27Nl5pCdfMGKnQwa5fp6oWWZ6l9uvfufX3R77v+4frph64eOg2DuSbSMF2EZe12bD7QJKjRmiRbhVIGT2SB0oULD08JECX9f3LxbmBjtfd8XJ5MDds6ME2R0ZIyhz/PDNmzEfPgzheQGZzikhik40V3hDzrgyBDj652lj1CEyItsHfJPjzig/nPePWAhS7Lc0WiS5wFooEfbalxRcvP/VpugWGLJIM3Sb1krXGBlThCSBZRhYhYs0xLOPNQWlW0LjB5lxqjM5J4uNZUid3SpiFkaOiS3AUM1Ui0Is2QL8mwrggRl1dpQebrrs5hSVa6j2j0WgLVaimlVZp7r8sohcr9V1msqmS1LnVlXCtSXCrc2gbabs2rp67qwiQDZToFKjnCxY3KQF7hqnXFFCHJWcYDp7GAYfc+2nUzEapwPI5WGoA4aYqJz0ZChcl589WqUIs8ehYNXceFbv0gxs6yZ7VFJUWafU8XvwoO86VwsU4stPJnRznbOCajjQHdBJ8XpgSt6GcHJmTnBmmnWAmylnEmmiU5EFvUWWTTVKI27onSuIE2UIC0L/4/y5J7XJgjye78LwtvcA87F7wejVsg6+H159zs5we9MxWom7snvnaKZOCB1n5aRTvex/iEOIEThKom6jr5XpneTnvQO6d1RPT2/s1r4MI7kd6h9kWwbOjfBG3QQvLfJczu4ebEj31miKwzXHLfAHK9wQv6fR+aovSXe/shEPd67Xgncu06mbnQj1A/eJ6EIna4zFc89xEVWgWeAdZFG0LEZ5mUZhUVEqGYOTrwseChXyxflcb9c88LHpRemkHGLFprH5pCRccDQmXOImkL2YMWlmAEsKpSE/xGU7LinvZRotIM7PBIl5uCAoTOjZKSg5AT8VX2HPMOr9WF0vArjbAFBSZu9j4vJ5MLSqz9jv9kzw2J8qkRzJiic7gg5RwK5MM1m9I79HqGg65U/SHTQ6d9OIu8eAe8miVjHUo329wjF0Llhon7l/PB1CWEfo/lSKP65vBW/D5loMvh2BZXrb+L3bnl9+1GBgnxKVN4P4TvDvWzWhZPyPVF+cr4hjxBVs5J8lyw9E/GYPYkbV/ZdZBGy7PoXMw73xR0vkTP4PKJfWPAmacxFHVX17JkyYjEXdzhhGtMMZAQnfEOS6qX6wDVl/20OtRDTcd/uerI0hruhueM+oslH+RpOqud48/Jf</diagram></mxfile>
+<mxfile host="65bd71144e" modified="2020-10-25T09:55:36.010Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="raxkVYbGOV6uRGWTwIaQ" version="13.6.5">
+    <diagram id="UwZ2g5ojYOJFI7yVt9XO" name="Page-1">
+        <mxGraphModel dx="738" dy="489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="06vhVU5y0i5gOPiee7I_-10" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="120" width="100" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="06vhVU5y0i5gOPiee7I_-10" vertex="1">
+                    <mxGeometry x="45" y="110" width="10" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="06vhVU5y0i5gOPiee7I_-9" value="Hệ thống" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="120" width="100" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="06vhVU5y0i5gOPiee7I_-9" vertex="1">
+                    <mxGeometry x="45" y="70" width="10" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-2" value="Gửi yêu cầu dữ liệu danh sách phim&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;" parent="06vhVU5y0i5gOPiee7I_-9" target="06vhVU5y0i5gOPiee7I_-10" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="50" y="120" as="sourcePoint"/>
+                        <mxPoint x="130" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="06vhVU5y0i5gOPiee7I_-5" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="120" width="20" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-5" value="Chọn phim để xem thông tin" style="html=1;verticalAlign=bottom;endArrow=block;" parent="06vhVU5y0i5gOPiee7I_-5" target="06vhVU5y0i5gOPiee7I_-9" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="10" y="240" as="sourcePoint"/>
+                        <mxPoint x="90" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-12" value="&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22235%22%20y%3D%22230%22%20width%3D%2210%22%20height%3D%22310%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="06vhVU5y0i5gOPiee7I_-5" vertex="1">
+                    <mxGeometry x="5" y="70" width="10" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="06vhVU5y0i5gOPiee7I_-11" value="Gửi yêu cầu xem danh sách phim" style="html=1;verticalAlign=bottom;endArrow=block;" parent="06vhVU5y0i5gOPiee7I_-5" target="06vhVU5y0i5gOPiee7I_-9" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="10" y="80" as="sourcePoint"/>
+                        <mxPoint x="210" y="80" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="06vhVU5y0i5gOPiee7I_-6" value="Khách xem &lt;br&gt;lịch chiếu" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="90" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-3" value="Trả về dữ liệu danh sách phim" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="06vhVU5y0i5gOPiee7I_-9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="700" y="280" as="sourcePoint"/>
+                        <mxPoint x="620" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-4" value="Trả về giao diện danh sách phim" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="06vhVU5y0i5gOPiee7I_-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="320" as="sourcePoint"/>
+                        <mxPoint x="240" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-7" value="Gửi yêu cầu dữ liệu thông tin phim" style="html=1;verticalAlign=bottom;endArrow=block;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="420" y="400" as="sourcePoint"/>
+                        <mxPoint x="699.5000000000002" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-8" value="Trả về dữ liệu thông tin phim" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="700.33" y="440" as="sourcePoint"/>
+                        <mxPoint x="420" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Hu0JMhSqJ0cCl_IkLovT-10" value="Trả về giao diện thông tin phim" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="06vhVU5y0i5gOPiee7I_-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="480" as="sourcePoint"/>
+                        <mxPoint x="190" y="480" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
