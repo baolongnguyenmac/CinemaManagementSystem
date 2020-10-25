@@ -13,6 +13,8 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{rotating}
+\usepackage{tikz}
 
 \captionsetup[table]{skip=5pt}
 \pagestyle{fancy}
@@ -78,10 +80,10 @@
         \hline
         STT &Ngày cập nhật &Phiên bản &\multicolumn{1}{c|}{Mô tả chi tiết} &\multicolumn{1}{c|}{Tác giả} \\ \hline
         1 &22/10/2020 &1.0 &\begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên nhóm\\ - Mô tả bài toán\\ - Yêu cầu hệ thống\\ - Xác định stakeholder\\ - Xác định actor\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Bảo Long\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
-        % 2 &21/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ biểu đồ use case\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
-        % 3 &24/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
-        % 4 &25/10/2020 &1.4 &\begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
-        % 5 &24/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
+        2 &25/10/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ biểu đồ use case\\- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\\Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
+        % 3 &25/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
+        % 4 &26/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
+        % 5 &26/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
         \end{tabular}
         \caption{Bảng lịch sử cập nhật các phiên bản của báo cáo yêu cầu}
     \end{table}
@@ -163,15 +165,15 @@
     Chức năng \textbf{Đăng nhập, Đăng xuất, Đăng ký tài khoản} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Đối với chức năng \textbf{Đăng nhập}, \textit{khách hàng của rạp phim} cung cấp thông tin đăng nhập cho hệ thống. Theo đó, hệ thống sẽ xác thực và cho phép họ truy cập vào hệ thống nếu thông tin đúng hoặc không cho phép truy cập hệ thống nếu thông tin sai.
     \textit{Khách hàng của rạp phim} thực hiện chức năng \textbf{Đăng xuất} để xác nhận thoát khỏi hệ thống. Chức năng \textbf{Đăng ký} cho phép \textit{khách hàng của rạp phim} tạo tài khoản để truy cập vào hệ thống.
     \\\\
-    Nhằm mục đích giúp \textit{khách hàng của rạp phim} linh hoạt trong việc mua vé, hệ thống cần có chức năng \textbf{Đăt, Huỷ vé} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Hai chức năng này cho phép \textit{khách hàng của rạp phim}, sau khi đăng nhập, có thể đặt vé hoặc huỷ vé đã đặt. Lưu ý, khi \textit{khách hàng của rạp phim} huỷ vé đã được thanh toán, hệ thống sẽ không hoàn lại tiền.
+    Nhằm mục đích giúp \textit{khách hàng của rạp phim} linh hoạt trong việc mua vé, hệ thống cần có chức năng \textbf{Đăt, Huỷ vé} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Hai chức năng này cho phép \textit{khách hàng của rạp phim}, sau khi đăng nhập, có thể đặt vé hoặc huỷ vé đã đặt. Đối với chức năng \textbf{Đặt vé}, sau khi đặt vé thành công, hệ thống sẽ lock\footnote{không cho phép khách hàng khác đặt vé tại vị trí chỗ ngồi này} vị trí này trong 5 phút. Lưu ý, khi \textit{khách hàng của rạp phim} huỷ vé đã được thanh toán, hệ thống sẽ không hoàn lại tiền.
     \\\\
-    Nhằm mục đích giúp cho \textit{khách hàng của rạp phim} có thể tiếp cận nhanh chóng với thông tin phim, hệ thống cần có chức năng \textbf{Xem thông tin của rạp phim} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Khi sử dụng chức năng này, \textit{khách hàng của rạp phim} có thể xem thông tin về phim, lịch chiếu và các chương trình khuyến mãi của rạp phim.
+    Nhằm mục đích giúp cho \textit{khách hàng của rạp phim} có thể tiếp cận nhanh chóng với thông tin phim, hệ thống cần có chức năng \textbf{Xem thông tin phim} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Khi sử dụng chức năng này, \textit{khách hàng của rạp phim} có thể xem thông tin về phim, lịch chiếu và các chương trình khuyến mãi của rạp phim.
     \\\\
     Nhằm mục đích tạo ra sự thuật tiện trong việc thanh toán, hệ thống cần có chức năng \textbf{Thanh toán online qua ví điện tử Momo} dành cho đối tượng người dùng là \textit{khách hàng của rạp phim}. Khi sử dụng chức năng này, \textit{khách hàng của rạp phim} có thể sử dụng ví điện tử Momo của mình để thanh toán trước vé đã đặt.
     \\\\
     Chức năng \textbf{Đăng nhập, Đăng xuất} dành cho đối tượng người dùng là \textit{quản lý của rạp phim}. Khi sử dụng chức năng này, các \textit{quản lý của rạp phim} thực hiện truy cập vào hệ thống thông bằng chức năng \textbf{Đăng nhập} (cùng cấp thông tin đăng nhập cho hệ thống) và thoát khỏi hệ thống thông qua chức năng \textbf{Đăng xuất}.
     \\\\
-    Nhằm mục đích tin học hoá cho quá trình cập nhật lịch chiếu phim, hệ thống cần có chức năng \textbf{Quản lý lịch chiếu} dành cho đối tượng người dùng là \textit{quản lý của rạp phim}. Khi sử dụng chức năng này, \textit{quản lý của rạp phim} có thể thực hiện các thao tác \textbf{thêm, xoá, sửa lịch chiếu} của các phim trong rạp phim.
+    Nhằm mục đích tin học hoá cho quá trình cập nhật thông tin về phim, hệ thống cần có chức năng \textbf{Quản lý thông tin phim} dành cho đối tượng người dùng là \textit{quản lý của rạp phim}. Khi sử dụng chức năng này, \textit{quản lý của rạp phim} có thể thực hiện các thao tác \textbf{thêm, xoá, sửa thông tin của các phim trong rạp phim} (bao gồm lịch chiếu, thông tin giới thiệu phim, trailer).
     \\\\
     Nhằm mục đích tin học hoá cho quá trình cập nhật các chương trình khuyến mãi, hệ thống cần có chức năng \textbf{Quản lý các chương trình khuyến mãi} dành cho tối tượng người dùng là \textit{quản lý của rạp phim}. Khi sử dụng chức năng này, \textit{quản lý của rạp phim} có thể thực hiện các thao tác \textbf{thêm, xoá, sửa các chương trình khuyến mãi} của rạp phim.
     \\\\
@@ -207,17 +209,22 @@
             \begin{tabular}{|c|c|l|}
                 % tách các chức năng ra thành từng dòng riêng 
             \hline
-            ID  & Trọng số & \multicolumn{1}{c|}{Phiên bản}                                                                                                          \\ \hline
-            1.1 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng ký, Đăng nhập, Đăng xuất}\\ tài khoản của họ\end{tabular}     \\ \hline
-            1.2 &       1   & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đặt/Huỷ vé xem phim} (chỉ huỷ\\ được trong TH đã đặt vé trước đó)\end{tabular} \\ \hline
-            1.3 &     2    & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Xem thông tin của rạp phim}\\ (phim, lịch chiếu, chương trình khuyến mãi)\end{tabular} \\ \hline
-            1.4 &        2  & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{thanh toán} vé đã đặt online qua\\ ví điện tử Momo\end{tabular}  \\ \hline
-            2.1 &     2   & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng nhập, Đăng xuất} tài khoản\\ do \textit{admin} cấp\end{tabular}         \\ \hline
-            2.2 &     1     & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý lịch chiếu} của phim trong rạp                                                         \\ \hline
-            2.3 &    4      & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý các chương trình khuyến mãi} trong rạp                                                              \\ \hline
-            3.1 &      2    & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng nhập, Đăng xuất} tài khoản của họ                                                                        \\ \hline
-            3.2 &      3    & Hệ thống sẽ cho phép \textit{admin} \textbf{Quản lý các quản lý} trong rạp                                                                                \\ \hline
-            3.3 &       4   & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{admin} \textbf{Thực hiện các thống kê về doanh thu} theo phim,\\ ngày, tháng, năm\end{tabular}    \\ \hline
+            ID  & Trọng số  & \multicolumn{1}{c|}{Yêu cầu chức năng}                                                                                                          \\ \hline
+            1.1 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng ký} tài khoản của họ     \\ \hline
+            1.2 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng nhập} tài khoản của họ     \\ \hline
+            1.3 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng xuất} tài khoản của họ     \\ \hline
+            1.4 &     1     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đặt vé xem phim} \\ \hline
+            1.5 &     1     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Huỷ vé xem phim} (chỉ huỷ\\ được trong TH đã đặt vé trước đó)\end{tabular} \\ \hline
+            1.6 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Xem thông tin phim}\\(lịch chiếu, chương trình khuyến mãi)\end{tabular} \\ \hline
+            1.7 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{thanh toán} vé đã đặt online\\ \textbf{qua ví điện tử Momo}\end{tabular}  \\ \hline
+            2.1 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng nhập} tài khoản do \textit{admin} cấp\end{tabular}         \\ \hline
+            2.2 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng xuất} tài khoản do \textit{admin} cấp\end{tabular}         \\ \hline
+            2.3 &     1     & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý thông tin phim} trong rạp                                                         \\ \hline
+            2.4 &     4     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý các chương trình}\\ \textbf{khuyến mãi} trong rạp\end{tabular}\\ \hline
+            3.1 &     2     & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng nhập} tài khoản của họ                                                                        \\ \hline
+            3.2 &     2     & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng xuất} tài khoản của họ                                                                        \\ \hline
+            3.3 &     3     & Hệ thống sẽ cho phép \textit{admin} \textbf{Quản lý các quản lý} trong rạp                                                                                \\ \hline
+            3.4 &     4     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{admin} \textbf{Thực hiện các thống kê về doanh thu} theo\\phim, ngày, tháng, năm\end{tabular}    \\ \hline
             \end{tabular}
             \caption{Bảng yêu cầu chức năng của hệ thống}
         \end{table}
@@ -258,9 +265,45 @@
     \end{itemize}
 
     \subsection{Đặc tả use case và vẽ biểu đồ use case}
+
     \subsubsection{Mô tả}
+    \begin{table}[h]
+        \begin{tabular}{|c|c|l|}
+        \hline
+        STT & Tên use case & \multicolumn{1}{c|}{Mô tả}                                                                         \\ \hline
+        1   & Đăng nhập    & \begin{tabular}[c]{@{}l@{}}Giúp \textit{khách hàng của rạp phim, quản lý của rạp, admin} có thể đăng \\nhập vào tài khoản của mình trên hệ thống      \end{tabular}\\ \hline
+        2   & Đăng ký      & Giúp \textit{khách hàng của rạp phim} tạo tài khoản cho bản thân trên hệ thống.                                      \\ \hline
+        3   & Đăng xuất    & \begin{tabular}[c]{@{}l@{}}Giúp \textit{khách hàng của rạp phim, quản lý của rạp, admin} có thể thoát\\ khỏi tài khoản đang đăng nhập trên hệ thống \end{tabular}\\ \hline
+        4   & Đặt vé       & Giúp \textit{khách hàng của rạp phim} có thể đặt vé xem phim trên hệ thống.                                          \\ \hline
+        5   & Hủy vé       & \begin{tabular}[c]{@{}l@{}}Giúp \textit{khách hàng của rạp phim} có thể hủy vé xem phim đã đặt trước \\đó trên hệ thống                           \end{tabular}\\ \hline
+        6   & \begin{tabular}[c]{@{}c@{}}Xem thông\\ tin phim\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Giúp “Khách hàng” xem được thông tin các bộ phim đang được chiếu\\ trên hệ thống \end{tabular}\\ \hline
+        7   & Thanh toán   & giúp “Khách hàng” thanh toán tiền mua vé trên hệ thống.                                          \\ \hline
+        8   & \begin{tabular}[c]{@{}c@{}}Quản lý\\ lịch chiếu\end{tabular}               & Giúp \textit{quản lý của rạp} có thể chỉnh sửa lịch chiếu trên hệ thống.                     \\ \hline
+        9   & \begin{tabular}[c]{@{}c@{}}Quản lý chương \\ trình khuyến mãi\end{tabular} & \begin{tabular}[c]{@{}l@{}}Giúp \textit{quản lý của rạp} có thể chỉnh sửa chương trình khuyến mãi trên\\ hệ thống      \end{tabular} \\ \hline
+        10  & \begin{tabular}[c]{@{}c@{}}Quản lý tài khoản\\ các quản lý\end{tabular}    & Giúp \textit{admin} có thể chỉnh sửa các tài khoản quản lý trên hệ thống.            \\ \hline
+        11  & \begin{tabular}[c]{@{}c@{}}Thống kê \\ doanh thu\end{tabular}              & Giúp \textit{admin} thống kê doanh thu của các rạp phim trên hệ thống                 \\ \hline
+        \end{tabular}
+    \end{table}
+
     \subsubsection{Biểu đồ use case}
+    \begin{figure}[H]
+        \includegraphics[scale = 0.5]{./UsecaseDiagram/usecase.png}
+        \caption{Biểu đồ use case của hệ thống}
+    \end{figure}
+
     \subsubsection{Ma trận truy xuất nguồn gốc}
+    \begin{figure}[H]
+        \includegraphics[scale = 0.7]{TraceMatrix/traceMatrix.png}
+    \end{figure}
+    % \begin{sidewaysfigure}
+    %     \centering
+    %     \begin{tikzpicture}[scale=4]
+    %         \includegraphics[scale = 1]{TraceMatrix/traceMatrix.png}
+    %     \end{tikzpicture}
+    %     % \caption{Box plot of number of positions sent per iteration using this scheme}
+    %     \label{fig:awesome_image}
+    % \end{sidewaysfigure}
+
     \subsubsection{Đặc tả use case}
 
     \subsection{Biểu đồ tuần tự}
