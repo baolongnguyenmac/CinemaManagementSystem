@@ -1,0 +1,119 @@
+<mxfile host="65bd71144e" modified="2020-10-25T06:19:23.297Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="OS0LVNoOitmRRl5o6-6U" version="13.6.5">
+    <diagram id="9I-thJWshJDuxypnTMfa" name="Page-1">
+        <mxGraphModel dx="660" dy="330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-16" value="ALT" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="490" width="830" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-1" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="120" width="20" height="680" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-6" value="Gửi yêu cầu vào trang quản lí thông tin phim" style="html=1;verticalAlign=bottom;endArrow=block;" parent="n7mIbu_Ckn_cU0Udae32-1" target="n7mIbu_Ckn_cU0Udae32-4" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="10" y="80" as="sourcePoint"/>
+                        <mxPoint x="230" y="80" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-10" value="Chỉnh sửa thông tin phim" style="html=1;verticalAlign=bottom;endArrow=block;" parent="n7mIbu_Ckn_cU0Udae32-1" target="n7mIbu_Ckn_cU0Udae32-4" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="10" y="240" as="sourcePoint"/>
+                        <mxPoint x="90" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="n7mIbu_Ckn_cU0Udae32-1" vertex="1">
+                    <mxGeometry x="5" y="70" width="10" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-2" value="Quản lí" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="100" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-4" value="Hệ thống" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="120" width="100" height="680" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-7" value="Gửi yêu cầu danh sách các phim đang được quản lí" style="html=1;verticalAlign=bottom;endArrow=block;" parent="n7mIbu_Ckn_cU0Udae32-4" target="n7mIbu_Ckn_cU0Udae32-5" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="50" y="120" as="sourcePoint"/>
+                        <mxPoint x="260" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-11" value="Gửi yêu cầu cập nhật dữ liệu thông tin phim" style="html=1;verticalAlign=bottom;endArrow=block;" parent="n7mIbu_Ckn_cU0Udae32-4" target="n7mIbu_Ckn_cU0Udae32-5" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="50" y="280" as="sourcePoint"/>
+                        <mxPoint x="130" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-29" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="n7mIbu_Ckn_cU0Udae32-4" vertex="1">
+                    <mxGeometry x="45" y="70" width="10" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-5" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="120" width="100" height="680" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-14" value="Cập nhật dữ liệu&lt;br&gt;thông tin phim" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;" parent="n7mIbu_Ckn_cU0Udae32-5" target="n7mIbu_Ckn_cU0Udae32-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="50" y="320" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="110" y="320"/>
+                            <mxPoint x="110" y="350"/>
+                        </Array>
+                        <mxPoint x="55" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-30" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="n7mIbu_Ckn_cU0Udae32-5" vertex="1">
+                    <mxGeometry x="45" y="100" width="10" height="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-8" value="Trả về danh sách các phim đang được quản lí" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="800" y="280" as="sourcePoint"/>
+                        <mxPoint x="610" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-9" value="Trả về trang quản lí thông tin phim" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="320" as="sourcePoint"/>
+                        <mxPoint x="330" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-17" value="Thông báo cập nhât thành công" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="560" as="sourcePoint"/>
+                        <mxPoint x="440" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-18" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;entryX=1;entryY=0.51;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.503;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="n7mIbu_Ckn_cU0Udae32-16" target="n7mIbu_Ckn_cU0Udae32-16" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="148" y="579" as="sourcePoint"/>
+                        <mxPoint x="320" y="580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-22" value="Cập nhật thất bại" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="799.5" y="640" as="sourcePoint"/>
+                        <mxPoint x="640" y="640" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-23" value="Cập nhật thành công" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="800" y="520" as="sourcePoint"/>
+                        <mxPoint x="720" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-24" value="Thông báo cập nhật thât bại" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="1" target="n7mIbu_Ckn_cU0Udae32-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="680" as="sourcePoint"/>
+                        <mxPoint x="440" y="680" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-25" value="Cập nhật thành công" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="535" width="130" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-26" value="Cập nhật thất bại" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="630" width="130" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="n7mIbu_Ckn_cU0Udae32-32" value="(Quản lí thông tin phim)" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="50" width="80" height="26" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
