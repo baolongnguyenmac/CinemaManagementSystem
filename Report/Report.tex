@@ -13,8 +13,8 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
-\usepackage{rotating}
-\usepackage{tikz}
+% \usepackage{rotating}
+% \usepackage{tikz}
 
 \captionsetup[table]{skip=5pt}
 \pagestyle{fancy}
@@ -277,8 +277,8 @@
         4   & Đặt vé       & Giúp \textit{khách hàng của rạp phim} có thể đặt vé xem phim trên hệ thống.                                          \\ \hline
         5   & Hủy vé       & \begin{tabular}[c]{@{}l@{}}Giúp \textit{khách hàng của rạp phim} có thể hủy vé xem phim đã đặt trước \\đó trên hệ thống                           \end{tabular}\\ \hline
         6   & \begin{tabular}[c]{@{}c@{}}Xem thông\\ tin phim\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Giúp “Khách hàng” xem được thông tin các bộ phim đang được chiếu\\ trên hệ thống \end{tabular}\\ \hline
-        7   & Thanh toán   & giúp “Khách hàng” thanh toán tiền mua vé trên hệ thống.                                          \\ \hline
-        8   & \begin{tabular}[c]{@{}c@{}}Quản lý\\ lịch chiếu\end{tabular}               & Giúp \textit{quản lý của rạp} có thể chỉnh sửa lịch chiếu trên hệ thống.                     \\ \hline
+        7   & Thanh toán online   & Giúp “Khách hàng” thanh toán tiền mua vé trên hệ thống thông qua Momo                                          \\ \hline
+        8   & \begin{tabular}[c]{@{}c@{}}Quản lý\\ lịch chiếu\end{tabular}               & Giúp \textit{quản lý của rạp} có thể chỉnh sửa lịch chiếu trên hệ thống                     \\ \hline
         9   & \begin{tabular}[c]{@{}c@{}}Quản lý chương \\ trình khuyến mãi\end{tabular} & \begin{tabular}[c]{@{}l@{}}Giúp \textit{quản lý của rạp} có thể chỉnh sửa chương trình khuyến mãi trên\\ hệ thống      \end{tabular} \\ \hline
         10  & \begin{tabular}[c]{@{}c@{}}Quản lý tài khoản\\ các quản lý\end{tabular}    & Giúp \textit{admin} có thể chỉnh sửa các tài khoản quản lý trên hệ thống.            \\ \hline
         11  & \begin{tabular}[c]{@{}c@{}}Thống kê \\ doanh thu\end{tabular}              & Giúp \textit{admin} thống kê doanh thu của các rạp phim trên hệ thống                 \\ \hline
@@ -287,19 +287,136 @@
 
     \subsubsection{Biểu đồ use case}
     \begin{figure}[H]
-        \includegraphics[scale = 0.5]{./UsecaseDiagram/usecase.png}
+        \includegraphics[scale = 0.6]{./UsecaseDiagram/usecase.png}
         \caption{Biểu đồ use case của hệ thống}
     \end{figure}
 
     \subsubsection{Ma trận truy xuất nguồn gốc}
     \begin{figure}[H]
-        \includegraphics[scale = 0.7]{TraceMatrix/traceMatrix.png}
+        \includegraphics[angle=90,scale = 0.8]{TraceMatrix/traceMatrix.png}
+        \caption{Ma trận truy xuất nguồn gốc}
     \end{figure}
 
     \subsubsection{Đặc tả use case}
+    \begin{itemize}
+        \item Use case Đăng nhập
+        \begin{table}[H]
+            \begin{tabular}{|l|l|}
+            \hline
+            ID                   & 1                                                                        \\ \hline
+            Tên use case         & Đăng nhập                                                                \\ \hline
+            Tóm tắt              & \begin{tabular}[c]{@{}l@{}}Giúp 3 khách hàng của rạp, quản lý của rạp, admin đăng nhập vào\\ hệ thống \end{tabular}\\ \hline
+            Tác nhân             & Khách hàng của rạp, quản lý của rạp, admin                               \\ \hline
+            Điều kiện tiên quyết & Thông tin về các tài khoản đã được lưu trong database                    \\ \hline
+            Kết quả              & Khách hàng của rạp, quản lý của rạp, admin đăng nhập thành công          \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. Actor chọn chức năng Đăng nhập\\ 2. Hệ thống sẽ hiển thị trang đăng nhập\\3. Actor nhập tài khoản và nhấn đăng nhập\\4. Hệ thống kiểm tra tài khoản của Actor\\5. Hệ thống thông báo đăng nhập thành công \end{tabular} \\ \hline
+            Kịch bản phụ &\begin{tabular}[c]{@{}l@{}}Tại bước 2, nếu khách hàng của rạp chưa có tài khoản\\   - 2.1. Khách hàng của rạp chọn chức năng Đăng ký \\   - 2.2. Hệ thống chuyển sang trang Đăng ký\\ Tại bước 4, nếu thông tin tài khoản sai hoặc không tồn tại, hệ thống \\sẽ báo lỗi tài khoản\end{tabular} \\ \hline
+            Ràng buộc phi chức năng &\begin{tabular}[c]{@{}l@{}}Hệ thống đã lưu thông tin đã được mã hoá về tài khoản, mật khẩu \\của người dùng trong database\\Thời gian phản hồi của hệ thống dưới 1s \end{tabular}\\ \hline
+            \end{tabular}
+            \caption{Bảng đặc tả use case Đăng nhập}
+        \end{table}
 
+        \item Use case Đặt vé
+        \begin{table}[H]
+            \begin{tabular}{|l|l|}
+            \hline
+            ID                      & 4                                        \\ \hline
+            Tên use case            & Đặt vé                                   \\ \hline
+            Tóm tắt                 & Giúp \textit{khách hàng của rạp} có thể đặt vé xem phim \\ \hline
+            Tác nhân                & Khách hàng của rạp                       \\ \hline
+            Điều kiện tiên quyết &\begin{tabular}[c]{@{}l@{}}Trên hệ thống đã được thêm lịch chiếu của các phim\\ Khách hàng đã đăng nhập vào hệ thống\end{tabular} \\ \hline
+            Kết quả                 & Chuyển sang bước checkout                \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. Khách hàng chọn phim muốn xem\\ 2. Khách hàng nhấn vào nút “Đặt vé”\\ 3. Hệ thống sẽ hiển thị form đặt vé\\ 4. \textit{Khách hàng của rạp} chọn lịch chiếu, ghế và nhấn nút “Thanh toán”\\ 5. Hệ thống sẽ chuyển đến trang thanh toán online\end{tabular} \\ \hline
+            Kịch bản phụ &\begin{tabular}[c]{@{}l@{}}Trong trường hợp khách hàng chưa đăng nhập:\\ - 0.1. Hệ thống thông báo “Vui lòng đăng nhập”\\ - 0.2. Hệ thống hiển thị trang đăng nhập\\ - 0.3. Khách hàng tiến hành đăng nhập vào hệ thống\\ Trong trường hợp không nhấn nút "Thanh toán" hoặc không thanh \\toán thì vé sẽ không được đặt\end{tabular} \\ \hline
+            Ràng buộc phi chức năng & Thời gian phản hồi của hệ thống dưới 1s  \\ \hline
+            \end{tabular}
+            \caption{Bảng đặc tả use case Đặt vé}
+        \end{table}
+
+        \item Use case Xem thông tin phim
+        \begin{table}[H]
+            \begin{tabular}{|l|l|}
+            \hline
+            ID                      & 7                                                     \\ \hline
+            Tên use case            & Xem thông tin về phim                                 \\ \hline
+            Tóm tắt &\begin{tabular}[c]{@{}l@{}}Giúp \textit{khách hàng của rạp} xem được lịch chiếu và các thông tin khác \\của phim (trailer, mô tả phim)\end{tabular} \\ \hline
+            Tác nhân                & Khách hàng của rạp                                    \\ \hline
+            Điều kiện tiên quyết    & Bộ phim đã được quản lý thêm lịch chiếu trên hệ thống \\ \hline
+            Kết quả                 & Thông tin về lịch chiếu ở các rạp                     \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. \textit{Khách hàng của rạp} nhấn nút “Xem lịch chiếu”\\ 2. Hệ thống hiển thị trang xem lịch chiếu\\ 3. \textit{khách hàng của rạp} chọn bộ phim muốn xem lịch chiếu\\ 4. Hệ thống hiển thị lịch chiếu và thông tin của phim (bao gồm\\ trailer, mô tả)\end{tabular} \\ \hline
+            Kịch bản phụ            & \begin{tabular}[c]{@{}l@{}}ád\\ ád\end{tabular}       \\ \hline
+            Ràng buộc phi chức năng & Thời gian phản hồi của hệ thống dưới 1s               \\ \hline
+            \end{tabular}
+            \caption{Bảng đặc tả use case Xem thông tin phim}
+        \end{table}
+
+        \item Use case Thanh toán online
+        \begin{table}[H]
+            \begin{tabular}{|l|l|}
+            \hline
+            ID                      & 9                                                                                       \\ \hline
+            Tên use case            & Thanh toán online                                                                       \\ \hline
+            Tóm tắt                 & Thanh toán online bằng Momo cho vé đã đặt của khách hàng                                \\ \hline
+            Tác nhân                & Khách hàng của rạp                                                                      \\ \hline
+            Điều kiện tiên quyết    & \begin{tabular}[c]{@{}l@{}}Khách hàng đã tiến hành chọn vé thành công\\\end{tabular} \\ \hline
+            Kết quả                 & \begin{tabular}[c]{@{}l@{}}Thông báo thanh toán thành công\\\end{tabular}            \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. Khách hàng chọn nút “Thanh toán”\\ 2. Hệ thống hiển thị trang thanh toán\\ 3. Khách hàng điền mã giảm giá (nếu có nhấn nút kiểm tra)\\ 4. Hệ thống kiểm tra mã giảm giá\\ 5. Khách hàng chọn nút “Tiếp tục”\\ 6. Hệ thống hiển thị trang quét mã Momo\\ 7. Khách hàng quét mã và thanh toán qua Momo\\ 8. Hệ thống kiểm tra việc thanh toán\\ 9. Hệ thống thông báo “Thanh toán thành công”\end{tabular} \\ \hline
+            Kịch bản phụ &\begin{tabular}[c]{@{}l@{}}Tại bước 4 trong trường hợp mã giảm giá không đúng\\ - 4.1. Hệ thống thông báo “Mã giảm giá không tồn tại”\\ - 4.2. Quay lại bước 3\\ Tại bước 8 trong trường hợp kiểm tra thanh toán xảy ra lỗi\\ - 8.1. Hệ thống thông báo “Thanh toán xảy ra lỗi vui lòng thanh\\ toán lại”\\ - 8.2. Quay lại bước 5\end{tabular} \\ \hline
+            Ràng buộc phi chức năng & Thời gian phản hồi của hệ thống dưới 1s                                                 \\ \hline
+            \end{tabular}
+            \caption{Bảng đặc tả use case Thanh toán online}
+        \end{table}
+
+        \item Use case Quản lý thông tin phim
+        \begin{table}[H]
+            \begin{tabular}{|l|l|}
+            \hline
+            ID                      & 10                                                                               \\ \hline
+            Tên use case            & Quản lý thông tin phim                                                           \\ \hline
+            Tóm tắt                 & \begin{tabular}[c]{@{}l@{}}Giúp “Quản lý” cập nhật lịch chiếu, thông tin phim, trailer về \\phim lên hệ thống \end{tabular}\\ \hline
+            Tác nhân                & Quản lý                                                                          \\ \hline
+            Điều kiện tiên quyết    & Quản lý đã đăng nhập vào hệ thống với vai trò quản lý                            \\ \hline
+            Kết quả                 & \begin{tabular}[c]{@{}l@{}}Lịch chiếu được cập nhật\\\end{tabular}             \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. Quản lý nhấn vào nút “Quản lý lịch chiếu”\\ 2. Hệ thống hiển thị trang quản lý lịch chiếu\\ 3. Quản lý chỉnh sửa lịch chiếu, thông tin phim, trailer\\ 4. Hệ thống thông báo “Chỉnh sửa thành công”\end{tabular} \\ \hline
+            Kịch bản phụ &\begin{tabular}[c]{@{}l@{}}Tại bước 3 trong trường hợp chỉnh sửa lịch chiếu bị xung đột\\ - 3.1. Hệ thống hiển thị thông báo “Lịch phim bị trùng. Thao tác\\ thất bại”\\ - 3.2. Quay lại bước 2\end{tabular} \\ \hline
+            Ràng buộc phi chức năng & Thời gian phản hồi của hệ thống dưới 1s                                          \\ \hline
+            \end{tabular}
+            \caption{Bảng đặc tả use case Quản lý thông tin phim}
+        \end{table}
+    \end{itemize}
 
     \subsection{Biểu đồ tuần tự}
+    \begin{itemize}
+        \item Use case Đăng nhập
+        \begin{figure}[H]
+            \includegraphics[scale = 0.65]{SequenceDiagram/Khách_Đăng nhập.png}
+            \caption{Biểu đồ tuần tự của use case Đăng nhập}
+        \end{figure}
+
+        \item Use case Đặt vé
+        \begin{figure}[H]
+            \includegraphics[scale = 0.65]{SequenceDiagram/Đặt vé.png}
+            \caption{Biểu đồ tuần tự của use case Đặt vé}
+        \end{figure}
+        
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \includegraphics[scale = 0.7]{SequenceDiagram/Khách_Xem thông tin phim.png}
+            \caption{Biểu đồ tuần tự của use case Xem thông tin phim}
+        \end{figure}
+        
+        \item Use case Thanh toán online
+        \begin{figure}[H]
+            \includegraphics[scale = 0.7]{SequenceDiagram/Thanh toán.png}
+            \caption{Biểu đồ tuần tự cho use case Thanh toán online}
+        \end{figure}
+        
+        \item Use case Quản lý thông tin phim
+        \begin{figure}[H]
+            \includegraphics[scale = 0.65]{SequenceDiagram/Quản lí_Thông tin phim.png}
+            \caption{Biểu đồ tuần tự của use case Quản lý thông tin phim}
+        \end{figure}
+    \end{itemize}
     \clearpage
 
     \section{Đặc tả giao diện người sử dụng}
