@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 
-\usepackage{makecell}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage[T5]{fontenc}
@@ -424,13 +424,171 @@
 
     \subsection{Thiết kế sơ bộ}
     \begin{enumerate}
+        %Use case Đăng nhập
         \item Use case Đăng nhập
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale = 0.25]{Wireframe/User/Đăng nhập.png}
-                \caption{Đây là 1 chiếc cap}
+                \caption{Giao diện đăng nhập của khách hàng rạp phim}
             \end{center}
         \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Đăng nhập.png}
+                \caption{Giao diện đăng nhập của quản lý}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Admin/Admin_Đăng nhập.png}
+                \caption{Giao diện đăng nhập của admin}
+            \end{center}
+        \end{figure}
+
+        %Use case Đăng kí
+        \item Use case Đăng kí
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Đăng kí.png}
+                \caption{Giao diện đăng kí của khách hàng rạp phim}
+            \end{center}
+        \end{figure}
+
+        %Use case Đăng xuất
+        \item Use case Đăng xuất
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Vé của tôi.png}
+                \caption{Nút Đăng xuất nằm tại góc phải màn hình của khách hàng của rạp}
+            \end{center}
+        \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Dashboard_Khuyến mãi.png}
+                \caption{Với quản lý: Nút đăng xuất sẽ nằm ở góc trái bên dưới sau khi đã đăng nhập}
+            \end{center}
+        \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Admin/Admin_Quản lý.png}
+                \caption{Với admin: Nút đăng xuất sẽ nằm ở góc trái bên dưới sau khi đã đăng nhập}
+            \end{center}
+        \end{figure}
+
+        %Use case Đặt vé
+        \item Use case Đặt vé
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Phim đang chiếu_ Chọn phim.png}
+                \caption{Giao diện xem phim đang chiếu}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Đặt vé.png}
+                \caption{Giao diện đặt vé của khách hàng rạp phim}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Chọn ghế.png}
+                \caption{Giao diện chọn ghế của khách hàng rạp phim}
+            \end{center}
+        \end{figure}
+
+        %Use case Hủy vé
+        \item Use case Hủy vé
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Vé của tôi.png}
+                \caption{Giao diện hủy vé của khách hàng rạp phim}
+            \end{center}
+        \end{figure}
+
+        %Use case Xem thông tin phim
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Phim đang chiếu_ Chọn phim.png}
+                \caption{Giao diện xem thông tin phim}
+            \end{center}
+        \end{figure}
+
+        %Use case Thanh toán online
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Thanh toán.png}
+                \caption{Giao diện thanh toán online}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/User/Thanh toán MOMO.png}
+                \caption{Giao diện quét mã thanh toán}
+            \end{center}
+        \end{figure}
+
+        %Use case Quản lý lịch chiếu
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Dashboard_Lịch chiếu.png}
+                \caption{Giao diện quản lý lịch chiếu}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Dashboard_Sửa phim.png}
+                \caption{Giao diện chỉnh sửa lịch chiếu}
+            \end{center}
+        \end{figure}
+
+        %Use case Quản lý chương trình khuyến mãi
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Dashboard_Khuyến mãi.png}
+                \caption{Giao diện quản lý khuyến mãi}
+            \end{center}
+        \end{figure}
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Manager/Quản lý_Dashboard_Sửa khuyến mãi.png}
+                \caption{Giao diện chỉnh sửa khuyến mãi}
+            \end{center}
+        \end{figure}
+
+        %Use case Quản lý các quản lý
+        \item Use case Xem thông tin phim
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Admin/Admin_Quản lý.png}
+                \caption{Giao diện quản lý các quản lý}
+            \end{center}
+        \end{figure}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Admin/Admin_Hình quản lý.png}
+                \caption{Giao diện chỉnh sửa một quản lý}
+            \end{center}
+        \end{figure}
+
+        %Use case Thống kê doanh thu
+        \item Use case Thống kê doanh thu
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 0.25]{Wireframe/Admin/Admin_Thống kê.png}
+                \caption{Giao diện thống kê doanh thu}
+            \end{center}
+        \end{figure}
+
     \end{enumerate}
 
     \subsection{Ước lượng nỗ lực người dùng}
@@ -438,9 +596,85 @@
         \item Use case Đăng nhập
         \begin{itemize}
             % trong th k cần xuống dòng thì có thể xoá phần \begin{itemize} đi nhá 
-            \item ước lượng 1
-            \item ước lượng 2
-            \item kết luận gì đó
+            \item Khách hàng của rạp phim: Truy cập vào trang chủ, nhấn nút đăng nhập $\rightarrow$ Nhập thông tin, nhấn nút đăng nhập (2 bước, khoảng 4 lần click chuột, 2 lần nhập thông tin)
+            \item Quản lý: Truy cập vào trang chủ, nhấn nút đăng nhập $\rightarrow$ Nhập thông tin, nhấn nút đăng nhập (2 bước, khoảng 4 lần click chuột, 2 lần nhập thông tin)
+            \item Admin: Truy cập vào trang chủ, nhấn nút đăng nhập $\rightarrow$ Nhập thông tin, nhấn nút đăng nhập (2 bước, khoảng 4 lần click chuột, 2 lần nhập thông tin)
+            \item Mất khoảng 10 giây để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Đăng kí
+        \item Use case Đăng kí
+        \begin{itemize}
+            \item Khách hàng của rạp phim: Truy cập vào trang chủ, nhấn nút đăng kí $\rightarrow$ Nhập thông tin, nhấn nút đăng kí (2 bước, khoảng 12 lần click chuột, 9 lần nhập thông tin)
+            \item Mất khoảng 2 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Đăng xuất
+        \item Use case Đăng kí
+        \begin{itemize}
+            \item Khách hàng của rạp phim: Nhấn nút đăng xuất (1 bước, 1 click)
+            \item Quản lý: Nhấn nút đăng xuất (1 bước, 1 click)
+            \item Admin: Nhấn nút đăng xuất (1 bước, 1 click)
+            \item Mất 3 giây để thực hiện thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Đặt vé
+        \item Use case Đặt vé
+        \begin{itemize}
+            \item Khách hàng chọn thông tin về rạp, phim, ngày, suất chiếu tại thanh đặt vé nhanh, nhấn nút đặt vé $\rightarrow$ Điều chỉnh lại thông tin đặt vé nếu cần tại giao diện đặt vé, nhấn nút chọn ghế  $\rightarrow$ Chọn ghế, chuyển qua thanh toán (3 bước, khoảng 12 lần click chuột)
+            \item Mất khoảng 2 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Hủy vé
+        \item Use case Hủy vé
+        \begin{itemize}
+            \item Khách hàng nhấn nút "Vé của tôi"  $\rightarrow$ Tìm và chọn vé muốn hủy, nhấn nút hủy vé $\rightarrow$ Nhấn xác nhận hủy vé (3 bước, khoảng 3 lần lick chuột)
+            \item Mất khoảng 1 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Xem thông tin phim
+        \item Use case Xem thông tin phim
+        \begin{itemize}
+            \item Khách hàng nhấn nút "Phim đang chiếu"  $\rightarrow$ Tìm và chọn phim muốn xem thêm thông tin, nhấn xem thêm (2 bước, khoảng 2 lần click chuột)
+            \item Mất khoảng 10 giây để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Thanh toán online
+        \item Use case Thanh toán online
+        \begin{itemize}
+            \item Khách hàng sau khi chọn ghế nhấn nút "Thanh toán qua Momo" $\rightarrow$ Quét mã để hoàn thành thanh toán (2 bước, khoảng 2 lần click chuột)
+            \item Mất khoảng 10 giây để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Quản lý lịch chiếu
+        \item Use case Quản lý lịch chiếu 
+        \begin{itemize}
+            \item Quản lý sau khi đăng nhập vào dashboard, nhấn vào tab "Lịch chiếu" ở thanh công cụ bên trái $\rightarrow$ Danh sách phim đang chiếu hiện ra, nhấn "Thêm phim", nhập thông tin sơ bộ về phim, nhấn sửa $\rightarrow$ Danh sách các suất chiếu của một phim hiện ra, nhấn sửa để có thể thay đổi nội dung. (3 bước, khoảng 7 lần click chuột, 6 lần nhập thông tin cho mỗi phim cần thêm)
+            \item Quản lý sau khi đăng nhập vào dashboard, nhấn vào tab "Lịch chiếu" ở thanh công cụ bên trái $\rightarrow$ Danh sách phim đang chiếu hiện ra, nhấn "Sửa" $\rightarrow$ Danh sách các suất chiếu của một phim hiện ra, nhấn sửa để có thể thay đổi nội dung. (3 bước, khoảng 7 lần click chuột cho mỗi phim cần sửa)
+            \item Mất khoảng 2 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Quản lý khuyến mãi
+        \item Use case Quản lý khuyến mãi
+        \begin{itemize}
+            \item Quản lý sau khi đăng nhập vào dashboard, nhấn vào tab "Khuyến mãi" ở thanh công cụ bên trái $\rightarrow$ Danh sách khuyến mãi hiện ra, nhấn "Thêm khuyến mãi", nhập thông tin sơ bộ về khuyến mãi, nhấn sửa $\rightarrow$ Danh sách các rạp được áp dụng khuyến mãi hiện ra, nhấn sửa để có thể thay đổi nội dung. (3 bước, khoảng 7 lần click chuột, 3 lần nhập thông tin cho mỗi khuyến mãi cần thêm)
+            \item Quản lý sau khi đăng nhập vào dashboard, nhấn vào tab "Khuyến mãi" ở thanh công cụ bên trái $\rightarrow$ Danh sách khuyến mãi hiện ra, nhấn "Sửa" , nhập thông tin sơ bộ về khuyến mãi, nhấn sửa $\rightarrow$ Danh sách các rạp được áp dụng khuyến mãi hiện ra, nhấn sửa để có thể thay đổi nội dung. (3 bước, khoảng 7 lần click chuột, 3 lần nhập thông tin cho mỗi khuyến mãi cần sửa)
+            \item Mất khoảng 2 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Quản lý các quản lý
+        \item Use case Quản lý các quản lý
+        \begin{itemize}
+            \item Admin sau khi đăng nhập vào dashboard, nhấn vào tab "Quản lý" ở thanh công cụ bên trái $\rightarrow$ Danh sách quản lý hiện ra, nhấn "Thêm quản lý" $\rightarrow$ Danh sách các quản lý hiện ra, nhấn sửa để có thể thay đổi nội dung. (2 bước, khoảng 7 lần click chuột, 4 lần nhập thông tin cho mỗi quản lý cần thêm)
+            \item Admin sau khi đăng nhập vào dashboard, nhấn vào tab "Quản lý" ở thanh công cụ bên trái $\rightarrow$ Danh sách quản lý hiện ra, nhấn "Sửa" $\rightarrow$ Danh sách các quản lý hiện ra, nhấn sửa để có thể thay đổi nội dung. (2 bước, khoảng 7 lần click chuột, 4 lần nhập thông tin cho mỗi quản lý cần thêm)
+            \item Mất khoảng 2 phút để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
+        \end{itemize}
+
+        %Use case Thống kê doanh thu
+        \item Use case Thống kê doanh thu
+        \begin{itemize}
+            \item Admin sau khi đăng nhập vào dashboard, nhấn vào tab "Thống kê" ở thanh công cụ bên trái $\rightarrow$ Giao diện thống kê hiện ra, có thể chọn thống kê theo các tiêu chí khác nhau (2 bước, khoảng 4 lần click chuột)
+            \item Mất khoảng 30 giây để thực hiện các thao tác trên (Trong điều kiện lý tưởng)
         \end{itemize}
     \end{enumerate}
     \clearpage
@@ -452,48 +686,101 @@
     \begin{table}[H]
         \begin{tabular}{|c|c|l|}
         \hline
-        STT & Milestone ID & \multicolumn{1}{c|}{Nội dung}             \\ \hline
+        STT & MilestoneID & \multicolumn{1}{c|}{Nội dung}             \\ \hline
         1   & M1          & Nộp báo cáo Phân tích thiết kế hệ thống   \\ \hline
         2   & M2          & Nộp báo cáo Giao diện và kiểm thử         \\ \hline
-        3   &M3 &\begin{tabular}[c]{@{}l@{}}Demo version 1:\\ - Yêu cầu 2.3 (Quản lý thông tin phim)\\ - Yêu cầu 1.4 (Đặt vé)\\ - Yêu cầu 1.5 (Huỷ vé)\end{tabular} \\ \hline
-        4   &M4 &\begin{tabular}[c]{@{}l@{}}Demo version 2\\ - Yêu cầu 1.7 (Thanh toán online)\\ - Yêu cầu 1.6 (Xem thông tin phim)\\ - Yêu cầu 1.1 (Đăng ký tài khoản)\\ - Yêu cầu 1.2, 2.1, 3.1 (Đăng nhập của khách của rạp, quản lý, admin)\\ - Yêu cầu 1.3, 2.2, 3.2 (Đăng xuất của khách của rạp, quản lý, admin)\end{tabular} \\ \hline
-        5   &M5 &\begin{tabular}[c]{@{}l@{}}Demo version 3:\\ - Yêu cầu 3.3 (Quản lý các quản lý của rạp phim)\\ - Yêu cầu 2.4 (Quản lý chương trình khuyến mãi)\\ - Yêu cầu 3.4(Thực hiện các thống kê doanh thu)\end{tabular} \\ \hline
+        3   & M3          &\begin{tabular}[c]{@{}l@{}}Demo version 1:\\ Yêu cầu 2.3 (Quản lý thông tin phim)\\ Yêu cầu 1.4 (Đặt vé)\\ Yêu cầu 1.5 (Huỷ vé)\end{tabular} \\ \hline
+        4   & M4          &\begin{tabular}[c]{@{}l@{}}Demo version 2\\ Yêu cầu 1.7 (Thanh toán online) \\ Yêu cầu 1.6 (Xem thông tin phim)\\ Yêu cầu 1.1 (Đăng ký tài khoản)\\ Yêu cầu 1.2, 2.1, 3.1 (Đăng nhập của khách của rạp, quản lý, admin)\\ Yêu cầu 1.3, 2.2, 3.2 (Đăng xuất của khách của rạp, quản lý, admin)\end{tabular} \\ \hline
+        5   & M5          &\begin{tabular}[c]{@{}l@{}}Demo version 3:\\ Yêu cầu 3.3 (Quản lý các quản lý của rạp phim)\\ Yêu cầu 2.4 (Quản lý chương trình khuyến mãi)\\ Yêu cầu 3.4(Thực hiện các thống kê doanh thu)\end{tabular} \\ \hline
         6   & M6          & Nộp báo cáo Cuối kỳ                       \\ \hline
         7   & M7          & Vấn đáp Đồ án cuối kỳ (Thực hành cuối kỳ) \\ \hline
         \end{tabular}
         \caption{Bảng các mốc milestone của dự án}
     \end{table}
 
-    \subsection{Các tác vụ cần thực hiện}
+    \subsection{Tác vụ cần thực hiện}
     \begin{table}[H]
         \begin{center}
             \begin{tabular}{|c|c|l|}
             \hline
-            STT & Task ID & \multicolumn{1}{c|}{Nội dung}                               \\ \hline
-            1   & T1      & Thực hiện báo cáo Phân tích thiết kế Hệ thống               \\ \hline
-            2   & T2      & Thực hiện báo cáo Giao diện và kiểm thử                     \\ \hline
-            3   & T3      & Cài đặt yêu cầu 2.3 (Quản lý thông tin phim)                \\ \hline
-            4   & T4      & Cài đặt yêu cầu 1.4 (Đặt vé)                                \\ \hline
-            5   & T5      & Cài đặt yêu cầu 1.5 (Hủy vé)                                \\ \hline
-            6   & T6      & Cài đặt yêu cầu 1.7 (Thanh toán online)                     \\ \hline
-            7   & T7      & Cài đặt yêu cầu 1.6 (Xem thông tin phim)                    \\ \hline
-            8   & T8      & Cài đặt yêu cầu 1.1 (Đăng ký tài khoản)                     \\ \hline
-            9   & T9      & Cài đặt yêu cầu 1.2 (Đăng nhập cho khách hàng của rạp phim) \\ \hline
-            10  & T10     & Cài đặt yêu cầu 2.1 (Đăng nhập cho quản lý của rạp phim)    \\ \hline
-            11  & T11     & Cài đặt yêu cầu 3.1 (Đăng nhập cho admin)                   \\ \hline
-            12  & T12     & Cài đặt yêu cầu 1.3 (Đăng xuất cho khách hàng của rạp phim) \\ \hline
-            13  & T13     & Cài đặt yêu cầu 2.2 (Đăng xuất cho quản lý)                 \\ \hline
-            14  & T14     & Cài đặt yêu cầu 3.2 (Đăng xuất cho admin)                   \\ \hline
-            15  & T15     & Cài đặt yêu cầu 3.3 (Quản lý các quản lý cho admin)         \\ \hline
-            16  & T16     & Cài đặt yêu cầu 2.4 (Quản lý chương trình khuyến mãi)       \\ \hline
-            17  & T17     & Cài đặt yêu cầu 3.4 (Thực hiện thống kê cho admin)          \\ \hline
+            STT & Task ID & \multicolumn{1}{c|}{Nội dung}                               \\ \hline \rowcolor[HTML]{E6B8AF} 
+            1   & T1      & Thực hiện báo cáo Phân tích thiết kế Hệ thống               \\ \hline \rowcolor[HTML]{EAD1DC} 
+            2   & T2      & Thực hiện báo cáo Giao diện và kiểm thử                     \\ \hline \rowcolor[HTML]{D9EAD3} 
+            3   & T3      & Cài đặt yêu cầu 2.3 (Quản lý thông tin phim)                \\ \hline \rowcolor[HTML]{D9EAD3} 
+            4   & T4      & Cài đặt yêu cầu 1.4 (Đặt vé)                                \\ \hline \rowcolor[HTML]{D9EAD3} 
+            5   & T5      & Cài đặt yêu cầu 1.5 (Hủy vé)                                \\ \hline \rowcolor[HTML]{FFFFFF} 
+            6   & T6      & Cài đặt yêu cầu 1.7 (Thanh toán online)                     \\ \hline \rowcolor[HTML]{FFFFFF} 
+            7   & T7      & Cài đặt yêu cầu 1.6 (Xem thông tin phim)                    \\ \hline \rowcolor[HTML]{FFFFFF} 
+            8   & T8      & Cài đặt yêu cầu 1.1 (Đăng ký tài khoản)                     \\ \hline \rowcolor[HTML]{FFFFFF} 
+            9   & T9      & Cài đặt yêu cầu 1.2 (Đăng nhập cho khách hàng của rạp phim) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            10  & T10     & Cài đặt yêu cầu 2.1 (Đăng nhập cho quản lý của rạp phim)    \\ \hline \rowcolor[HTML]{FFFFFF} 
+            11  & T11     & Cài đặt yêu cầu 3.1 (Đăng nhập cho admin)                   \\ \hline \rowcolor[HTML]{FFFFFF} 
+            12  & T12     & Cài đặt yêu cầu 1.3 (Đăng xuất cho khách hàng của rạp phim) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            13  & T13     & Cài đặt yêu cầu 2.2 (Đăng xuất cho quản lý)                 \\ \hline \rowcolor[HTML]{FFFFFF} 
+            14  & T14     & Cài đặt yêu cầu 3.2 (Đăng xuất cho admin)                   \\ \hline \rowcolor[HTML]{C9DAF8} 
+            15  & T15     & Cài đặt yêu cầu 3.3 (Quản lý các quản lý cho admin)         \\ \hline \rowcolor[HTML]{C9DAF8} 
+            16  & T16     & Cài đặt yêu cầu 2.4 (Quản lý chương trình khuyến mãi)       \\ \hline \rowcolor[HTML]{C9DAF8} 
+            17  & T17     & Cài đặt yêu cầu 3.4 (Thực hiện thống kê cho admin)          \\ \hline \rowcolor[HTML]{FCE5CD} 
+            18  & T18     & Thực hiện báo cáo cuối kỳ                                   \\ \hline \rowcolor[HTML]{D0E0E3} 
+            19  & T19     & Thực hiện vấn đáp cuối kỳ                                   \\ \hline
             \end{tabular}
-            \caption{Bảng các tác vụ cần thực hiện}
+            \caption{Bảng nội dung các tác vụ cần thực hiện trong dự án}
         \end{center}
     \end{table}
 
     \subsection{Thời gian thực hiện tác vụ và phụ thuộc tác vụ}
-
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|c|c|c|l|}
+            \hline
+            Task ID & Effort (person-days) & Duration (days) & \multicolumn{1}{c|}{Dependencies}                               \\ \hline \rowcolor[HTML]{E6B8AF} 
+            T1      & 70                   & 14              & \\ \hline \rowcolor[HTML]{EAD1DC} 
+            T2      & 70                   & 14              &T1(M1) \\ \hline \rowcolor[HTML]{D9EAD3} 
+            T3      & 10                   & 10              &T2(M2) \\ \hline \rowcolor[HTML]{D9EAD3} 
+            T4      & 28                   & 14              &T2(M2) \\ \hline \rowcolor[HTML]{D9EAD3} 
+            T5      & 20                   & 10              &T2(M2) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T6      & 14                   & 14              &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T7      & 13                   & 13              &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T8      & 13                   & 13              &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T9      & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T10     & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T11     & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T12     & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T13     & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{FFFFFF} 
+            T14     & 4                    & 4               &T4(M3) \\ \hline \rowcolor[HTML]{C9DAF8} 
+            T15     & 7                    & 6               &T6(M4) \\ \hline \rowcolor[HTML]{C9DAF8} 
+            T16     & 7                    & 6               &T6(M4) \\ \hline \rowcolor[HTML]{C9DAF8} 
+            T17     & 21                   & 7               &T6(M4) \\ \hline \rowcolor[HTML]{FCE5CD} 
+            T18     & 70                   & 14              &T17(M5) \\ \hline \rowcolor[HTML]{D0E0E3} 
+            T19     & 5                    & 1               &T18(M6) \\ \hline
+            \end{tabular}
+            \caption{Bảng nội dung các tác vụ cần thực hiện trong dự án}
+        \end{center}
+    \end{table}
+    % \begin{table}[H]
+    %     \begin{tabular}{|c|c|c|l|} \hline
+    %     ID yêu cầu & Effort(person của days) & Duration(days)     & \multicolumn{1}{c|}{Dependencies} \\ \hline \rowcolor[HTML]{E6B8AF} 
+    %     T1  & 70 & 14 &         \\ \hline \rowcolor[HTML]{EAD1DC} 
+        % T2  & 70 & 14 & T1(M1)  \\ \hline \rowcolor[HTML]{D9EAD3} 
+        % T3  & 10 & 10 & T2(M2)  \\ \hline \rowcolor[HTML]{D9EAD3} 
+        % T4  & 28 & 14 & T2(M2)  \\ \hline \rowcolor[HTML]{D9EAD3} 
+        % T5  & 20 & 10 & T2(M2)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T6  & 14 & 14 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T7  & 13 & 13 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T8  & 13 & 13 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T9  & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T10 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T11 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T12 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T13 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
+        % T14 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{C9DAF8} 
+        % T15 & 7  & 6  & T6(M4)  \\ \hline \rowcolor[HTML]{C9DAF8} 
+        % T16 & 7  & 6  & T6(M4)  \\ \hline \rowcolor[HTML]{C9DAF8} 
+        % T17 & 21 & 7  & T6(M4)  \\ \hline \rowcolor[HTML]{FCE5CD} 
+        % T18 & 70 & 14 & T17(M5) \\ \hline \rowcolor[HTML]{D0E0E3} 
+    %     T19        & GVTH thông báo sau     & GVTH thông báo sau & T18(M6)                           \\ \hline
+    %     \end{tabular}
+    % \end{table}
     \clearpage
 
     \section{Tham khảo}
