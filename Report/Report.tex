@@ -82,8 +82,8 @@
         1 &22/10/2020 &1.0 &\begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên nhóm\\ - Mô tả bài toán\\ - Yêu cầu hệ thống\\ - Xác định stakeholder\\ - Xác định actor\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Bảo Long\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
         2 &25/10/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ biểu đồ use case\\- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\\Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
         3 &25/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Đặc tả giao diện người dùng\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh \\ Phạm Văn Minh Phương\end{tabular} \\ \hline
-        % 4 &26/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
-        % 5 &26/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
+        4 &30/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
+        5 &31/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
         \end{tabular}
         \caption{Bảng lịch sử cập nhật các phiên bản của báo cáo yêu cầu}
     \end{table}
@@ -126,6 +126,18 @@
 
     \section{Phân tích đóng góp cá nhân}
     \label{sec:analys}
+    \begin{table}[H]
+        \begin{tabular}{|c|l|l|c|}
+        \hline
+        STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                & Phần trăm đóng góp \\ \hline
+        1 & Nguyễn Bảo Long      & \begin{tabular}[c]{@{}l@{}}- Mô tả bài toán\\ - Mô tả yêu cầu hệ thống\\ - Vẽ biểu đồ tuần tự\end{tabular}              & 20\% \\ \hline
+        2 & Phạm Văn Minh Phương & \begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên\\ - Đặc tả giao diện người dùng\end{tabular}                          & 20\% \\ \hline
+        3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} & 20\%               \\ \hline
+        4 & Phạm Tống Bình Minh  & \begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ ma trận truy vết\\ - Vẽ biểu đồ use case\end{tabular}               & 20\% \\ \hline
+        5 & Nguyễn Duy Vũ        & \begin{tabular}[c]{@{}l@{}}- Lên danh sách actor, stakeholder\\ - Đặc tả use case \\ - Vẽ ma trận truy vết\end{tabular} & 20\% \\ \hline
+        \end{tabular}
+        \caption{Bảng phân tích đóng góp cá nhân}
+    \end{table}
     \clearpage
 
     \section{Mô tả bài toán}
@@ -343,8 +355,8 @@
             Tác nhân                & Khách hàng của rạp                                    \\ \hline
             Điều kiện tiên quyết    & Bộ phim đã được quản lý thêm lịch chiếu trên hệ thống \\ \hline
             Kết quả                 & Thông tin về lịch chiếu ở các rạp                     \\ \hline
-            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. \textit{Khách hàng của rạp} nhấn nút “Xem lịch chiếu”\\ 2. Hệ thống hiển thị trang xem lịch chiếu\\ 3. \textit{khách hàng của rạp} chọn bộ phim muốn xem lịch chiếu\\ 4. Hệ thống hiển thị lịch chiếu và thông tin của phim (bao gồm\\ trailer, mô tả)\end{tabular} \\ \hline
-            Kịch bản phụ            & \begin{tabular}[c]{@{}l@{}}ád\\ ád\end{tabular}       \\ \hline
+            Kịch bản chính &\begin{tabular}[c]{@{}l@{}}1. \textit{Khách hàng của rạp} nhấn nút “Xem lịch chiếu”\\ 2. Hệ thống hiển thị trang xem lịch chiếu\\ 3. \textit{Khách hàng của rạp} chọn bộ phim muốn xem lịch chiếu\\ 4. Hệ thống hiển thị lịch chiếu và thông tin của phim (bao gồm\\ trailer, mô tả)\end{tabular} \\ \hline
+            Kịch bản phụ            & \begin{tabular}[c]{@{}l@{}}Tại bước 3, trong trường hợp bộ phim chưa có lịch chiếu, website \\sẽ để trống ở phần thông tin lịch chiếu \end{tabular}       \\ \hline
             Ràng buộc phi chức năng & Thời gian phản hồi của hệ thống dưới 1s               \\ \hline
             \end{tabular}
             \caption{Bảng đặc tả use case Xem thông tin phim}
@@ -757,30 +769,22 @@
             \caption{Bảng nội dung các tác vụ cần thực hiện trong dự án}
         \end{center}
     \end{table}
-    % \begin{table}[H]
-    %     \begin{tabular}{|c|c|c|l|} \hline
-    %     ID yêu cầu & Effort(person của days) & Duration(days)     & \multicolumn{1}{c|}{Dependencies} \\ \hline \rowcolor[HTML]{E6B8AF} 
-    %     T1  & 70 & 14 &         \\ \hline \rowcolor[HTML]{EAD1DC} 
-        % T2  & 70 & 14 & T1(M1)  \\ \hline \rowcolor[HTML]{D9EAD3} 
-        % T3  & 10 & 10 & T2(M2)  \\ \hline \rowcolor[HTML]{D9EAD3} 
-        % T4  & 28 & 14 & T2(M2)  \\ \hline \rowcolor[HTML]{D9EAD3} 
-        % T5  & 20 & 10 & T2(M2)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T6  & 14 & 14 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T7  & 13 & 13 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T8  & 13 & 13 & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T9  & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T10 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T11 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T12 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T13 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{FFFFFF} 
-        % T14 & 4  & 4  & T4(M3)  \\ \hline \rowcolor[HTML]{C9DAF8} 
-        % T15 & 7  & 6  & T6(M4)  \\ \hline \rowcolor[HTML]{C9DAF8} 
-        % T16 & 7  & 6  & T6(M4)  \\ \hline \rowcolor[HTML]{C9DAF8} 
-        % T17 & 21 & 7  & T6(M4)  \\ \hline \rowcolor[HTML]{FCE5CD} 
-        % T18 & 70 & 14 & T17(M5) \\ \hline \rowcolor[HTML]{D0E0E3} 
-    %     T19        & GVTH thông báo sau     & GVTH thông báo sau & T18(M6)                           \\ \hline
-    %     \end{tabular}
-    % \end{table}
+
+    \subsection{Biểu đồ hoạt động của dự án}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[angle=90, scale = 0.55]{PlanDiagram/grantchart1.PNG}
+            \caption{Activity bar chart}
+        \end{center}
+    \end{figure}
+
+    \subsection{Biểu đồ phân bổ nhân lực}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[angle=90, scale = 0.55]{PlanDiagram/Assignment.PNG}
+            \caption{Biểu đồ phân bố nhân lực}
+        \end{center}
+    \end{figure}
     \clearpage
 
     \section{Tham khảo}
