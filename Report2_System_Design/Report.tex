@@ -106,13 +106,78 @@
 \section{Thiết kế kiến trúc và hệ thống}
 
 \subsection{Kiến trúc hệ thống}
-
+	  \begin{figure}[H]
+	 	\begin{center}
+	 		\includegraphics[scale = 0.25]{image/4.1.png}
+	 		\caption{Kiến trúc tổng thể hệ thống}
+	 	\end{center}
+	 \end{figure}
+ 	%text description
+ 	Hệ thống đặt vé xem phim sử dụng kiến trúc Client - Server :
+ 	\begin{itemize}
+ 		\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web.
+ 		\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng node.js để xây dựng hệ thống.
+ 		\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu mongo DB.
+ 	\end{itemize}
+	
 \subsection{Nhận diện hệ thống con}
-
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale = 0.35]{image/4.2.png}
+			\caption{Component Diagram}
+		\end{center}
+	\end{figure}
+	%text description
+	Hệ thống đặt vé xem phim có 2 hệ thống con :
+	\begin{itemize}
+		\item Hệ thống con đặt vé xem phim với các component:
+			\begin{enumerate}
+				\item Rạp : cung cấp chức năng xem lịch chiếu. 
+				\item Phim : cung cấp chức năng xem thông tin phim.
+				\item Đặt vé : cung cấp chức năng đặt vé.
+				\item Thanh Toán : cung cấp chức năng thanh toán.
+			\end{enumerate}
+		\item Hệ thống con quản lý với các component
+			\begin{enumerate}
+				\item Rạp : cung cấp chức năng xem lịch chiếu.
+				\item Phim: cung cấp chức năng xem lịch chiếu.
+				\item Đơn hàng:cung cấp chức năng xem quản lý vé đã đặt.
+				\item Thống kê: cung cấp chức năng thống kê doanh thu.
+			\end{enumerate}
+	\end{itemize}
 \subsection{Ánh xạ các phần của hệ thống với phần cứng}
-
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale = 0.5]{image/4.3.png}
+			\caption{Ánh xạ hệ thống tới phần cứng}
+		\end{center}
+	\end{figure}
+	%text description
+	Hệ thống đặt vé xem phim sử dụng mô hình Client - Server thì có các phần cứng :
+	\begin{itemize}
+		\item Ở phía Client sẽ sử dụng các thiết bị như Laptop, PC, SmartPhone , Table, ... để truy cập vào hệ thống thông qua Web Browser như Google, Safari, FireFox ...
+		\item Ở phía Server sẽ sử dụng các máy chủ để chạy Server và hệ quản trị cơ sở dữ liệu.
+	\end{itemize}
 \subsection{Lưu trữ dữ liệu lâu dài}
-
+		\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale = 0.25]{image/4.4.png}
+			\caption{Database Diagram}
+		\end{center}
+	\end{figure}
+	%text description
+	Hệ thống đặt vé xem phim sử dụng mongoDB làm hệ quản trị CSDL với các Collection:
+	\begin{itemize}
+		\item PHIM: lưu thông tin Phim.
+		\item PHONGCHIEU: lưu thông tin phòng chiếu.
+		\item GHE: lưu thông tin về ghế trong PHONGCHIEU.
+		\item LICHCHIEU: lưu thông tin lịch chiếu.
+		\item SUATCHIEU: lưu thông tin suất chiếu.
+		\item DATVE: lưu thông tin đặt vé của khách hàng.
+		\item KHACHHANG\_THANHTOAN: lưu thông tin về thanh toán của vé đã đặt.
+		\item THANHTOANONLINE: lưu thông tin về thanh toán online cho 1 đơn hàng(đặt vé) thông qua KHACHHANG\_THANHTOAN.
+		\item KHACHHANG: lưu thông tin về khách hàng
+	\end{itemize}	
 \subsection{Giao thức mạng}
 
 \subsection{Luồng điều khiển (Global Control Flow)}
@@ -132,6 +197,16 @@
 \subsubsection{Đặc tả lớp C2}
 
 \subsubsection{Đặc tả lớp C3}
+
+\clearpage
+
+\section{Thuật toán và cấu trúc dữ liệu}
+
+\subsection{Các thuật toán}
+
+\subsection{Các cấu trúc dữ liệu}
+	Ở hệ thống này không sử dụng các cấu trúc dữ liêu phức tạp
+
 
 \clearpage
 
