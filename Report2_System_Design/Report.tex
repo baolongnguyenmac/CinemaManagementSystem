@@ -22,105 +22,105 @@
 \fancyhead[R]{Nhóm Just $4^{th}$}
 
 \begin{document}
-\begin{titlepage}
-    \begin{center}
-        \vspace*{1cm}
-        \Large\textbf{Báo cáo \#2\\Thiết kế hệ thống}\\
-
-        \vfill
-        \line(1,0){450}\\[4mm]
-        \LARGE\textbf{\MakeUppercase{Dự án quản lý tạp chiếu phim}}\\[3mm]
-        \Large{Nhập môn Công nghệ phần mềm (CSC13002)}\\[3mm]
-        \Large{Nhóm Just $4^{th}$}
-        \line(1,0){430}\\
-        \vfill
-
-        \vfill
-        TP Hồ Chí Minh, ngày 07/11/2020
-    \end{center}
-\end{titlepage}
-
-\tableofcontents
-\thispagestyle{empty}
-\clearpage
-
-\section{Thông tin nhóm}
-\label{sec:info}
-\begin{enumerate}
-    \item \textbf{Đường link GitHub}: \url{https://github.com/baolongnguyenmac/CinemaManagementSystem}
-    \item \textbf{Đường link Trello}: \url{https://trello.com/b/uymvzWAR/báo-cáo-thiết-kế-hệ-thống}
-    \item \textbf{Danh sách thành viên}
-    \begin{table}[H]
-        \begin{center}
-            \begin{tabular}{|c|c|l|c|c|}
-            \hline
-            STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
-            1   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0919070940 \\ \hline
-            2   & 18120211 & Võ Thế Minh                 & 18120211@student.hcmus.edu.vn & 0981850699 \\ \hline
-            3   & 18120227 & Phạm Văn Minh Phương        & 18120227@student.hcmus.edu.vn & 0343049359 \\ \hline
-            4   & 18120210 & Phạm Tống Bình Minh         & 18120210@student.hcmus.edu.vn & 0971877781 \\ \hline
-            5   & 18120264 & Nguyễn Duy Vũ               & 18120264@student.hcmus.edu.vn & 0911572108 \\ \hline
-            \end{tabular}
-            \caption{Bảng danh sách thành viên nhóm}
-        \end{center}
-    \end{table}
-\end{enumerate}
-\clearpage
-
-\section{Lịch sử cập nhật}
-\label{sec:history}
-\begin{table}[h]
-    \begin{center}
-        \begin{tabular}{|c|c|c|l|l|}
-        \hline
-        STT &Ngày cập nhật &Phiên bản &\multicolumn{1}{c|}{Mô tả chi tiết} &\multicolumn{1}{c|}{Tác giả} \\ \hline
-        % 1 &22/10/2020 &1.0 &\begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên nhóm\\ - Mô tả bài toán\\ - Yêu cầu hệ thống\\ - Xác định stakeholder\\ - Xác định actor\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Bảo Long\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
-        % 2 &25/10/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ biểu đồ use case\\- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\\Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
-        % 3 &25/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Đặc tả giao diện người dùng\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh \\ Phạm Văn Minh Phương\end{tabular} \\ \hline
-        % 4 &30/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
-        % 5 &31/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
-        \end{tabular}
-        \caption{Bảng lịch sử cập nhật các phiên bản của báo cáo yêu cầu}
-    \end{center}
-\end{table}
-\clearpage
-
-\section{Phân tích đóng góp cá nhân}
-\label{sec:analys}
-\begin{table}[H]
-    \begin{center}
-        \begin{tabular}{|c|l|l|c|}
-        \hline
-        STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                & Phần trăm đóng góp \\ \hline
-        % 1 & Nguyễn Bảo Long      & \begin{tabular}[c]{@{}l@{}}- Mô tả bài toán\\ - Mô tả yêu cầu hệ thống\\ - Vẽ biểu đồ tuần tự\end{tabular}              & 20\% \\ \hline
-        % 2 & Phạm Văn Minh Phương & \begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên\\ - Đặc tả giao diện người dùng\end{tabular}                          & 20\% \\ \hline
-        % 3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} & 20\%               \\ \hline
-        % 4 & Phạm Tống Bình Minh  & \begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ ma trận truy vết\\ - Vẽ biểu đồ use case\end{tabular}               & 20\% \\ \hline
-        % 5 & Nguyễn Duy Vũ        & \begin{tabular}[c]{@{}l@{}}- Lên danh sách actor, stakeholder\\ - Đặc tả use case \\ - Vẽ ma trận truy vết\end{tabular} & 20\% \\ \hline
-        \end{tabular}
-        \caption{Bảng phân tích đóng góp cá nhân}
-    \end{center}
-\end{table}
-\clearpage
-
-\section{Thiết kế kiến trúc và hệ thống}
-
-\subsection{Kiến trúc hệ thống}
-	  \begin{figure}[H]
-	 	\begin{center}
-	 		\includegraphics[scale = 0.25]{image/4.1.png}
-	 		\caption{Kiến trúc tổng thể hệ thống}
-	 	\end{center}
-	 \end{figure}
- 	%text description
- 	Hệ thống đặt vé xem phim sử dụng kiến trúc Client - Server :
- 	\begin{itemize}
- 		\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web.
- 		\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng node.js để xây dựng hệ thống.
- 		\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu mongo DB.
- 	\end{itemize}
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			\Large\textbf{Báo cáo \#2\\Thiết kế hệ thống}\\
+			
+			\vfill
+			\line(1,0){450}\\[4mm]
+			\LARGE\textbf{\MakeUppercase{Dự án quản lý tạp chiếu phim}}\\[3mm]
+			\Large{Nhập môn Công nghệ phần mềm (CSC13002)}\\[3mm]
+			\Large{Nhóm Just $4^{th}$}
+			\line(1,0){430}\\
+			\vfill
+			
+			\vfill
+			TP Hồ Chí Minh, ngày 07/11/2020
+		\end{center}
+	\end{titlepage}
 	
-\subsection{Nhận diện hệ thống con}
+	\tableofcontents
+	\thispagestyle{empty}
+	\clearpage
+	
+	\section{Thông tin nhóm}
+	\label{sec:info}
+	\begin{enumerate}
+		\item \textbf{Đường link GitHub}: \url{https://github.com/baolongnguyenmac/CinemaManagementSystem}
+		\item \textbf{Đường link Trello}: \url{https://trello.com/b/uymvzWAR/báo-cáo-thiết-kế-hệ-thống}
+		\item \textbf{Danh sách thành viên}
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{|c|c|l|c|c|}
+					\hline
+					STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
+					1   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0919070940 \\ \hline
+					2   & 18120211 & Võ Thế Minh                 & 18120211@student.hcmus.edu.vn & 0981850699 \\ \hline
+					3   & 18120227 & Phạm Văn Minh Phương        & 18120227@student.hcmus.edu.vn & 0343049359 \\ \hline
+					4   & 18120210 & Phạm Tống Bình Minh         & 18120210@student.hcmus.edu.vn & 0971877781 \\ \hline
+					5   & 18120264 & Nguyễn Duy Vũ               & 18120264@student.hcmus.edu.vn & 0911572108 \\ \hline
+				\end{tabular}
+				\caption{Bảng danh sách thành viên nhóm}
+			\end{center}
+		\end{table}
+	\end{enumerate}
+	\clearpage
+	
+	\section{Lịch sử cập nhật}
+	\label{sec:history}
+	\begin{table}[h]
+		\begin{center}
+			\begin{tabular}{|c|c|c|l|l|}
+				\hline
+				STT &Ngày cập nhật &Phiên bản &\multicolumn{1}{c|}{Mô tả chi tiết} &\multicolumn{1}{c|}{Tác giả} \\ \hline
+				% 1 &22/10/2020 &1.0 &\begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên nhóm\\ - Mô tả bài toán\\ - Yêu cầu hệ thống\\ - Xác định stakeholder\\ - Xác định actor\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Bảo Long\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
+				% 2 &25/10/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ biểu đồ use case\\- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\\Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
+				% 3 &25/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Đặc tả giao diện người dùng\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh \\ Phạm Văn Minh Phương\end{tabular} \\ \hline
+				% 4 &30/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
+				% 5 &31/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
+			\end{tabular}
+			\caption{Bảng lịch sử cập nhật các phiên bản của báo cáo yêu cầu}
+		\end{center}
+	\end{table}
+	\clearpage
+	
+	\section{Phân tích đóng góp cá nhân}
+	\label{sec:analys}
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|l|l|c|}
+				\hline
+				STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                & Phần trăm đóng góp \\ \hline
+				% 1 & Nguyễn Bảo Long      & \begin{tabular}[c]{@{}l@{}}- Mô tả bài toán\\ - Mô tả yêu cầu hệ thống\\ - Vẽ biểu đồ tuần tự\end{tabular}              & 20\% \\ \hline
+				% 2 & Phạm Văn Minh Phương & \begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên\\ - Đặc tả giao diện người dùng\end{tabular}                          & 20\% \\ \hline
+				% 3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} & 20\%               \\ \hline
+				% 4 & Phạm Tống Bình Minh  & \begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ ma trận truy vết\\ - Vẽ biểu đồ use case\end{tabular}               & 20\% \\ \hline
+				% 5 & Nguyễn Duy Vũ        & \begin{tabular}[c]{@{}l@{}}- Lên danh sách actor, stakeholder\\ - Đặc tả use case \\ - Vẽ ma trận truy vết\end{tabular} & 20\% \\ \hline
+			\end{tabular}
+			\caption{Bảng phân tích đóng góp cá nhân}
+		\end{center}
+	\end{table}
+	\clearpage
+	
+	\section{Thiết kế kiến trúc và hệ thống}
+	
+	\subsection{Kiến trúc hệ thống}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale = 0.25]{image/4.1.png}
+			\caption{Kiến trúc tổng thể hệ thống}
+		\end{center}
+	\end{figure}
+	%text description
+	Hệ thống đặt vé xem phim sử dụng kiến trúc Client - Server :
+	\begin{itemize}
+		\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web.
+		\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng node.js để xây dựng hệ thống.
+		\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu MySQL.
+	\end{itemize}
+	
+	\subsection{Nhận diện hệ thống con}
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale = 0.35]{image/4.2.png}
@@ -131,21 +131,21 @@
 	Hệ thống đặt vé xem phim có 2 hệ thống con :
 	\begin{itemize}
 		\item Hệ thống con đặt vé xem phim với các component:
-			\begin{enumerate}
-				\item Rạp : cung cấp chức năng xem lịch chiếu. 
-				\item Phim : cung cấp chức năng xem thông tin phim.
-				\item Đặt vé : cung cấp chức năng đặt vé.
-				\item Thanh Toán : cung cấp chức năng thanh toán.
-			\end{enumerate}
+		\begin{enumerate}
+			\item Rạp : cung cấp chức năng xem lịch chiếu. 
+			\item Phim : cung cấp chức năng xem thông tin phim.
+			\item Đặt vé : cung cấp chức năng đặt vé.
+			\item Thanh Toán : cung cấp chức năng thanh toán.
+		\end{enumerate}
 		\item Hệ thống con quản lý với các component
-			\begin{enumerate}
-				\item Rạp : cung cấp chức năng xem lịch chiếu.
-				\item Phim: cung cấp chức năng xem lịch chiếu.
-				\item Đơn hàng:cung cấp chức năng xem quản lý vé đã đặt.
-				\item Thống kê: cung cấp chức năng thống kê doanh thu.
-			\end{enumerate}
+		\begin{enumerate}
+			\item Rạp : cung cấp chức năng xem lịch chiếu.
+			\item Phim: cung cấp chức năng xem lịch chiếu.
+			\item Đơn hàng:cung cấp chức năng xem quản lý vé đã đặt.
+			\item Thống kê: cung cấp chức năng thống kê doanh thu.
+		\end{enumerate}
 	\end{itemize}
-\subsection{Ánh xạ các phần của hệ thống với phần cứng}
+	\subsection{Ánh xạ các phần của hệ thống với phần cứng}
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale = 0.5]{image/4.3.png}
@@ -158,15 +158,15 @@
 		\item Ở phía Client sẽ sử dụng các thiết bị như Laptop, PC, SmartPhone , Table, ... để truy cập vào hệ thống thông qua Web Browser như Google, Safari, FireFox ...
 		\item Ở phía Server sẽ sử dụng các máy chủ để chạy Server và hệ quản trị cơ sở dữ liệu.
 	\end{itemize}
-\subsection{Lưu trữ dữ liệu lâu dài}
-		\begin{figure}[H]
+	\subsection{Lưu trữ dữ liệu lâu dài}
+	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[scale = 0.25]{image/4.4.png}
 			\caption{Database Diagram}
 		\end{center}
 	\end{figure}
 	%text description
-	Hệ thống đặt vé xem phim sử dụng mongoDB làm hệ quản trị CSDL với các Collection:
+	Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL với các Table:
 	\begin{itemize}
 		\item PHIM: lưu thông tin Phim.
 		\item PHONGCHIEU: lưu thông tin phòng chiếu.
@@ -177,7 +177,11 @@
 		\item KHACHHANG\_THANHTOAN: lưu thông tin về thanh toán của vé đã đặt.
 		\item THANHTOANONLINE: lưu thông tin về thanh toán online cho 1 đơn hàng(đặt vé) thông qua KHACHHANG\_THANHTOAN.
 		\item KHACHHANG: lưu thông tin về khách hàng
+		\item USER: lưu thông tin về Quản lý và Admin
+		\item QUANLIPHIM: lưu lịch sử của việc quản lý (thêm, xóa, sửa) phim.
+		\item QUANLILICHCHIEU: lưu lịch sử của việc quản lý (thêm, xóa, sửa) lịch chiếu.
 	\end{itemize}	
+<<<<<<< HEAD
 \subsection{Giao thức mạng}
 
 \subsection{Luồng điều khiển (Global Control Flow)}
@@ -442,24 +446,25 @@ STT & Tên phương thức & Loại   & Ràng buộc & Ý nghĩa                
 \subsection{Các thuật toán}
 
 \subsection{Các cấu trúc dữ liệu}
+
 	Ở hệ thống này không sử dụng các cấu trúc dữ liêu phức tạp
-
-
-\clearpage
-
-\section{Quản trị dự án và kế hoạch làm việc}
-
-\subsection{Tổng hợp đóng góp từ các thành viên của nhóm}
-
-\subsection{Báo cáo tiến độ và điều phối dự á}
-
-\subsection{Kế hoạch thực hiện}
-
-\subsection{Phân rã trách nhiệm (Breakdown of Responsibilities)}
-
-\clearpage
-
-\section{Tham khảo}
-\clearpage
-
+	
+	
+	\clearpage
+	
+	\section{Quản trị dự án và kế hoạch làm việc}
+	
+	\subsection{Tổng hợp đóng góp từ các thành viên của nhóm}
+	
+	\subsection{Báo cáo tiến độ và điều phối dự á}
+	
+	\subsection{Kế hoạch thực hiện}
+	
+	\subsection{Phân rã trách nhiệm (Breakdown of Responsibilities)}
+	
+	\clearpage
+	
+	\section{Tham khảo}
+	\clearpage
+	
 \end{document}
