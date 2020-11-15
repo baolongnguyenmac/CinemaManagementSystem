@@ -183,66 +183,67 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 \end{itemize}	
 
 \subsection{Giao thức mạng}
-	%text description
-	Hệ thống sử dụng các giao thức mạng như sau:
-	\begin{itemize}
-		\item Transmission Control Protocol (TCP): Giao thức điều khiển truyền vận. Chúng là giao thức cốt lõi của Internet Protocol Suite (Bộ giao thức liên mạng). Với nhiệm vụ thực thi mạng, bổ sung cho Internet Protocol. Giao thức này đảm bảo chuyển giao dữ liệu tới nơi nhận một cách đáng tin cậy và đúng thứ tự.
-		\item Internet Protocol (IP): Giao thức chính trong Internet protocol suite. Với khả năng chuyển tiếp dữ liệu qua mạng và giúp thiết lập internet thông qua việc định tuyến  của Internet Protocol. IP cung cấp một dịch vụ gửi dữ liệu không đảm bảo  nên gói dữ liệu có thể đến nơi mà không còn nguyên vẹn, nó có thể đến không theo thứ tự.
-		\item File Transfer Protocol (FTP): Giao thức truyền tập tin để trao đổi tập tin qua mạng lưới truyền thông dùng giao thức TCP/IP.
-		\item Hypertext Transfer Protocol (HTTP): Giao thức truyền tải siêu văn bản. Chúng là một trong năm giao thức chuẩn của mạng Internet. Giao thức này dùng để liên hệ thông tin giữa máy cung cấp dịch vụ (Web server) và Máy sử dụng dịch vụ (Web client). Chúng hoạt trông trong mô hình Client/Server dùng cho World Wide Web.
-		\item Hypertext Transfer Protocol over SSL/TLS (HTTPS): Một giao thức kết hợp giữa giao thức HTTP và giao thức bảo mật SSL hay TLS cho phép trao đổi thông tin một cách bảo mật trên Internet.
-	\end{itemize}
-	\clearpage
+
+Hệ thống sử dụng các giao thức mạng như sau:
+\begin{itemize}
+	\item Transmission Control Protocol (TCP): Giao thức điều khiển truyền vận. Chúng là giao thức cốt lõi của Internet Protocol Suite (Bộ giao thức liên mạng). Với nhiệm vụ thực thi mạng, bổ sung cho Internet Protocol. Giao thức này đảm bảo chuyển giao dữ liệu tới nơi nhận một cách đáng tin cậy và đúng thứ tự.
+	\item Internet Protocol (IP): Giao thức chính trong Internet protocol suite. Với khả năng chuyển tiếp dữ liệu qua mạng và giúp thiết lập internet thông qua việc định tuyến  của Internet Protocol. IP cung cấp một dịch vụ gửi dữ liệu không đảm bảo  nên gói dữ liệu có thể đến nơi mà không còn nguyên vẹn, nó có thể đến không theo thứ tự.
+	\item File Transfer Protocol (FTP): Giao thức truyền tập tin để trao đổi tập tin qua mạng lưới truyền thông dùng giao thức TCP/IP.
+	\item Hypertext Transfer Protocol (HTTP): Giao thức truyền tải siêu văn bản. Chúng là một trong năm giao thức chuẩn của mạng Internet. Giao thức này dùng để liên hệ thông tin giữa máy cung cấp dịch vụ (Web server) và Máy sử dụng dịch vụ (Web client). Chúng hoạt trông trong mô hình Client/Server dùng cho World Wide Web.
+	\item Hypertext Transfer Protocol over SSL/TLS (HTTPS): Một giao thức kết hợp giữa giao thức HTTP và giao thức bảo mật SSL hay TLS cho phép trao đổi thông tin một cách bảo mật trên Internet.
+\end{itemize}
+\clearpage
 
 \subsection{Luồng điều khiển (Global Control Flow)}
-	%Insert images and codes here
-	Thứ tự thực thi: Hệ thống hướng sự kiện: Chờ sự kiện xảy ra và xử lý các sự kiện đó \newline
-	Phụ thuộc thời gian: Không \newline
-	Sử dụng đa luồng: Không \newline
-	\begin{figure}[H]
+
+\begin{itemize}
+	\item Thứ tự thực thi: Hệ thống hướng sự kiện: Chờ sự kiện xảy ra và xử lý các sự kiện đó
+	\item Phụ thuộc thời gian: Không 
+	\item Sử dụng đa luồng: Không 
+\end{itemize}
+
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.6]{GCF Charts/GCF_Admin.png}
 		\caption{Luồng điều khiển của Admin}
 	\end{center}
-	\end{figure}
+\end{figure}
 
-	\begin{figure}[H]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.6]{GCF Charts/GCF_Manager.png}
 		\caption{Luồng điều khiển của Quản lý}
 	\end{center}
-	\end{figure}
+\end{figure}
 
-	\begin{figure}[H]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.6]{GCF Charts/GCF_User.png}
 		\caption{Luồng điều khiển của Khách hàng}
 	\end{center}
-	\end{figure}
-
-
-	\clearpage
+\end{figure}
 
 \subsection{Yêu cầu phần cứng}
-	%Text description
-	Phía client: Một máy tính cá nhân, tablet, điện thoại thông minh bất kì có thể sử dụng các trình duyệt web như Google Chrome, Microsoft Edge, Mozilla Firefox, Safari...
-\newline Phía server: Máy chủ vật lý hoặc máy chủ ảo có cấu hình tương đương tối thiểu như sau
+
+\begin{itemize}
+	\item Phía client: Một máy tính cá nhân, tablet, điện thoại thông minh bất kì có thể sử dụng các trình duyệt web như Google Chrome, Microsoft Edge, Mozilla Firefox, Safari...
+	\item Phía server: Máy chủ vật lý hoặc máy chủ ảo có cấu hình tương đương tối thiểu như sau
 	\begin{itemize}
 		\item CPU: Intel Xeon 2.0 GHz, 2M Cache
 		\item RAM: 2GB DDR4
 		\item Lưu trữ: 240GB HDD/SSD
-		\item Mạng: 100MBps cho cả Upload và Download, không giới hạn băng thông
+		\item Mạng: 100MBps cho cả Upload và Download, không giới hạn băng thông 
 	\end{itemize}
-
-	\clearpage
-
+\end{itemize}
+\clearpage
 
 \section{Biểu đồ lớp}
 
 \subsection{Biểu đồ lớp}
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[angle=90,scale=0.5]{image/5.0.png}
+		\includegraphics[angle=90,scale=0.49]{image/5.0.png}
 		\caption{Class Diagram}
 	\end{center}
 \end{figure}
@@ -252,25 +253,25 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 \subsubsection{Lớp AccountData}
 \begin{table}[h]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		STT & Tên thuộc tính & Loại   & Ràng buộc & Ý nghĩa             \\ \hline
-		1   & name           & private &           & Tên người dùng      \\ \hline
-		2   & username       & private &           & Tài khoản đăng nhập \\ \hline
-		3   & password       & private &           & Mật khẩu đăng nhập  \\ \hline
-		4   & id             & private &           & Định danh tài khoản \\ \hline
-		\end{tabular}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại                         & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & id                                  & \multicolumn{1}{l|}{private} & not null, unique               & Định danh tài khoản          \\ \hline
+			2   & name                                & private                      & not null                       & Tên người dùng               \\ \hline
+			3   & username                            & private                      & not null, unique               & Xem lịch chiếu               \\ \hline
+			4   & password                            & private                      & not null                       & Mật khẩu đăng nhập           \\ \hline
+			\end{tabular}
 		\caption{Mô tả phương thức lớp AccountData}
 	\end{center}
 \end{table}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                                                           \\ \hline
-		1   & Các phương thức get, set & public &           & \begin{tabular}[c]{@{}l@{}}Lấy hoặc gán giá trị cho\\ các thuộc tính\end{tabular} \\ \hline
-		\end{tabular}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại   & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}    \\ \hline
+			1   & Các phương thức get, set             & public &             Không                   & Lấy hoặc gán giá trị thuộc tính \\ \hline
+			\end{tabular}
 		\caption{Mô tả phương thức lớp AccountData}
 	\end{center}
 \end{table}
@@ -279,10 +280,10 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
+		\begin{tabular}{|c|l|c|l|l|}
 			\hline
-			STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa             \\ \hline
-			1   & type           & private &           & Loại User(Quản lí, Admin)      \\ \hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại    & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & type                                & private & in\{1:admin,2:quản lí\}        & Loại User(quản lí, admin)    \\ \hline
 			\end{tabular}
 			\caption{Bảng mô tả thuôc tính lớp User}
 	\end{center}
@@ -290,11 +291,11 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                                                           \\ \hline
-		1   & User() 				   & public &           & Khởi tạo đối tượng user \\ \hline
-		\end{tabular}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại   & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & User                                 & public &            Không                    & Khởi tạo đối tượng User      \\ \hline
+			\end{tabular}
 		\caption{Bảng mô tả phương thức lớp User}
 	\end{center}
 \end{table}
@@ -303,12 +304,12 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
+		\begin{tabular}{|c|l|c|l|l|}
 			\hline
-			STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                                                           \\ \hline
-			1   & Customer() 				   & public &           & Khởi tạo đối tượng user \\ \hline
-		\end{tabular}
-		\caption{Bảng mô tả thuôc tính lớp Customer}
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại   & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & Customer                             & public &         Không                       & Khởi tạo đối tượng Customer  \\ \hline
+			\end{tabular}
+		\caption{Bảng mô tả phương thức lớp Customer}
 	\end{center}
 \end{table}
 
@@ -319,192 +320,235 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 		\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                  \\ \hline
-		1   & id             & private &           & Định danh một thanh toán \\ \hline
-		2   & detail         & private &           & Chi tiết một thanh toán  \\ \hline
+		1   & id             & private &   not null, unique        & Định danh một thanh toán \\ \hline
+		2   & detail         & private &   Không        & Chi tiết một thanh toán  \\ \hline
 		\end{tabular}
-		\caption{đây là 1 chiếc cap}
+		\caption{Bảng mô tả thuộc tính lớp Payment}
 	\end{center}
 \end{table}
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|l|l|l|l|l|}
-		\hline
-		STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                  \\ \hline
-		1   & id             & private &           & Định danh một thanh toán \\ \hline
-		2   & detail         & private &           & Chi tiết một thanh toán  \\ \hline
-		\end{tabular}
-		\caption{đây là 1 chiếc cap}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại                        & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}    \\ \hline
+			1   & Các phương thức get, set             & public                      &      Không                          & Lấy hoặc gán giá trị thuộc tính \\ \hline
+			2   & Payment                              & \multicolumn{1}{l|}{public} &      Không                          & Khởi tạo một đối tượng Payment  \\ \hline
+			\end{tabular}
+		\caption{Bảng mô tả phương thức lớp Payment}
 	\end{center}
 \end{table}
 
 \subsubsection{Lớp SuatChieu}
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                             \\ \hline
-1   & stt            & private &           & Số thứ tự của suất chiếu trong ngày \\ \hline
-2   & date           & private &           & Ngày khởi tạo suất chiếu            \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại                         & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}        \\ \hline
+			1   & stt                                 & private                      & not null                       & Số thứ tự trong ngày của suất chiếu \\ \hline
+			2   & date                                & \multicolumn{1}{l|}{private} & not null                       & Ngày khởi tạo suất chiếu            \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuộc tính lớp SuatChieu}
+	\end{center}
 \end{table}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                             \\ \hline
-1   & Các phương thức get, set & public &           & Lấy hoặc gán giá trị cho thuộc tính \\ \hline
-2   & Payment                  & public &           & Khởi tạo một đối tượng thanh toán   \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại                        & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}     \\ \hline
+			1   & Các phương thức get, set             & public                      &                 Không               & Lấy hoặc gán giá trị thuộc tính  \\ \hline
+			2   & SuatChieu                            & \multicolumn{1}{l|}{public} &                      Không          & Khởi tạo một đối tượng SuatChieu \\ \hline
+			\end{tabular}
+		\caption{Bảng mô tả phương thức lớp SuatChieu}
+	\end{center}
 \end{table}
 
 \subsubsection{Lớp Film}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                	\\ \hline
-1   & name           & private &           & Tên phim 					\\ \hline
-2   & id             & private &           & Định danh phim           	\\ \hline
-3   & introduction   & private &           & Giới thiệu phim          	\\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|l|l|l|}
+			\hline
+			STT                     & \multicolumn{1}{c|}{Tên thuộc tính} & \multicolumn{1}{c|}{Loại}    & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1                       & name                                & \multicolumn{1}{c|}{private} & not null                       & Tên phim                     \\ \hline
+			2                       & id                                  & private                      & not null, unique               & Định danh một bộ phim        \\ \hline
+			3			   		    & introduction                        & private                      &         not null                       & Giới thiệu phim              \\ \hline
+			\end{tabular}
+			\caption{Bảng mô tả thuộc tính lớp Film}
+	\end{center}
 \end{table}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                 \\ \hline
-1   & Các phương thức get, set & public &           & Lấy hoặc gán giá trị cho các thuộc tính \\ \hline
-2   & Film                     & public &           & Khởi tạo một đối tượng phim             \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại                        & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}    \\ \hline
+			1   & Các phương thức get, set             & public                      &            Không                    & Lấy hoặc gán giá trị thuộc tính \\ \hline
+			2   & Film                                 & \multicolumn{1}{l|}{public} &                 Không               & Khởi tạo một đối tượng Film     \\ \hline
+			\end{tabular}
+			\caption{Bảng mô tả phương thức lớp Film}
+	\end{center}
 \end{table}
 
 \subsubsection{Lớp Theater}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                    \\ \hline
-1   & id           	 & private &           & Định danh phim phòng chiếu \\ \hline
-2   & listChair      & private &           & Danh sách ghế              \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại                         & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & id                                  & private                      & not null, unique               & Định danh một phòng chiếu    \\ \hline
+			2   & listChair                           & \multicolumn{1}{l|}{private} & not null                       & Danh sách ghế                \\ \hline
+			\end{tabular}
+			\caption{Bảng mô tả thuộc tính lớp Theater}
+	\end{center}
 \end{table}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                 \\ \hline
-1   & Các phương thức get, set & public &           & Lấy hoặc gán giá trị cho các thuộc tính \\ \hline
-2   & Theatẻ                   & public &           & Khởi tạo một đối tượng phòng chiếu      \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại                        & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}    \\ \hline
+			1   & Các phương thức get, set             & public                      &              Không                  & Lấy hoặc gán giá trị thuộc tính \\ \hline
+			2   & Theater                              & \multicolumn{1}{l|}{public} &                   Không             & Khởi tạo một đối tượng Theater  \\ \hline
+			\end{tabular}
+			\caption{Bảng mô tả thuộc tính lớp Theater}
+	\end{center}
 \end{table}
 
 \subsubsection{Lớp Schedule}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính           & Loại   & Ràng buộc & Ý nghĩa                                 \\ \hline
-1   & Các phương thức get, set & public &           & Lấy hoặc gán giá trị cho các thuộc tính \\ \hline
-2   & Schedule                 & public &           & Khởi tạo một đối tượng lịch chiếu       \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại                         & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa} \\ \hline
+			1   & id                                  & private                      & not null, unique               & Định danh một lịch chiếu     \\ \hline
+			2   & date                                & \multicolumn{1}{l|}{private} & not null                       & Ngày khởi tạo lịch chiếu     \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuộc tính lớp Schedule}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính  & Loại    & Ràng buộc & Ý nghĩa                  \\ \hline
-1   & id              & private &           & Định danh một lịch chiếu \\ \hline
-2   & date            & private &           & Ngày khởi tạo lịch chiếu \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|c|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại                        & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}    \\ \hline
+			1   & Các phương thức get, set             & public                      &                   Không             & Lấy hoặc gán giá trị thuộc tính \\ \hline
+			2   & Schedule                             & \multicolumn{1}{l|}{public} &                       Không         & Khởi tạo một đối tượng Schedule \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả phương thức lớp Schedule}
+	\end {center}
 \end{table}
 
 \subsubsection{Lớp Global}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tinh  & Loại     & Ràng buộc & Ý nghĩa                                                                                                      \\ \hline
-1   & instance        & priavate &           & \begin{tabular}[c]{@{}l@{}}Đối tượng Global duy nhất được\\ tạo để quản lí dữ liệu toàn cục\end{tabular} \\ \hline
-2   & listAccount     & public   &           & Quản lí danh sách các AccountData                                                                            \\ \hline
-3   & listPayment     & public   &           & Quản lí danh sách các Payment                                                                                \\ \hline
-4   & listSuatChieu   & public   &           & Quản lí danh sách các Suất chiếu                                                                             \\ \hline
-5   & listSchedule    & public   &           & Quản lí danh sách các lịch chiếu                                                                             \\ \hline
-6   & listFilm        & public   &           & Quản lí danh sách các phim                                                                                   \\ \hline
-7   & listTheater     & public   &           & Quản lí danh sách các phòng chiếu                                                                            \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|l|c|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & \multicolumn{1}{c|}{Loại}    & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}                                                                             \\ \hline
+			1   & instance                            & \multicolumn{1}{c|}{private} & Không                                & \begin{tabular}[c]{@{}l@{}}Đối tượng Global duy nhất được\\ tạo để quản lí dữ liệu toàn cục\end{tabular} \\ \hline
+			2   & listAccount                         & public                       & not null                       & Quản lí danh sách các AccountData                                                                        \\ \hline
+			3   & listPayment                         & public                       & not null                       & Quản lí danh sách các thanh toán                                                                         \\ \hline
+			4   & listSuatChieu                       & public                       & not null                       & Quản lí danh sách các suất chiếu                                                                         \\ \hline
+			5   & listSchedule                        & public                       & not null                       & Quản lí danh sách các lịch chiếu                                                                         \\ \hline
+			6   & listFilm                            & public                       & not null                       & Quản lí danh sách các phim                                                                               \\ \hline
+			7   & listTheater                         & public                       & not null                       & Quản lí danh sách các phòng chiếu                                                                        \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuộc tính lớp Global}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức & Loại    & Ràng buộc & Ý nghĩa                                                                                                      \\ \hline
-1   & instance        & private &           & \begin{tabular}[c]{@{}l@{}}Đối tượng duy nhất của Global được\\ tạo để quản lí dữ liệu toàn cục\end{tabular} \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|c|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & Loại   & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}        \\ \hline
+			1   & getInstance                          & public & Không                               & Truy xuất đối tượng Global duy nhất \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả phương thức lớp Global}
+	\end{center}
 \end{table}
 
 \subsubsection{Lớp UserControl}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                                           \\ \hline
-1   & user           & private &           & Dữ liệu user của UserControl                      \\ \hline
-2   & instance       & private &           & Đối tượng user duy nhất được tạo ra khi đăng nhập \\ \hline
-\end{tabular}
-\end{table}
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức & Loại   & Ràng buộc & Ý nghĩa                                              \\ \hline
-1   & getInstance     & public &           & Truy xuất đối tượng UserControl duy nhất             \\ \hline
-2   & login           & public &           & Đăng nhập, nếu đúng trả về một User(quản lí)         \\ \hline
-3   & logout          & public &           & Đăng xuất tài khoản(quản lí)                         \\ \hline
-4   & loadInfor       & public &           & Xem thông tin cá nhân(quản lí)                       \\ \hline
-5   & manageFilm      & public &           & Quản lí phim(thêm, xóa, sửa)(quản lí)                \\ \hline
-6   & manageSchedule  & public &           & Quản lí lịch chiếu(thêm, xóa, sửa)(quản lí)          \\ \hline
-7   & makeStatic      & public &           & Thống kê doanh thu(admin)                            \\ \hline
-8   & manageAccount   & public &           & Quản lí các tài khoản quản lí(thêm, xóa, sửa)(admin) \\ \hline
-\end{tabular}
-\end{table}
-\subsubsection{Lớp CustomerControl}
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa                                           \\ \hline
-1   & user           & private &           & Dữ liệu user của UserControl                      \\ \hline
-2   & instance       & private &           & Đối tượng user duy nhất được tạo ra khi đăng nhập \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|c|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên thuộc tính} & Loại                         & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}                        \\ \hline
+			1   & user                                & private                      & not null                       & Dữ liệu User của UserControl                        \\ \hline
+			2   & instance                            & \multicolumn{1}{l|}{private} &          Không                      & Đối tượng User duy nhất được khởi tạo khi đăng nhập \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuôc tính lớp UserControl}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức & Loại   & Ràng buộc & Ý nghĩa                                      \\ \hline
-1   & getInstance     & public &           & Truy xuất đối tượng CustomerControl          \\ \hline
-2   & login           & public &           & Đăng nhập, nếu chính xác trả về một Customer \\ \hline
-3   & logout          & public &           & Đăng xuất, nếu đúng trả về true và ngược lại \\ \hline
-4   & loadInfor       & public &           & Xem thông tin cá nhân                        \\ \hline
-5   & editInfor       & public &           & Chỉnh sửa thông tin cá nhân                  \\ \hline
-6   & buyTicket       & public &           & Mua vé                                       \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|c|c|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Tên phương thức} & \multicolumn{1}{c|}{Loại}   & \multicolumn{1}{c|}{Ràng buộc} & \multicolumn{1}{c|}{Ý nghĩa}                       \\ \hline
+			1   & getInstance                          & \multicolumn{1}{c|}{public} &       Không                         & Truy xuất đối tượng UserControl duy nhất           \\ \hline
+			2   & login                                & public                      &       Không                         & Đăng nhập nếu chính xác trả về một User            \\ \hline
+			3   & logout                               & public                      &       Không                         & Đăng xuất, nếu thành công trả về true và ngược lại \\ \hline
+			4   & loadInfor                            & public                      &       Không                         & Xem thông tin cá nhân(quản lí)                     \\ \hline
+			5   & editInfor                            & public                      &       Không                         & Chỉnh sửa thông tin cá nhân(quản lí)               \\ \hline
+			6   & manageFilm                           & public                      &       Không                         & Quản lí phim(Thêm, xóa, sửa)(quản lí)              \\ \hline
+			7   & manageSchedule                       & public                      &       Không                         & Quản lí lịch chiếu(Thêm, xóa, sửa)(quản lí)        \\ \hline
+			8   & makeStatic                           & public                      &       Không                         & Thống kê doanh thu(Admin)                          \\ \hline
+			9   & manageAccount                        & public                      &       Không                         & Quản lí các quản lí(thêm, xóa, sửa)(admin)         \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả phương thức lớp UserControl}
+	\end{center}
+\end{table}
+
+\subsubsection{Lớp CustomerControl}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|l|l|c|l|}
+		\hline
+		STT & Tên thuộc tính & Loại    & Ràng buộc & \multicolumn{1}{c|}{Ý nghĩa}                                           \\ \hline
+		1   & user           & private &    not null       & Dữ liệu user của UserControl                      \\ \hline
+		2   & instance       & private &         Không  & Đối tượng user duy nhất được tạo ra khi đăng nhập \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuộc tính lớp CustomerControl}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|l|c|l|}
+		\hline
+		STT & Tên phương thức & Loại   & Ràng buộc & \multicolumn{1}{c|}{Ý nghĩa}                                      \\ \hline
+		1   & getInstance     & public &   Không        & Truy xuất đối tượng CustomerControl          \\ \hline
+		2   & login           & public &   Không        & Đăng nhập, nếu chính xác trả về một Customer \\ \hline
+		3   & logout          & public &   Không        & Đăng xuất, nếu đúng trả về true và ngược lại \\ \hline
+		4   & loadInfor       & public &   Không        & Xem thông tin cá nhân                        \\ \hline
+		5   & editInfor       & public &   Không        & Chỉnh sửa thông tin cá nhân                  \\ \hline
+		6   & buyTicket       & public &   Không        & Mua vé                                       \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả phương thức lớp CustomerControl}
+	\end{center}
 \end{table}
 
 \subsubsection{Lớp Guest}
+
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-STT & Tên phương thức & Loại   & Ràng buộc & Ý nghĩa                                 \\ \hline
-1   & login           & public &           & Đăng nhập, nếu đúng trả về một Customer \\ \hline
-2   & viewSchedule    & public &           & Xem lịch chiếu                          \\ \hline
-3   & viewFilm        & public &           & Xem phim                                \\ \hline
-\end{tabular}
+	\begin{center}
+		\begin{tabular}{|c|l|l|c|l|}
+		\hline
+		STT & Tên phương thức & Loại   & Ràng buộc & \multicolumn{1}{c|}{Ý nghĩa}                                 \\ \hline
+		1   & login           & public &   Không        & Đăng nhập, nếu đúng trả về một Customer \\ \hline
+		2   & viewSchedule    & public &   Không        & Xem lịch chiếu                          \\ \hline
+		3   & viewFilm        & public &   Không        & Xem phim                                \\ \hline
+		\end{tabular}
+		\caption{Bảng mô tả thuộc tính lớp Guest}
+	\end{center}
 \end{table}
 
 \clearpage
@@ -545,6 +589,13 @@ Các vấn đề mà nhóm đang đối mặt và hướng giải quyết tươn
 Hiện tại dự án đang đi đúng tiến độ trong kế hoạch được đặt ra tại báo cáo \#1
 
 \subsection{Kế hoạch thực hiện}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.35, angle=90]{image/gantt.png}
+		\caption{Activity bar chart}
+	\end{center}
+\end{figure}
 
 \subsection{Phân rã trách nhiệm (Breakdown of Responsibilities)}
 
