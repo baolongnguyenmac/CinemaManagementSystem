@@ -183,19 +183,66 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 \end{itemize}	
 
 \subsection{Giao thức mạng}
+	%text description
+	Hệ thống sử dụng các giao thức mạng như sau:
+	\begin{itemize}
+		\item Transmission Control Protocol (TCP): Giao thức điều khiển truyền vận. Chúng là giao thức cốt lõi của Internet Protocol Suite (Bộ giao thức liên mạng). Với nhiệm vụ thực thi mạng, bổ sung cho Internet Protocol. Giao thức này đảm bảo chuyển giao dữ liệu tới nơi nhận một cách đáng tin cậy và đúng thứ tự.
+		\item Internet Protocol (IP): Giao thức chính trong Internet protocol suite. Với khả năng chuyển tiếp dữ liệu qua mạng và giúp thiết lập internet thông qua việc định tuyến  của Internet Protocol. IP cung cấp một dịch vụ gửi dữ liệu không đảm bảo  nên gói dữ liệu có thể đến nơi mà không còn nguyên vẹn, nó có thể đến không theo thứ tự.
+		\item File Transfer Protocol (FTP): Giao thức truyền tập tin để trao đổi tập tin qua mạng lưới truyền thông dùng giao thức TCP/IP.
+		\item Hypertext Transfer Protocol (HTTP): Giao thức truyền tải siêu văn bản. Chúng là một trong năm giao thức chuẩn của mạng Internet. Giao thức này dùng để liên hệ thông tin giữa máy cung cấp dịch vụ (Web server) và Máy sử dụng dịch vụ (Web client). Chúng hoạt trông trong mô hình Client/Server dùng cho World Wide Web.
+		\item Hypertext Transfer Protocol over SSL/TLS (HTTPS): Một giao thức kết hợp giữa giao thức HTTP và giao thức bảo mật SSL hay TLS cho phép trao đổi thông tin một cách bảo mật trên Internet.
+	\end{itemize}
+	\clearpage
 
 \subsection{Luồng điều khiển (Global Control Flow)}
+	%Insert images and codes here
+	Thứ tự thực thi: Hệ thống hướng sự kiện: Chờ sự kiện xảy ra và xử lý các sự kiện đó \newline
+	Phụ thuộc thời gian: Không \newline
+	Sử dụng đa luồng: Không \newline
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.6]{GCF Charts/GCF_Admin.png}
+		\caption{Luồng điều khiển của Admin}
+	\end{center}
+	\end{figure}
+
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.6]{GCF Charts/GCF_Manager.png}
+		\caption{Luồng điều khiển của Quản lý}
+	\end{center}
+	\end{figure}
+
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.6]{GCF Charts/GCF_User.png}
+		\caption{Luồng điều khiển của Khách hàng}
+	\end{center}
+	\end{figure}
+
+
+	\clearpage
 
 \subsection{Yêu cầu phần cứng}
+	%Text description
+	Phía client: Một máy tính cá nhân, tablet, điện thoại thông minh bất kì có thể sử dụng các trình duyệt web như Google Chrome, Microsoft Edge, Mozilla Firefox, Safari...
+\newline Phía server: Máy chủ vật lý hoặc máy chủ ảo có cấu hình tương đương tối thiểu như sau
+	\begin{itemize}
+		\item CPU: Intel Xeon 2.0 GHz, 2M Cache
+		\item RAM: 2GB DDR4
+		\item Lưu trữ: 240GB HDD/SSD
+		\item Mạng: 100MBps cho cả Upload và Download, không giới hạn băng thông
+	\end{itemize}
 
-\clearpage
+	\clearpage
+
 
 \section{Biểu đồ lớp}
 
 \subsection{Biểu đồ lớp}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.37]{image/5.0.png}
+		\includegraphics[angle=90,scale=0.5]{image/5.0.png}
 		\caption{Class Diagram}
 	\end{center}
 \end{figure}
@@ -228,7 +275,7 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 	\end{center}
 \end{table}
 
-\subsubsection{Lớp User-Kế thừa lớp AccountData}
+\subsubsection{Lớp User - kế thừa lớp AccountData}
 
 \begin{table}[H]
 	\begin{center}
@@ -237,7 +284,7 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 			STT & Tên thuộc tính & Loại    & Ràng buộc & Ý nghĩa             \\ \hline
 			1   & type           & private &           & Loại User(Quản lí, Admin)      \\ \hline
 			\end{tabular}
-			\caption{đây là 1 chiếc cap}
+			\caption{Bảng mô tả thuôc tính lớp User}
 	\end{center}
 \end{table}
 
@@ -248,11 +295,11 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 		STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                                                           \\ \hline
 		1   & User() 				   & public &           & Khởi tạo đối tượng user \\ \hline
 		\end{tabular}
-		\caption{đây là 1 chiếc cap}
+		\caption{Bảng mô tả phương thức lớp User}
 	\end{center}
 \end{table}
 
-\subsubsection{Lớp Customer-Kế thừa lớp AccountData}
+\subsubsection{Lớp Customer - kế thừa lớp AccountData}
 
 \begin{table}[H]
 	\begin{center}
@@ -261,7 +308,7 @@ Hệ thống đặt vé xem phim sử dụng MySQL làm hệ quản trị CSDL v
 			STT & Tên phương thức          & Loại   & Ràng buộc & Ý nghĩa                                                                           \\ \hline
 			1   & Customer() 				   & public &           & Khởi tạo đối tượng user \\ \hline
 		\end{tabular}
-		\caption{đây là 1 chiếc cap}
+		\caption{Bảng mô tả thuôc tính lớp Customer}
 	\end{center}
 \end{table}
 
@@ -462,17 +509,6 @@ STT & Tên phương thức & Loại   & Ràng buộc & Ý nghĩa                
 
 \clearpage
 
-\section{Thuật toán và cấu trúc dữ liệu}
-
-\subsection{Các thuật toán}
-
-\subsection{Các cấu trúc dữ liệu}
-
-Ở hệ thống này không sử dụng các cấu trúc dữ liêu phức tạp
-
-
-\clearpage
-
 \section{Quản trị dự án và kế hoạch làm việc}
 
 \subsection{Tổng hợp đóng góp từ các thành viên của nhóm}
@@ -500,17 +536,36 @@ Các vấn đề mà nhóm đang đối mặt và hướng giải quyết tươn
     \item Một thành viên nhận 1 task quá lớn, bao gồm nhiều task con
     \begin{itemize}
         \item Mô tả vấn đề: Khi một thành viên trong nhóm nhận 1 task quá sức với bản thân. Hơn nữa, task này còn được nhiều task khác phụ thuộc vào. Khi thành viên này không hoàn thành đúng tiến độ sẽ làm ảnh hướng đến rất nhiều task khác
-        \item Hướng giair quyết: Chia task lớn thành các task nguyên tố (không thể chia nhỏ hơn)
+        \item Hướng giải quyết: Chia task lớn thành các task nguyên tố (không thể chia nhỏ hơn)
     \end{itemize}
 \end{enumerate}
 
-\subsection{Báo cáo tiến độ và điều phối dự á}
+\subsection{Báo cáo tiến độ và điều phối dự án}
 
 Hiện tại dự án đang đi đúng tiến độ trong kế hoạch được đặt ra tại báo cáo \#1
 
 \subsection{Kế hoạch thực hiện}
 
 \subsection{Phân rã trách nhiệm (Breakdown of Responsibilities)}
+
+\begin{itemize}
+	\item Phân chia vai trò chính trong mỗi module
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+	\item Điều phối tích hợp
+	\begin{itemize}
+		\item Trong quá trình tích hợp, các thành viên đều phải tham gia
+		\item Người chịu trách nhiệm chính trong quá điều phối trình tích hợp là: Phạm Tống Bình Minh - Vai trò: Developer
+	\end{itemize}
+
+	\item Kiểm thử tích hợp
+	\begin{itemize}
+		\item Việc cài đặt unit test cho các phần phải được thực hiện bởi thành viên chịu trách nhiệm cài đặt phần đó
+		\item Người chịu trách nhiệm chính trong quá trình kiểm thử tích hợp là Nguyễn Duy Vũ - Vai trò: Tester
+	\end{itemize}
+\end{itemize}
 
 \clearpage
 
