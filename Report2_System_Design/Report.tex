@@ -1,5 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{multirow}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{enumerate}
 \usepackage{graphicx}
@@ -73,7 +74,7 @@
 			\hline
 			STT &Ngày cập nhật &Phiên bản &\multicolumn{1}{c|}{Mô tả chi tiết} &\multicolumn{1}{c|}{Tác giả} \\ \hline
 			1 &11/11/2020 &1.0 &\begin{tabular}[c]{@{}l@{}}- Kiến trúc hệ thống\\ - Nhận diện hệ thống con\\ - Ánh xạ với phần cứng\\ - Thiết kế database\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\end{tabular} \\ \hline
-			2 &14/11/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Xác định giao thức mạng\\ - Vẽ biểu đồ use case\\- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\ Nguyễn Duy Vũ\\Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
+			2 &14/11/2020 &1.1 &\begin{tabular}[c]{@{}l@{}}- Xác định giao thức mạng\\ - Xác định yêu cầu phần cứng\\- Xác định luồng điều khiển\\ - Cập nhật kế hoạch làm việc\\ - Tổng hợp đóng góp báo cáo\\ - Phân rã trách nhiệm \end{tabular} &\begin{tabular}[c]{@{}l@{}}Phạm Văn Minh Phương\\ Nguyễn Bảo Long \\ Võ Thế Minh\end{tabular} \\ \hline
 			% 3 &25/10/2020 &1.2 &\begin{tabular}[c]{@{}l@{}}- Đặc tả giao diện người dùng\\ - Lên kế hoạch làm việc\end{tabular} &\begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\ Võ Thế Minh \\ Phạm Văn Minh Phương\end{tabular} \\ \hline
 			% 4 &30/10/2020 &1.3 &- Đặc tả giao diện người dùng &Phạm Văn Minh Phương \\ \hline
 			% 5 &31/10/2020 &1.5 &- Phân tích đóng góp cá nhân &Phạm Văn Minh Phương \\ \hline
@@ -90,11 +91,11 @@
 		\begin{tabular}{|c|l|l|c|}
 			\hline
 			STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                & Phần trăm đóng góp \\ \hline
-			% 1 & Nguyễn Bảo Long      & \begin{tabular}[c]{@{}l@{}}- Mô tả bài toán\\ - Mô tả yêu cầu hệ thống\\ - Vẽ biểu đồ tuần tự\end{tabular}              & 20\% \\ \hline
-			% 2 & Phạm Văn Minh Phương & \begin{tabular}[c]{@{}l@{}}- Nhận diện thành viên\\ - Đặc tả giao diện người dùng\end{tabular}                          & 20\% \\ \hline
-			% 3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ tuần tự\\ - Lên kế hoạch làm việc\end{tabular} & 20\%               \\ \hline
-			% 4 & Phạm Tống Bình Minh  & \begin{tabular}[c]{@{}l@{}}- Đặc tả use case\\ - Vẽ ma trận truy vết\\ - Vẽ biểu đồ use case\end{tabular}               & 20\% \\ \hline
-			% 5 & Nguyễn Duy Vũ        & \begin{tabular}[c]{@{}l@{}}- Lên danh sách actor, stakeholder\\ - Đặc tả use case \\ - Vẽ ma trận truy vết\end{tabular} & 20\% \\ \hline
+			1 & Nguyễn Bảo Long      & \begin{tabular}[c]{@{}l@{}}- Báo cáo tiến độ và điều phối dự án\\ - Phân rã trách nhiệm\\ - Tổng hợp đóng góp báo cáo\end{tabular}              & 20\% \\ \hline
+			2 & Phạm Văn Minh Phương & \begin{tabular}[c]{@{}l@{}}- Xác định giao thức mạng\\ - Xác định yêu cầu phần cứng\\ - Vẽ flow chart\end{tabular}                          & 20\% \\ \hline
+			3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Vẽ biểu đồ lớp\\ - Đặc tả lớp\\ - Lên kế hoạch làm việc\end{tabular} & 20\%               \\ \hline
+			4 & Phạm Tống Bình Minh  & \begin{tabular}[c]{@{}l@{}}- Ánh xạ thiết kế với phần cứng\\ - Thiết kế CSDL để lưu trữ lâu dài\\\end{tabular}               & 20\% \\ \hline
+			5 & Nguyễn Duy Vũ        & \begin{tabular}[c]{@{}l@{}}- Nhận diện hệ thống con\\ - Nhận diện kiến trúc hệ thống\end{tabular} & 20\% \\ \hline
 		\end{tabular}
 		\caption{Bảng phân tích đóng góp cá nhân}
 	\end{center}
@@ -113,9 +114,9 @@
 
 Hệ thống đặt vé xem phim sử dụng kiến trúc Client - Server:
 \begin{itemize}
-	\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web.
-	\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng node.js để xây dựng hệ thống.
-	\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu MySQL.
+	\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web
+	\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng NodeJS để xây dựng hệ thống
+	\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu MongoDB
 \end{itemize}
 
 \subsection{Nhận diện hệ thống con}
@@ -161,7 +162,7 @@ Hệ thống đặt vé xem phim sử dụng mô hình Client - Server thì có 
 \subsection{Lưu trữ dữ liệu lâu dài}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale = 0.25]{image/4.4.png}
+		\includegraphics[scale = 0.5]{image/4.4.png}
 		\caption{Database Diagram}
 	\end{center}
 \end{figure}
@@ -251,6 +252,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \subsection{Đặc tả các lớp}
 
 \subsubsection{Lớp AccountData}
+Là lớp cha của lớp User và Customer, dùng lưu thông tin người dùng bao gồm username, password, tên và id của người sử dụng web
 \begin{table}[h]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -277,7 +279,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp User - kế thừa lớp AccountData}
-
+Kế thừa các thuộc tính của lớp AccountData, lưu thông tin quả quản lý rạp chiếu và admin rạp chiếu. Phân biệt với nhau qua thuộc tính \textit{type}. \textit{type} = 1 biểu thị admin, \textit{type} = 2 biểu thị quản lý
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -301,7 +303,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Customer - kế thừa lớp AccountData}
-
+Kế thừa lớp AccountData, dùng để lưu những thông tin cơ bản của khách hàng của rạp phim
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -314,7 +316,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Payment}
-
+Dùng để lưu thông tin thanh toán, bao gồm mã thanh toán và chi tiết thanh toán
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|l|l|l|l|l|}
@@ -340,6 +342,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp SuatChieu}
+Dùng để lưu thông tin suất chiếu, bao gồm thứ tự suất chiếu trong ngày và ngày chiếu tương ứng
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -365,7 +368,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Film}
-
+Dùng để lưu thông tin film, bao gồm mã phim, tên phim và mô tả kèm theo
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|l|l|l|}
@@ -392,7 +395,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Theater}
-
+Dùng để lưu thông tin phòng chiếu, bao gồm mã phòng chiếu và danh sách các ghế có trong phòng chiếu 
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -418,7 +421,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Schedule}
-
+Dùng để lưu thông tin lịch chiếu, bao gồm mã lịch chiếu và ngày chiếu 
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|l|l|}
@@ -444,7 +447,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Global}
-
+Dùng lưu thông tin toàn cục, các thông tin bao gồm danh sách của tài khoản, danh sách thông tin thanh toán, danh sách suất chiếu trong ngày, danh sách phim và danh sách phòng chiếu
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|l|c|l|}
@@ -474,7 +477,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp UserControl}
-
+Khi user đăng nhập thành công, 1 đối tượng thuộc lớp UserControl sẽ được tạo ra. Tuỳ theo biến \textit{type} lưu trong đối tượng \textit{user}, các đối tượng được tạo ra sẽ có những hành động của quản lý rạp chiếu hoặc của admin
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|c|c|l|}
@@ -507,7 +510,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp CustomerControl}
-
+Khi khách hàng đăng nhập thành công, một đối tượng thuộc lớp CustomerControl sẽ được tạo ra để thực hiện các thao tác của khách hàng của rạp phim
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|l|c|l|}
@@ -522,7 +525,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{|c|c|l|c|l|}
+		\begin{tabular}{|c|l|l|c|l|}
 		\hline
 		STT & Tên phương thức & Loại   & Ràng buộc & \multicolumn{1}{c|}{Ý nghĩa}                                      \\ \hline
 		1   & getInstance     & public &   Không        & Truy xuất đối tượng CustomerControl          \\ \hline
@@ -537,15 +540,16 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \end{table}
 
 \subsubsection{Lớp Guest}
-
+Khi khách hàng của rạp chiếu 
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{|c|l|l|c|l|}
 		\hline
 		STT & Tên phương thức & Loại   & Ràng buộc & \multicolumn{1}{c|}{Ý nghĩa}                                 \\ \hline
 		1   & login           & public &   Không        & Đăng nhập, nếu đúng trả về một Customer \\ \hline
+		2   & signUp           & public &   Không        & Đăng ký tài khoản \\ \hline
 		2   & viewSchedule    & public &   Không        & Xem lịch chiếu                          \\ \hline
-		3   & viewFilm        & public &   Không        & Xem phim                                \\ \hline
+		3   & viewFilm        & public &   Không        & Xem mô tả phim                                \\ \hline
 		\end{tabular}
 		\caption{Bảng mô tả thuộc tính lớp Guest}
 	\end{center}
@@ -600,10 +604,28 @@ Hiện tại dự án đang đi đúng tiến độ trong kế hoạch được 
 \subsection{Phân rã trách nhiệm (Breakdown of Responsibilities)}
 
 \begin{itemize}
-	\item Phân chia vai trò chính trong mỗi module
-	\begin{itemize}
-		\item 
-	\end{itemize}
+	\item Phân chia vai trò chính trong mỗi class
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|l|}
+			\hline
+			STT & Tên thành viên                        & \multicolumn{1}{c|}{Chịu trách nhiệm cho class} \\ \hline
+			1   & \multirow{4}{*}{Nguyễn Bảo Long}      & User - kế thùa AccountData                      \\ \cline{1-1} \cline{3-3} 
+			2   &                                       & Theter                                          \\ \cline{1-1} \cline{3-3} 
+			3   &                                       & Customer - kế thừa AccountData                  \\ \cline{1-1} \cline{3-3} 
+			4   &                                       & AccountData                                     \\ \hline
+			5   & \multirow{4}{*}{Nguyễn Duy Vũ}        & Schedule                                        \\ \cline{1-1} \cline{3-3} 
+			6   &                                       & Film                                            \\ \cline{1-1} \cline{3-3} 
+			7   &                                       & Payment                                         \\ \cline{1-1} \cline{3-3} 
+			8   &                                       & SuatChieu                                       \\ \hline
+			9   & \multirow{2}{*}{Phạm Văn Minh Phương} & Global                                          \\ \cline{1-1} \cline{3-3} 
+			10  &                                       & Guest                                           \\ \hline
+			11  & Phạm Tống Bình Minh                   & CustomerControl                                 \\ \hline
+			12  & Võ Thế Minh                           & UserControl                                     \\ \hline
+			\end{tabular}
+			\caption{Bảng phân chia cài đặt và kiểm thử lớp}
+		\end{center}
+	\end{table}
 
 	\item Điều phối tích hợp
 	\begin{itemize}
