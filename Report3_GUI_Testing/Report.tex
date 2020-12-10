@@ -104,10 +104,171 @@
 \clearpage
 
 \section{Thiết kế giao diện người dùng}
+	\subsection{Sơ đồ và điều hướng giữa các màn hình}
+		\begin{enumerate}
+			\item Sơ đồ điều hướng:
+				\begin{figure}[H]
+					\begin{center}
+						\includegraphics[scale = 0.3]{Diagram/User Screen-flow diagram.png}
+						\caption{Sơ đồ điều hướng màn hình người dùng}
+					\end{center}
+				\end{figure}
+			\pagebreak
+			\item Bảng mô tả:
+				\begin{table}[H]
+				\begin{tabular}{|c|c|l|}
+				\hline
+				STT &
+				  Tên màn hình &
+				  Ý nghĩa/Ghi chú \\ \hline
+				1 &
+				  Trang chủ &
+				  \begin{tabular}[c]{@{}l@{}}Nơi người dùng sẽ truy cập đầu tiên. Từ đây, người dùng có thể \\ chuyển qua các màn hình Đăng nhập/Đăng kí/Phim đang chiếu\\ /Khuyến mãi/Đặt vé\end{tabular} \\ \hline
+				2 &
+				  Đăng nhập &
+				  \begin{tabular}[c]{@{}l@{}}Nơi người dùng đăng nhập. Sau khi đăng nhập thành công sẽ \\ chuyển về trang chủ\end{tabular} \\ \hline
+				3 &
+				  Đăng kí &
+				  Nơi người dùng đăng kí tài khoản \\ \hline
+				4 &
+				  Phim đang chiếu &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị danh sách phim đang chiếu và chuyển qua màn hình \\ Đặt vé.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				5 &
+				  Khuyến mãi &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị danh sách khuyến mãi.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				6 &
+				  Vé của tôi &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị danh sách vé đã đặt và giao diện hủy vé.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				7 &
+				  Đặt vé &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị giao diện đặt vé, có thể chuyển qua màn hình Chọn ghế.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				8 &
+				  Chọn ghế &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị giao diện chọn ghế xem phim, có thể chuyển về màn hình\\ Đặt vé, chuyển qua màn hình Thanh toán.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				9 &
+				  Thanh toán &
+				  \begin{tabular}[c]{@{}l@{}}Hiển thị thông tin thanh toán, có thể chuyển về màn hình Chọn ghế.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+				\end{tabular}
+				\end{table}
+		\end{enumerate}
 
-\subsection{Sơ đồ và điều hướng giữa các màn hình}
+	\subsection{Đặc tả màn hình giao diện}
+		\subsubsection{Màn hình 1: Trang chủ}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale = 0.25]{Wireframe/User/Homepage.png}
+					\caption{Màn hình trang chủ}
+				\end{center}
+			\end{figure}
+			Các thành phần chính: 
+			\begin{itemize}
+				\item Navigation bar
+				\item Thanh "Đặt vé" nhanh
+				\item Nút "Đăng nhập", "Đăng kí"
+				\item Slideshow danh sách các phim đang chiếu, danh sách các khuyến mãi đang có hiệu lực
+			\end{itemize}
+			Xử lý các event trên màn hình:
+			\begin{itemize}
+				\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+				\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+				\item Event click vào nút mũi tên của slideshow của danh sách phim đang chiếu/khuyến mãi: Chuyển slide theo hướng mũi tên
+			\end{itemize}
 
-\subsection{Đặc tả màn hình giao diện}
+		\subsubsection{Màn hình 2: Phim đang chiếu/Chọn phim (Trạng thái chưa đăng nhập)}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale = 0.25]{Wireframe/User/Phim đang chiếu_ Chọn phim.png}
+					\caption{Màn hình phim đang chiếu/Chọn phim}
+				\end{center}
+			\end{figure}
+			Các thành phần chính: 
+			\begin{itemize}
+				\item Navigation bar
+				\item Thanh "Đặt vé" nhanh
+				\item Nút "Đăng nhập", "Đăng kí"
+				\item Danh sách các phim đang chiếu cùng nút "Đặt vé"
+			\end{itemize}
+			Xử lý các event trên màn hình:
+			\begin{itemize}
+				\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+				\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+				\item Event click vào nút "Đặt vé" trên danh sách phim. Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+			\end{itemize}
+
+		\subsubsection{Màn hình 3: Đặt vé}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale = 0.25]{Wireframe/User/Đặt vé.png}
+					\caption{Màn hình Đặt vé}
+				\end{center}
+			\end{figure}
+			Các thành phần chính: 
+			\begin{itemize}
+				\item Navigation bar
+				\item Thanh "Đặt vé" nhanh
+				\item Nút "Đăng xuất", "Vé của tôi"
+				\item Trường thông tin về vé đang đặt
+				\item Các combo box, input field cho phép người dùng chỉnh sửa lại thông tin về rạp, phim, suất chiếu.
+			\end{itemize}
+			Xử lý các event trên màn hình:
+			\begin{itemize}
+				\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+				\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì reload màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+				\item Event click vào các combo box: Đổ ra thông tin tương ứng với nhãn cho người dùng chọn
+				\item Event click vào nút "Chọn ghế": Gửi thông tin vé về server, tạo yêu cầu phát sinh vé, chuyển qua màn hình "Chọn ghế"
+				\item Event click vào nút "Chọn phim khác": Chuyển về màn hình "Phim đang chiếu"
+			\end{itemize}
+
+		\subsubsection{Màn hình 4: Chọn ghế}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale = 0.25]{Wireframe/User/Chọn ghế.png}
+					\caption{Màn hình Chọn ghế}
+				\end{center}
+			\end{figure}
+			Các thành phần chính: 
+			\begin{itemize}
+				\item Navigation bar
+				\item Thanh "Đặt vé" nhanh
+				\item Nút "Đăng xuất", "Vé của tôi"
+				\item Trường thông tin về vé đang đặt
+				\item Trường chọn ghế
+				\item Đồng hồ chỉ thời gian chọn ghế còn lại
+			\end{itemize}
+			Xử lý các event trên màn hình:
+			\begin{itemize}
+				\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+				\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển về màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+				\item Event click vào các icon ghế: Đổi màu icon sang màu xanh lá cây nếu đó là ghế trống - có thể chọn
+				\item Event click vào nút "Thanh toán": Gửi thông tin ghế về server, bổ sung mã ghế đã chọnvào thông tin vé, chuyển qua màn hình "Thanh toán"
+				\item Event click vào nút "Quay lại": Chuyển về màn hình "Đặt vé"
+			\end{itemize}
+
+		\subsubsection{Màn hình 5: Thanh toán}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[scale = 0.25]{Wireframe/User/Thanh toán.png}
+					\caption{Màn hình Thanh toán}
+				\end{center}
+			\end{figure}
+			Các thành phần chính: 
+			\begin{itemize}
+				\item Navigation bar
+				\item Thanh "Đặt vé" nhanh
+				\item Nút "Đăng xuất", "Vé của tôi"
+				\item Trường thông tin về vé đang đặt
+				\item Input field của thông tin thanh toán
+				\item Trường chính sách và điều khoản thanh toán
+			\end{itemize}
+			Xử lý các event trên màn hình:
+			\begin{itemize}
+				\item Load event: Khi màn hình được tải thì phần input field của thông tin thanh toán được điền bởi các thông tin của tài khoản khi đăng kí, có thể thay đổi.
+				\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+				\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển về màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+				\item Event click vào các combo box: Đổ ra thông tin tương ứng với nhãn cho người dùng chọn
+				\item Event click vào nút "Thanh toán qua Momo": Lưu thông tin thanh toán, gọi API của Momo Service, hỗ trợ thanh toán qua quét mã QR. Reload màn hình với mã QR được sinh ra từ API, yêu cầu người dùng quét để hoàn thành giao dịch.
+				\item Event click vào nút "Quay lại": Chuyển về màn hình "Chọn ghế"
+			\end{itemize}
 
 \clearpage
 
