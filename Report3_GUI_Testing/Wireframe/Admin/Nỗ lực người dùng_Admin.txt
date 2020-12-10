@@ -1,0 +1,5 @@
+Đăng nhập: Truy cập vào trang dành riêng cho Admin --> Nhập thông tin, nhấn nút đăng nhập (2 bước)
+Thêm, xóa, sửa quản lý: Đăng nhập --> Nhấn vào tab "Quản lý" --> Nhấn vào nút "thêm" hoặc "sửa" --> sửa thông tin (ID, tên, rạp...), nhấn lưu (3 bước)
+Đăng xuất: Nhấn nút đăng xuất (1 bước)
+
+Các bước tốn khoảng 1-3 click chuột và riêng các bước có nhập thông tin thì sẽ tốn 5-10 lần click/nhập.
