@@ -275,12 +275,512 @@
 \section{Kiểm thử phần mềm}
 
 \subsection{Kế hoạch kiểm thử}
+Nhóm dự định sẽ tiến hành hoạt động kiểm thử hệ thống và áp dụng những kỹ thuật kiểm thử như: kiểm thử chức năng, kiểm thử giao diện. Nhóm sử dụng chiến thuật kiểm thử là kiểm thử dựa vào chỉ dẫn. 
 
+Cách nhóm tiến hành: Sau khi một chức năng nào đó được làm xong sẽ được kiểm thử trên chức năng đó để đảm bảo chức năng hoạt động một cách thuận lời rồi mới tích hợp vào hệ thống và kiểm tra trên hệ thống. Sau khi tích hợp mỗi chức năng sẽ tiến hành tra sự tương tác giữa các chức năng vừa mới tích hợp để đảm bảo hệ thống có thể hoạt động ổn định với chức năng mới không và tiến hành kiểm thử giao diện để đảm bảo sự hợp lý của giao diện cho người sử dụng
+
+	
 \subsection{Test case}
 
 \subsubsection{Danh sách test case}
+	\begin{tabular}{|c|l|l|l|}
+		\hline
+		STT&Tên test case & Đối tượng test&  Ý nghĩa\\
+		\hline
+		1&Test case 1&Đăng ký&Kiểm tra trường hợp đăng ký thành công \\
+		\hline
+		2&Test case 2&Đăng nhập&Kiểm tra trường hợp đăng nhập thành công\\
+		\hline
+		3&
+		Test case 3&
+		Đăng xuất &
+		Kiểm tra trường hợp đăng xuất thành công\\
+		\hline
+		4&
+		Test case 4&
+		Đặt vé&
+		Kiểm tra trường hợp đặt vé thành công\\
+		\hline
+		5&
+		Test case 5&
+		Hủy vé&
+		Kiểm tra trường hợp hủy vé thành công\\
+		\hline
+		6&
+		Test case 6&
+		Xem thông tin phim&
+		Kiểm tra trường hợp xem thông tin phim thành công\\
+		\hline
+		7&
+		Test case 7&
+		Thanh toán online&
+		Kiểm tra trường hợp thanh toán online thành công\\
+		\hline
+		8&
+		Test case 8&
+		Quản lý lịch chiếu&
+		Kiểm tra trường hợp quản lý lịch chiếu thành công\\
+		\hline		
+		9&
+		Test case 9&
+		Quản lý chương trình khuyến mãi&
+		Kiểm tra trường hợp quản lý chương trình khuyến mãi thành công\\
+		\hline
+		10&
+		Test case 10&
+		Quản lý các tài khoản quản lý&
+		Kiểm tra trường hợp quản lý các tài khoản quản lý thành công\\
+		\hline
+		11&
+		Test case 11&
+		Thống kê doanh thu&
+		Kiểm tra trường hợp thống kê doanh thu thành công\\
+		\hline
+		12&
+		Test case 12&
+		Đăng ký&
+		Kiểm tra trường hợp đăng ký nhưng không điền đầy đủ thông tin\\
+		\hline
+		13&
+		Test case 13&
+		Đăng ký&
+		Kiểm tra trường hợp đăng ký nhưng tài khoản đã tồn tại trong hệ thống\\
+		\hline		
+		14&
+		Test case 14&
+		Đăng nhập&
+		Kiểm tra trường hợp đăng nhập nhưng không điền “Tài khoản”\\
+		\hline
+		15 &
+		Test case 15&
+		Đăng nhập&
+		Kiểm tra trường hợp đăng nhập nhưng không điền “Mật khẩu”\\
+		\hline
+		16&
+		Test case 16&
+		Đăng nhập&
+		Kiểm tra trường hợp đăng nhập với “Tài khoản” không tồn tại trong hệ thống\\
+		\hline
+		17&
+		Test case 17&
+		Đăng nhập&
+		Kiểm tra trường hợp đăng nhập với “Mật khẩu” sai\\
+		\hline
+		18&
+		Test case 18&
+		Đặt vé &
+		Kiểm tra trường hợp đặt vé nhưng chưa đăng nhập\\
+		\hline
+		19&
+		Test case 19&
+		Đặt vé&
+		Kiểm tra trường hợp đặt vé nhưng đã hết suất chiếu\\
+		\hline
+		20&
+		Test case 20&
+		Đặt vé&
+		Kiểm tra trường hợp đặt vé nhưng không điền đầy đủ form đặt vé\\
+		\hline
+		21&
+		Test case 21&
+		Đặt vé&
+		Kiểm tra trường hợp đặt vé nhưng quá thời gian chờ của hệ thống\\
+		\hline
+		22&
+		Test case 22&
+		Hủy vé&
+		Kiểm tra trường hợp hủy vé nhưng chưa đăng nhập\\
+		\hline
+		23&
+		Test case 23&
+		Hủy vé&
+		Kiểm tra trường hợp hủy vé nhưng chưa mua vé\\
+		\hline
+		24&
+		Test case 24&
+		Xem thông tin phim&
+		Kiểm tra trường hợp xem thông tin phim nhưng phim chưa có thông tin phim\\
+		\hline
+		25&
+		Test case 25&
+		Thanh toán online&
+		Kiểm tra trường hợp thanh toán online nhưng nhập mã giảm giá sai\\
+		\hline
+		26&
+		Test case 26&
+		Thanh toán online&
+		Kiểm tra trường hợp thanh toán online nhưng thanh toán không thành công\\
+		\hline
+		27&
+		Test case 27&
+		Thanh toán online&
+		Kiểm tra trường hợp thanh toán online quá thời hạn thanh toán\\
+		\hline
+		28&
+		Test case 28&
+		Quản lý lịch chiếu&
+		Kiểm tra trường hợp quản lý lịch chiếu nhưng chỉnh sửa gây ra xung đột\\
+		\hline
+		29&
+		Test case 29&
+		Quản lý các chương trình khuyến mãi&
+		Kiểm tra trường hợp quản lý các chương trình khuyến mãi nhưng chỉnh sửa gây ra xung đột\\
+		\hline
+		30&
+		Test case 30&
+		Quản lý các tài khoản quản lý&
+		Kiểm tra trường hợp quản lý các quản lý nhưng phân quyền không thành công\\
+		\hline
+
+	\end{tabular}
 
 \subsubsection{Đặc tả test case}
+	\begin{enumerate}
+		\item Test case 1\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 1\\\\
+			\hline
+			Related Use case&
+			Đăng ký\\
+			\hline
+			Context&
+			Người dùng đăng ký thành công với “Tài khoản” và “Mật khẩu” hợp lệ\\
+			\hline
+			Input Data&
+			Tài khoản: just4thdangky\\&
+			Mật khẩu: 123456\\&
+			Họ tên: just4th\\
+			\hline
+			Expected Output&
+			Xuất hiện cửa sổ thông báo “Đăng ký thành công” và tài khoản được cập nhật trong hệ thống\\
+			\hline
+			Test steps&
+			1.Nhập “Tài khoản”\\&
+			2.Nhập “Mật khẩu”\\&
+			3.Nhập “Họ tên”\\&
+			4.Click nút “Đăng ký”\\
+			\hline
+		\end{tabular}
+		\item Test case 2\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 2\\
+			\hline
+			Related Use case&
+			Đăng nhập\\
+			\hline
+			Context&
+			Người dùng đăng nhập vào hệ thống thành công với tài khoản và mật khẩu đã tồn tại trong hệ thống\\
+			\hline
+			Input Data&
+			Tài khoản: just4thdangky\\&
+			Mật khẩu: 123456\\
+			\hline
+			Expected Output&
+			Xuất hiện cửa sổ thông báo “Đăng nhập thành công” \\
+			\hline
+			Test steps&
+			1.Nhập “Tài khoản”\\&
+			2.Nhập “Mật khẩu”\\&
+			3.Click nút “Đăng nhập”\\
+			\hline
+		\end{tabular}
+		\item Test case 3\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 3\\
+			\hline
+			Related Use case&
+			Đăng xuất\\
+			\hline
+			Context&
+			Người dùng đăng xuất khỏi tài khoản hiện tại thành công\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Xuất hiện cửa sổ thông báo “Đăng xuất thành công” \\
+			\hline
+			Test steps&
+			1.Click nút “Đăng xuất”\\
+			\hline
+		\end{tabular}
+		\item Test case 4\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 4\\
+			\hline
+			Related Use case&
+			Đặt vé\\
+			\hline
+			Context&
+			Người dùng đặt vé thành công\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Xuất hiện cửa sổ thông báo “Đặt vé thành công”, thông tin đặt vé được cập nhật trên hệ thống\\
+			\hline
+			Test steps&
+			1.Chọn phim muốn xem\\&
+			2.Điền form đặt vé\\&
+			3.Chọn lịch chiếu, ghế \\&
+			4.Click nút “Thanh toán”\\
+			\hline
+		\end{tabular}
+		\item Test case 5\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 5\\
+			\hline
+			Related Use case&
+			Hủy vé\\
+			\hline
+			Context&
+			Người dùng hủy vé thành công\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Xuất hiện cửa sổ thông báo “Hủy vé thành công”, thông tin hủy vé được cập nhật trên hệ thống\\
+			\hline
+			Test steps&
+			1.Chọn phim muốn xem\\&
+			2.Click nút “Hủy vé”\\
+			\hline
+		\end{tabular}
+		\item Test case 6\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 6\\
+			\hline
+			Related Use case&
+			Xem thông tin phim\\
+			\hline
+			Context&
+			Người dùng xem thông tin phim thành công\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Hiển thị thông tin phim của người dùng muốn xem\\
+			\hline
+			Test steps&
+			1.Chọn phim muốn xem lịch chiếu\\&
+			2.Nhấn nút “Xem lịch chiếu”\\
+			\hline
+		\end{tabular}
+		\item Test case 7\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 7\\
+			\hline
+			Related Use case&
+			Thanh toán online\\
+			\hline
+			Context&
+			Người dùng thanh toán online thành công\\
+			\hline
+			Input Data&
+			Mã giảm giá: giamgia\\
+			\hline
+			Expected Output&
+			Hiển thị cửa sổ “Thanh toán online thành công”, thông tin thanh toán thành công được cập nhật trên hệ thống\\
+			\hline
+			Test steps&
+			1.Nhập “Mã giảm giá”\\&
+			2.Click nút kiểm tra mã giảm giá\\&
+			3.Nhấn nút “Tiếp tục”\\&
+			4.Quét mã thanh toán\\
+			\hline
+		\end{tabular}
+		\item Test case 8\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 8\\
+			\hline
+			Related Use case&
+			Quản lý lịch chiếu\\
+			\hline
+			Context&
+			Quản lý quản lý các lịch chiếu trong rạp chiếu phim thành công\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Hiển thị cửa sổ “Chỉnh sửa thành công”\\
+			\hline
+			Test steps&
+			1.Chọn phim muốn chỉnh sửa\\&
+			2.Thực hiện chỉnh sửa\\&
+			3.Click nút “Hoàn tất”\\			
+			\hline
+		\end{tabular}
+		\item Test case 9\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 14\\
+			\hline
+			Related Use case&
+			Đăng nhập\\
+			\hline
+			Context&
+			Người dùng đăng nhập nhưng không điền tài khoản\\
+			\hline
+			Input Data&
+			Mật khẩu: 123456\\
+			\hline
+			Expected Output&
+			Hiển thị cửa sổ “Vui lòng điền tài khoản”\\
+			\hline
+			Test steps&
+			1.Nhập mật khẩu\\&
+			2.Click nút “Đăng nhập”\\				
+			\hline
+		\end{tabular}
+		\item Test case 10\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 15\\
+			\hline
+			Related Use case&
+			Đăng nhập\\
+			\hline
+			Context&
+			Người dùng đăng nhập nhưng không điền mật khẩu\\
+			\hline
+			Input Data&
+			Tài khoản: just4th\\
+			\hline
+			Expected Output&
+			Hiển thị cửa sổ “Vui lòng điền mật khẩu”\\
+			\hline
+			Test steps&
+			1.Nhập tài khoản\\&
+			2.Click nút “Đăng nhập”\\				
+			\hline
+		\end{tabular}
+		\item Test case 11\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 16\\
+			\hline
+			Related Use case&
+			Đăng nhập\\
+			\hline
+			Context&
+			Người dùng nhập tài khoản không tồn tài\\
+			\hline
+			Input Data&
+			Tài khoản: abc123456\\&
+			Mật khẩu: 123456\\
+			\hline
+			Expected Output&
+			Hiển thị thông báo “Tài khoản không tồn tại”\\
+			\hline
+			Test steps&
+			1.Nhập “Tài khoản”\\&
+			2.Nhập “Mật khẩu”\\&
+			3.Click nút “Đăng nhập”\\							
+			\hline
+		\end{tabular}
+		\item Test case 12\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 17\\
+			\hline
+			Related Use case&
+			Đăng nhập\\
+			\hline
+			Context&
+			Người dùng nhập mật khẩu sai\\
+			\hline
+			Input Data&
+			Tài khoản: just4th\\&
+			Mật khẩu: abc123456\\
+			
+			\hline
+			Expected Output&
+			Hiển thị thông báo “Mật khẩu sai”\\
+			\hline
+			Test steps&
+			1.Nhập “Tài khoản”\\&
+			2.Nhập “Mật khẩu”\\&
+			3.Click nút “Đăng nhập”\\					
+			\hline
+		\end{tabular}
+		\item Test case 13\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 18\\
+			\hline
+			Related Use case&
+			Đặt vé\\
+			\hline
+			Context&
+			Người dùng đặt vé nhưng chưa thực hiện việc đăng nhập\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Hiển thị cửa sổ “Vui lòng đăng nhập trước khi thực hiện chức năng này”\\
+			\hline
+			Test steps&
+			1.Click chọn “Đăng nhập”\\					
+			\hline
+		\end{tabular}
+		\item Test case 14\\\\
+		\begin{tabular}{|l|l|}
+			\hline
+			Test case&
+			Test case 19\\
+			\hline
+			Related Use case&
+			Đặt vé\\
+			\hline
+			Context&
+			Người dùng đặt vé nhưng vé của suất chiếu đã hết\\
+			\hline
+			Input Data&
+			Không\\
+			\hline
+			Expected Output&
+			Hiển thị thông báo “Suất chiếu đã hết vé”\\
+			
+			\hline
+			Test steps&
+			1.Chọn phim muốn xem\\&
+			2.Chọn nút đặt vé\\&
+			3.Điền form đặt vé\\&
+			4.Nhấn nút tiếp tục\\
+								
+			\hline
+		\end{tabular}
+		
+	
+	
+	
+	\end{enumerate}
 
 \clearpage
 
