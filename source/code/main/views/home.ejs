@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <% if(isAuthenticated) {%>
+        <%- include('./partials/toolbarAuth.ejs'); %>
+    <% } %>
+    <%  if(!isAuthenticated){ %>
+        <%- include('./partials/toolbar.ejs'); %>
+    <% } %>
+</div>
+<div>
+    <a href="/">
+        <button type="button">Trang chủ</button>
+    </a>
+    <a href="#">
+        <button type="button">Xem thông tin phim</button>
+    </a>
+    <a href="#">
+        <button type="button">Hệ thống rạp</button>
+    </a>
+    <a href="#">
+        <button type="button">Khuyến mãi</button>
+    </a>
+    <a href="#">
+        <button type="button">Liên hệ</button>
+    </a>
+    <a href="#">
+        <button type="button">Mua vé ngay</button>
+    </a>
+</div>
