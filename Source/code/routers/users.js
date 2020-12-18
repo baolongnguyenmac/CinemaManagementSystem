@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const User = require('../models/User');
+const LocalUser = require('../models/LocalUser');
 
 const bcrypt = require('bcryptjs');
 
@@ -17,7 +17,7 @@ router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 //Profile page
-router.get('/account', ensureAuthenticated, (req, res) => res.render('account', {user: req.user}));
+router.get('/account', ensureAuthenticated, (req, res) => res.render('account', { user: req.user }));
 
 //users post
 router.post('/register', function (req, res) {
@@ -41,7 +41,7 @@ router.post('/register', function (req, res) {
       errors
     });
   } else {
-    User.findOne({ email: email }).then(async (user) => {
+    LocalUser.findOne({ email: email }).then(async (user) => {
       if (user) {
         errors.push({ msg: 'Account existed, Try another email' });
         res.render('register', {
@@ -49,7 +49,7 @@ router.post('/register', function (req, res) {
         });
       }
       else {
-        const newUser = new User({
+        const newUser = new LocalUser({
           name,
           email,
           password
@@ -66,14 +66,26 @@ router.post('/register', function (req, res) {
   }
 });
 
-// Login
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/users/login',
-    failureFlash: true
-  })(req, res, next);
-});
+router.post('/login', passport.authenticate('local', {
+  failureRedirect: '/users/login',
+  successRedirect: '/'
+}));
+
+// router.post('/login', passport.authenticate('local', {
+//   failureRedirect: '/users/login',
+// }),(req,res,next)=>{
+//   res.redirect('/');
+// });
+
+router.get('/auth/facebook',
+  passport.authenticate('facebook', {scope: ['email', 'user_photos']}));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  failureRedirect: '/' 
+}), function (req, res, next) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 // Logout
 router.get('/logout', (req, res) => {

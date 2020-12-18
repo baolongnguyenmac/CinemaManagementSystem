@@ -1,5 +1,9 @@
 <div class="container">
     <h1 class="mt-4">Account</h1>
     <p class="lead mb-3">Welcome <%= user.name %></p>
+    <p class="lead mb-3">Your email: <%= user.email %></p>
     <a href="/users/logout" class="btn btn-secondary">Logout</a>
+    <p><img src='<%= user.avatar %>'></p>
+    <p class="lead mb-3">Your avatar: <%= user.avatar %></p>
+    <p class="lead mb-3">Your gender: <%= user.gender %></p>
 </div>
