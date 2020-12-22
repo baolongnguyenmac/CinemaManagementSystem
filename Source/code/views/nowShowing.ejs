@@ -1,0 +1,34 @@
+<div class="container">
+    <% for( let i = 0; i < films.length; i++ ) { %>
+    <a href="javascript:()=>{return false;}">
+        <img class='poster' data-id='<%= films[i]._id %>' src="<%= films[i].poster %>"
+            alt="This image is no longer exist" height="300px" width="200px"><br>
+    </a>
+    <p><%= films[i].name %> </p>
+    <p>Thể loại: <%= films[i].genre %> </p>
+    <p>Thời lượng: <%= films[i].runningTime %> </p>
+    <p>Ngày phát hành: <%= releaseTimes[i] %></p>
+    <button class='booking btn btn-danger' data-id='<%= films[i]._id %>'>Đặt vé</button><hr>
+    <% } %>
+</div>
+
+<form id="myForm1" method="POST" action="/users/nowShowingToMovieDetail">
+    <input type="hidden" name="movieID" id="movieID">
+</form>
+<form id="myForm2" method="POST" action="/users/nowShowingToSchedule">
+    <input type="hidden" name="movieID" id="movieID">
+</form>
+
+<script type="text/javascript">
+    $('.poster').on('click', (e) => {
+        const ID = $(e.target).data('id');
+        $('#myForm1').children('input#movieID').val(ID);
+        $('#myForm1').submit();
+    });
+
+    $('.booking').on('click', (e) => {
+        const ID = $(e.target).data('id');
+        $('#myForm2').children('input#movieID').val(ID);
+        $('#myForm2').submit();
+    });
+</script>

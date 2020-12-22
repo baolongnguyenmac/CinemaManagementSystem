@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 const ScheduleSchema = mongoose.Schema({
+    name: {
+        type: String
+    },
     time: {
         required: true,
         type: Date
@@ -15,6 +18,7 @@ const ScheduleSchema = mongoose.Schema({
         ref: 'Room',
         required: true
     }
+    
 });
 
 const Schedule = mongoose.model('schedules', ScheduleSchema);

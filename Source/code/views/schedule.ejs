@@ -1,0 +1,7 @@
+<div class="container">
+  <h2><%= film.name %> </h2>
+  <img src="<%= film.poster%>" alt="<%= film.poster%>" height="450px" width="300px">
+  <% for( let index = 0; index < releaseTimes.length; index++ ) { %>
+    <button><%= releaseTimes[index]%> </button>
+  <% } %> 
+</div>

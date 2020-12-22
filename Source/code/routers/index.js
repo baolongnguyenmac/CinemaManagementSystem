@@ -6,13 +6,14 @@ const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
 const LocalUser = require("../models/LocalUser");
 
+const Film = require("../models/Film");
+
 // Home Page
 router.get("/", function(req, res){
   res.render('home', {
     isAuthenticated: req.isAuthenticated()
   });
 });
-
 
 // Dashboard
 router.get("/dashboard", ensureAuthenticated, async (req, res) => {

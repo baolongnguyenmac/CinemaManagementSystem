@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const SeatSchema = mongoose.Schema({
-    serial: {
+    name: {
         required: true,
-        type: Number
+        type: String
     },
     idRoom: {
         type: mongoose.Schema.ObjectId,

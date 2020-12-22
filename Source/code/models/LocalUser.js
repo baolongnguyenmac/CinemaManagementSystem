@@ -19,7 +19,7 @@ const LocalUserSchema = mongoose.Schema ({
     },
     avatar: {
         type: String,
-        default: '/public/default_avatar/avatar.png'
+        default: '/public/avatar/default/avatar.png'
     },
     gender:{
         type: String,
