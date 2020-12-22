@@ -1,0 +1,307 @@
+[{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513b7"
+  },
+  "name": "A0",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513b8"
+  },
+  "name": "A1",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513b9"
+  },
+  "name": "A2",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513ba"
+  },
+  "name": "A3",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513bb"
+  },
+  "name": "A4",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513bc"
+  },
+  "name": "A5",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513bd"
+  },
+  "name": "A6",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513be"
+  },
+  "name": "A7",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513bf"
+  },
+  "name": "A8",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c0"
+  },
+  "name": "A9",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c1"
+  },
+  "name": "A10",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c2"
+  },
+  "name": "A11",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c3"
+  },
+  "name": "A12",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c4"
+  },
+  "name": "A13",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c5"
+  },
+  "name": "A14",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c6"
+  },
+  "name": "A15",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c7"
+  },
+  "name": "A16",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c8"
+  },
+  "name": "B0",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513c9"
+  },
+  "name": "B1",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513ca"
+  },
+  "name": "B2",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513cb"
+  },
+  "name": "B3",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513cc"
+  },
+  "name": "B4",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513cd"
+  },
+  "name": "B5",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513ce"
+  },
+  "name": "B6",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513cf"
+  },
+  "name": "B7",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d0"
+  },
+  "name": "B8",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d1"
+  },
+  "name": "B9",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d2"
+  },
+  "name": "B10",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d3"
+  },
+  "name": "B11",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d4"
+  },
+  "name": "B12",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d5"
+  },
+  "name": "B13",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d6"
+  },
+  "name": "B14",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d7"
+  },
+  "name": "B15",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf64ccc5fab91b90a513d8"
+  },
+  "name": "B16",
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "__v": 0
+}]

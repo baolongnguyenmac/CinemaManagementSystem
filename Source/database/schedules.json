@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "time": {
+    "$date": "2021-01-01T06:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "name": "Phim Transformet phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5c8"
+  },
+  "time": {
+    "$date": "2021-01-01T14:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "name": "Phim hwang-chó phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "time": {
+    "$date": "2021-01-01T08:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "name": "Phim Transformet phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "time": {
+    "$date": "2021-01-01T08:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "name": "Phim hwang-chó phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "time": {
+    "$date": "2021-01-01T11:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "name": "Phim Transformet phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "time": {
+    "$date": "2021-01-01T01:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "name": "Phim hwang-chó phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5cc"
+  },
+  "time": {
+    "$date": "2021-01-01T10:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "name": "Phim hwang-chó phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "time": {
+    "$date": "2021-01-01T14:30:00Z"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "name": "Phim Transformet phòng số 1",
+  "__v": 0
+}]

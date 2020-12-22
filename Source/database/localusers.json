@@ -1,0 +1,170 @@
+[{
+  "_id": {
+    "$oid": "5fda6d486223c7277c1f5609"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "12321nguyeqwnle_minhchau@yahoo.com",
+  "password": "$2a$10$JwC8D/Povt1orJ4ffZ27yOhIGeHwRMmzoPYfTftAM9Mk8pBsX7GLa",
+  "date": {
+    "$date": "2020-12-16T20:25:44.656Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdad9bcae16d116485c5102"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "minhthevo123@gmail.com",
+  "password": "$2a$10$yQ5rk5cFrZcpn0A00UWAEuXXyv7k3scmC1DiQ2ueAikjq/eK.uFYO",
+  "date": {
+    "$date": "2020-12-17T04:08:28.361Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdc4815a10ace0578b9269e"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "ntdd123@gmail.com",
+  "password": "$2a$10$EVRjHlHfOWCubbkTSBkSYO3N.WuYMZAyWfxsGX06Zv5Sg8XKevOoW",
+  "date": {
+    "$date": "2020-12-18T06:11:33.834Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdc485f2941cb32d0236707"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "ntdd12312@gmail.com",
+  "password": "$2a$10$Jhl2uCWmzwWooozCFfc7C.8CHUywFwDXMfK7k25yIhRUE5Sen2ie2",
+  "date": {
+    "$date": "2020-12-18T06:12:47.596Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdc48c2f422340928780707"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "minht123hevo123@gmail.com",
+  "password": "$2a$10$lpkzRot8SUvq3LhmnnTcjubLWZXtQMgbOHbiSCmSVs7vlmBSSCe8W",
+  "date": {
+    "$date": "2020-12-18T06:14:26.371Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdc4a4523f94c21c428d7a7"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "min123hthevo123@gmail.com",
+  "password": "$2a$10$Vpp9VPrdhCGIOa.eeuNdBeuEkeeMIZJdZGuiTJJK7H0Khomwchoju",
+  "date": {
+    "$date": "2020-12-18T06:20:53.960Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fdc6312ddb0cd206030100c"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "ntdd12@gmail.com",
+  "password": "$2a$10$JQLc.cWwrNXVEsInwzsbVuMw8Ux2KfdS.R2fiYm7vWus29AUqN2xy",
+  "date": {
+    "$date": "2020-12-18T08:06:42.353Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe0d2f487052229f06eb797"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "ntdd12123@gmail.com",
+  "password": "$2a$10$XUnBw4380qlC.WdFleg7/.G9hrLclosmiIzsMFk3X4tVhekHFY9p2",
+  "date": {
+    "$date": "2020-12-21T16:53:08.993Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe1961b11245738cca463ed"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "nt123dd12@gmail.com",
+  "password": "$2a$10$vT/kvfyCGDF26mLdIkg6y.hMuA5hY.qBSx/uZU8IMXlTdp8WvPTXu",
+  "date": {
+    "$date": "2020-12-22T06:45:47.248Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe1c56b1306dd0d48e28c48"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "123ntdd12@gmail.com",
+  "password": "$2a$10$IUdZEZPSuaSBSPgPM6mjOeTTaBxloL26J6cj6WTMZmtyKWA5RAuDW",
+  "date": {
+    "$date": "2020-12-22T10:07:39.563Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe1c5761306dd0d48e28c49"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "1ntdd12@gmail.com",
+  "password": "$2a$10$QxLwqwSIFvNevKYv.juELeQiT4R0mRnycu6qOp53cxBGffCq0gypu",
+  "date": {
+    "$date": "2020-12-22T10:07:50.725Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe1c58d0733b60a1c46d3a6"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "nt12dd12@gmail.com",
+  "password": "$2a$10$fXHD6q1pdWiuI0Bp9GUpLugp4L73iAKYbF7LOE8/EdPZGlqj7ViY2",
+  "date": {
+    "$date": "2020-12-22T10:08:13.077Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe1c5b10733b60a1c46d3a7"
+  },
+  "avatar": "/public/avatar/default/avatar.png",
+  "gender": "female",
+  "name": "Thế Minh Võ",
+  "email": "ntd13d12123@gmail.com",
+  "password": "$2a$10$sX5V9Wh4vIITnZG6n97UM.tDofFtvZcNiwLw/03k8kE.CAMMSlL8C",
+  "date": {
+    "$date": "2020-12-22T10:08:49.127Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "avatar": "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2945178119049012&height=50&width=50&ext=1610742413&hash=AeSOaNQ4RHgCz5qD2j0",
+  "date": {
+    "$date": "2020-12-16T20:26:44.172Z"
+  },
+  "facebookId": "2945178119049012",
+  "name": "Minh Võ",
+  "email": "minhthevo123@gmail.com",
+  "token": "EAA0CtATr9K4BAP8hs7WlZB1LGOIlZAZBuT3VRkaZCLEBXUjLP7ev2veJFcWjzugvZCHnrU0MZAlSrSQPKLjOLtQVEUEnKPlNUxnVEKiT3ZAUC0t1cq3B4BbQQZAqZCqOEZBRt8F1j2TMlMQ0YyBSrR37EB58tWcB0nwd0rXl9BHyukOQZDZD",
+  "__v": 0
+}]

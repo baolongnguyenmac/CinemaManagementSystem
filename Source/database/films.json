@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "name": "Transformer: Những kẻ chuyển giới",
+  "__v": 0,
+  "poster": "/public/poster/transformer/poster.png",
+  "description": "Đây là mô tả phim Transformer",
+  "genre": "Hành động, phiêu lưu",
+  "runningTime": "100 phút",
+  "releaseTime": {
+    "$date": "2021-01-01T17:00:00Z"
+  },
+  "cast": "Peter Cullen, Shia LaBeouf, Frank Welker",
+  "director": "Michael Bay, Travis Knight",
+  "trailer": "https://www.youtube.com/embed/AntcyqJ6brc"
+},{
+  "_id": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "name": "Hwang-Chó: Bậc thầy của sự phê pha",
+  "__v": 0,
+  "description": "Đây là mô tả phim Hwang-Chó",
+  "poster": "/public/poster/hwangcho/poster.png",
+  "genre": "Hành động, trẻ em",
+  "runningTime": "120 phút",
+  "releaseTime": {
+    "$date": "2021-01-01T17:00:00Z"
+  },
+  "cast": "Bảo Bảo, Minh Phương, Duy Vũ, Bình Minh",
+  "director": "Võ Thế Minh",
+  "trailer": "https://www.youtube.com/embed/uUkqRJacRuY"
+}]
