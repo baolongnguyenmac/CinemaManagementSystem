@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CheckedSeatSchema = mongoose.Schema({
+const OccupiedSeatSchema = mongoose.Schema({
     name: {
         type: String,
         default: 'Phòng x lịch chiếu y đã có những ghế sau được đặt'
@@ -12,10 +12,11 @@ const CheckedSeatSchema = mongoose.Schema({
     },
     idSeats: {
         type: [mongoose.Schema.ObjectId],
-        ref: 'seats'
+        ref: 'seats',
+        default: []
     }
 });
 
-const CheckedSeat = mongoose.model('checkedseats', CheckedSeatSchema);
+const OccupiedSeat = mongoose.model('occupiedseats', OccupiedSeatSchema);
 
-module.exports = CheckedSeat;
+module.exports = OccupiedSeat;

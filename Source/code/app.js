@@ -36,27 +36,4 @@ app.listen(8080, console.log("Server running on Port: 8080"));
 // const Seat = require('./models/Seat');
 // const Room = require('./models/Room');
 // const Film = require('./models/Film');
-
-
-// Film.find().then((films)=>{
-//     for (let i = 0; i < films.length; i++) {
-//         console.log(films[i]);
-//         films[i].save().then(console.log('saved'));
-//     }
-// });
-
-// LocalUser.find().then((docs)=>{
-//     for (let i = 0; i < docs.length; i++) {
-//         docs[i].avatar = '/public/avatar/default/avatar.png';
-//         console.log(docs[i]);
-//         docs[i].save().then(console.log('saved'));
-//     }
-// });
-
-// FaceBookUser.find().then((docs)=>{
-//     for (let i = 0; i < docs.length; i++) {
-//         docs[i].avatar = '/public/avatar/default/avatar.png';
-//         console.log(docs[i]);
-//         docs[i].save().then(console.log('saved'));
-//     }
-// });
+// const OccupiedSeat = require('./models/OccupiedSeat');

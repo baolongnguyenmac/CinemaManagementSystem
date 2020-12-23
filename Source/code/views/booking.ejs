@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
@@ -137,7 +137,7 @@
         </li>
         <li>
             <div class="seat selected"></div>
-            <small>Ghế đã có người chọn</small>
+            <small>Ghế đã chọn</small>
         </li>
         <li>
             <div class="seat occupied"></div>
@@ -148,60 +148,52 @@
         <textarea id="textField">
 
         </textarea>
-        <button type="submit" class="btn btn-primary btn-lg">CHECKOUT</button>
+        <button type="submit" class="btn btn-primary btn-lg" id='checkout'>CHECKOUT</button>
     </form>
 
     <div class="container">
         <div class="screen"></div>
+        <% for( let i = 0; i < 6; i++ ) { %>
         <div class="row">
-            <div data-id='IDA0' data-price='10' class="seat">A0</div>
-            <div data-id='IDA1' data-price='10' class="seat">A1</div>
-            <div data-id='IDA2' data-price='10' class="seat">A2</div>
-            <div class="seat">A3</div>
-            <div class="seat">A4</div>
-            <div class="seat">A5</div>
-            <div class="seat">A6</div>
-            <div class="seat">A7</div>
-            <div class="seat">A8</div>
-            <div class="seat">A9</div>
-            <div class="seat">A10</div>
-            <div class="seat">A11</div>
-            <div class="seat">A12</div>
-            <div class="seat">A13</div>
-            <div class="seat">A14</div>
-            <div class="seat">A15</div>
-            <div class="seat">A16</div>
+            <% for( let j = 0; j < 17; j++ ) { %>
+            <% let seat = '' %>
+            <% if (i == 0) { %>
+            <% seat = 'A'+j; %>
+            <% } %>
+            <% if (i == 1) { %>
+            <% seat = 'B'+j; %>
+            <% } %>
+            <% if (i == 2) { %>
+            <% seat = 'C'+j; %>
+            <% } %>
+            <% if (i == 3) { %>
+            <% seat = 'D'+j; %>
+            <% } %>
+            <% if (i == 4) { %>
+            <% seat = 'E'+j; %>
+            <% } %>
+            <% if (i == 5) { %>
+            <% seat = 'F'+j; %>
+            <% } %>
+            <% let isOccupied = 0;%> 
+            <% for( let i = 0; i < occupiedSeatNames.length; i++ ) { %>
+                <% if (seat == occupiedSeatNames[i]) { %>
+                    <% isOccupied = 1; %> 
+                    <% break; %> 
+                <% } %>
+            <% } %>
+            <% if (isOccupied) { %>
+                <div data-seat='<%= seat %>' class="seat occupied"><%= seat %></div>
+            <% } %>
+            <% if (!isOccupied) { %>
+                <div data-seat='<%= seat %>' class="seat"><%= seat %></div>
+            <% } %>
+            <% } %>
         </div>
-        <div class="row">
-            <div data-id='IDB0' data-price='10' class="seat">B0</div>
-            <div data-id='IDB1' data-price='10' class="seat">B1</div>
-            <div data-id='IDB2' data-price='10' class="seat">B2</div>
-
-            <div class="seat">B3</div>
-            <div class="seat">B4</div>
-            <div class="seat occupied">B5</div>
-            <div class="seat occupied">B6</div>
-            <div class="seat">B7</div>
-            <div class="seat">B8</div>
-            <div class="seat">B9</div>
-            <div class="seat">B10</div>
-            <div class="seat">B11</div>
-            <div class="seat">B12</div>
-            <div class="seat occupied">B13</div>
-            <div class="seat occupied">B14</div>
-            <div class="seat">B15</div>
-            <div class="seat">B16</div>
-        </div>
-
-        <p id="demo"></p>
-
-        <button class="btn" onclick="alert('Ghế vừa chọn: clm')">Hoàn tất</button>
+        <% } %>
     </div>
-
-
-    <script>
+    <script type='text/javascript'>
         const container = document.querySelector('.container');
-        const seats = document.querySelectorAll('.row.seat:not(.occupied)');
 
         let textField = [];
 
@@ -209,7 +201,7 @@
             if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
                 e.target.classList.toggle('selected');
 
-                let ID = $(e.target).data('id');
+                let ID = $(e.target).data('seat');
                 if (e.target.classList.contains('selected')) {
                     console.log('selected');
                     textField.push(ID);
@@ -217,14 +209,9 @@
                     console.log('unselected');
                     textField.splice(textField.indexOf(ID), 1);
                 }
-
                 $('#textField').text(textField);
             }
         });
-
-        function myFunction(name, job) {
-            document.getElementById("demo").innerHTML = "Welcome " + name + ", the " + job + ".";
-        }
     </script>
 </body>
 

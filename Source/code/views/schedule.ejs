@@ -2,6 +2,18 @@
   <h2><%= film.name %> </h2>
   <img src="<%= film.poster%>" alt="<%= film.poster%>" height="450px" width="300px">
   <% for( let index = 0; index < releaseTimes.length; index++ ) { %>
-    <button><%= releaseTimes[index]%> </button>
+    <button class='click' data-id='<%= schedules[index]._id %>'><%= releaseTimes[index]%> </button>
   <% } %> 
 </div>
+
+<form id="myForm" method="POST" action="/users/booking">
+  <input type="hidden" name="scheduleID" id="scheduleID">
+</form>
+
+<script type='text/javascript'>
+  $('.click').on('click', (e)=>{
+    const ID = $(e.target).data('id');
+    $('#myForm').children('input#scheduleID').val(ID);
+    $('#myForm').submit();
+  });
+</script>

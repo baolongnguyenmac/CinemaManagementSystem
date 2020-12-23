@@ -4,15 +4,15 @@
     <p>Tác giả: <%= film.director %> </p>
     <p>Diễn viên: <%= film.cast %> </p>
     <p>Thể loại: <%= film.genre %> </p>
-    <p>Thời lượng: <% film.genre %> </p>
+    <p>Thời lượng: <%= film.runningTime %> </p>
     <p>Phát hành: <%= releaseTime %> </p>
-    <button class="booking" data-id='<%= film._id %>' class='btn btn-danger'>Đặt vé</button>
+    <button class="booking btn btn-primary" data-id='<%= film._id %>' class='btn btn-danger'>Đặt vé</button>
     <p>Mô tả: <%= film.description %> </p>
     <iframe width="560" height="315" src="<%= film.trailer%>" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
 </div>
-<form id="myForm" action="users/movieDetailToSchedule" method="POST">
+<form id="myForm" action="/users/movieDetailToSchedule" method="POST">
     <input type="hidden" name="movieID" id="movieID">
 </form>
 
