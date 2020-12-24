@@ -1,0 +1,32 @@
+<a class="btn btn-primary" href="/" role="button">
+    <i class="fa fa-home" aria-hidden="true"></i>
+        HOME
+</a>
+<div class="container">
+    <h3>Tổng cộng: <%= amount %>$</h3>
+    <hr>
+    <form action="/users/payment" method="POST" id="myForm">
+        <input type="hidden" name='checkedSeats' value='<%= checkedSeats %>'>
+        <input type="hidden" name='scheduleID' value='<%= scheduleID %>'>
+        <input type="hidden" name='amount' value='<%= amount%>'>
+        <input type="hidden" name='method' id='method'>
+        <input type="radio" name="paymentMethod" id="paypal" value="paypal">
+        <label for="paypal">
+            <img src="/public/payment/paypal/paypal-logo.png" alt="Cannot load logo" height="40px" width="100px">
+        </label>
+
+    </form>
+    <button type="button" id="PAY">
+        THANH TOÁN
+    </button>
+</div>
+
+<script>
+    $('#PAY').on('click', (e) => {
+        if ($('input[name=paymentMethod]:checked', '#myForm').val()) {
+            const method = $('input[name=paymentMethod]:checked', '#myForm').val();
+            $('#method').val(method + ' USD');
+            $('#myForm').submit();
+        }
+    });
+</script>

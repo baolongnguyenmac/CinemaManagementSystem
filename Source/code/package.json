@@ -1,5 +1,5 @@
 {
-  "name": "test_project_nmpm_nodejs_1",
+  "name": "project_cinema_management",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -17,7 +17,8 @@
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "paypal-rest-sdk": "^1.8.1"
   },
   "devDependencies": {},
   "scripts": {

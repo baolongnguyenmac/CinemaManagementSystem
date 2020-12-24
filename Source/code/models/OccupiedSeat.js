@@ -8,7 +8,8 @@ const OccupiedSeatSchema = mongoose.Schema({
     idSchedule: {
         type: mongoose.Schema.ObjectId,
         required: true,
-        ref: 'schedules'
+        ref: 'schedules',
+        unique: true
     },
     idSeats: {
         type: [mongoose.Schema.ObjectId],

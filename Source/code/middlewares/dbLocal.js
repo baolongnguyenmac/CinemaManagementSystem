@@ -6,7 +6,8 @@ module.exports = function() {
     const mongooseConfig = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        poolSize: 100
+        poolSize: 100,
+        useCreateIndex: true
     };
     mongoose
         .connect(db, mongooseConfig)

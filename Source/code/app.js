@@ -16,6 +16,7 @@ require('./middlewares/local.mdw')(app);
 require('./middlewares/view.mdw')(app);
 require('./middlewares/router.mdw')(app);
 require('./middlewares/error.mdw')(app);
+require('./middlewares/paypal.mdw')(app);
 
 
 //Server
@@ -37,3 +38,5 @@ app.listen(8080, console.log("Server running on Port: 8080"));
 // const Room = require('./models/Room');
 // const Film = require('./models/Film');
 // const OccupiedSeat = require('./models/OccupiedSeat');
+
+// OccupiedSeat.insertMany({idSchedule: '5fdf6fad596cfb3ad856c5c7', idSeats: []}).then(console.log('saved'));
