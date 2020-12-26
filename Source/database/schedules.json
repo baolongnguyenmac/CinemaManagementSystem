@@ -3,7 +3,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5c5"
   },
   "time": {
-    "$date": "2021-01-01T06:30:00Z"
+    "$date": "2021-11-01T06:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d5509"
@@ -18,7 +18,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5c8"
   },
   "time": {
-    "$date": "2021-01-01T14:30:00Z"
+    "$date": "2021-11-01T14:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d550a"
@@ -33,7 +33,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5c6"
   },
   "time": {
-    "$date": "2021-01-01T08:30:00Z"
+    "$date": "2021-11-01T08:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d5509"
@@ -48,7 +48,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5c7"
   },
   "time": {
-    "$date": "2021-01-01T08:30:00Z"
+    "$date": "2021-11-01T08:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d550a"
@@ -63,7 +63,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5ca"
   },
   "time": {
-    "$date": "2021-01-01T11:30:00Z"
+    "$date": "2021-11-01T11:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d5509"
@@ -78,7 +78,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5cb"
   },
   "time": {
-    "$date": "2021-01-01T01:30:00Z"
+    "$date": "2021-11-01T01:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d550a"
@@ -93,7 +93,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5cc"
   },
   "time": {
-    "$date": "2021-01-01T10:30:00Z"
+    "$date": "2021-11-01T10:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d550a"
@@ -108,7 +108,7 @@
     "$oid": "5fdf6fad596cfb3ad856c5c9"
   },
   "time": {
-    "$date": "2021-01-01T14:30:00Z"
+    "$date": "2021-11-01T14:30:00Z"
   },
   "idFilm": {
     "$oid": "5fd90eb92201551ca46d5509"
@@ -117,5 +117,125 @@
     "$oid": "5fdf6d08dfa15c2a4c64ead6"
   },
   "name": "Phim Transformet phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a2"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "time": {
+    "$date": "2021-11-02T03:30:00Z"
+  },
+  "name": "Phim transformer phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a3"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "time": {
+    "$date": "2021-11-02T06:30:00Z"
+  },
+  "name": "Phim transformer phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a4"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "time": {
+    "$date": "2021-11-02T10:00:00Z"
+  },
+  "name": "Phim transformer phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a5"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d5509"
+  },
+  "idRoom": {
+    "$oid": "5fdf63c2d92ac21fb4ef73ae"
+  },
+  "time": {
+    "$date": "2021-11-02T14:00:00Z"
+  },
+  "name": "Phim transformer phòng số 0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a6"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "time": {
+    "$date": "2021-11-02T01:00:00Z"
+  },
+  "name": "Phim hwang-chó phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a7"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "time": {
+    "$date": "2021-11-02T04:30:00Z"
+  },
+  "name": "Phim hwang-chó phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a8"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "time": {
+    "$date": "2021-11-02T08:00:00Z"
+  },
+  "name": "Phim hwang-chó phòng số 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6ed65dd82961e48b889a9"
+  },
+  "idFilm": {
+    "$oid": "5fd90eb92201551ca46d550a"
+  },
+  "idRoom": {
+    "$oid": "5fdf6d08dfa15c2a4c64ead6"
+  },
+  "time": {
+    "$date": "2021-11-02T14:30:00Z"
+  },
+  "name": "Phim hwang-chó phòng số 1",
   "__v": 0
 }]

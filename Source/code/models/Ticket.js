@@ -13,16 +13,15 @@ const TicketSchema = mongoose.Schema({
     idSchedule: {
         type: mongoose.Schema.ObjectId,
         required: true,
-        ref: 'Schedule'
+        ref: 'schedules'
     },
     idSeat: {
         type: mongoose.Schema.ObjectId,
         required: true,
-        ref: 'Seat'
+        ref: 'seats'
     },
     idUser: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.ObjectId
     }
 });
 

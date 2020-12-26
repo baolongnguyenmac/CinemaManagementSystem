@@ -1,0 +1,203 @@
+[{
+  "_id": {
+    "$oid": "5fe6206730839c05fcb75a0a"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe23a300e763e196487e609"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e608"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60a"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60b"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60c"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fc"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fd"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fe"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e4"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e5"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e6"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "__v": 3
+},{
+  "_id": {
+    "$oid": "5fe621d23e5d1c10583e4f3c"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe23a300e763e196487e608"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e609"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60a"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60b"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e60c"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e7"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e8"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5e9"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fc"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fd"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e5fe"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "__v": 3
+},{
+  "_id": {
+    "$oid": "5fe626ab9b8b4938a80f50a8"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe4eb77bb793f2564c20528"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20529"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c2052a"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20506"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20507"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20508"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "__v": 2
+},{
+  "_id": {
+    "$oid": "5fe626ee9b8b4938a80f50ac"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe4eb77bb793f2564c20527"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20528"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20529"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c2052a"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c2052b"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "__v": 1
+},{
+  "_id": {
+    "$oid": "5fe6292d4673b123c4f65260"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe4eb77bb793f2564c20528"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20529"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c2052a"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20507"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20508"
+    },
+    {
+      "$oid": "5fe4eb77bb793f2564c20509"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "__v": 2
+},{
+  "_id": {
+    "$oid": "5fe79423259f0727b805939a"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [],
+  "idSchedule": {
+    "$oid": "5fe6ed65dd82961e48b889a2"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7ac670ad59243b8c3131f"
+  },
+  "name": "Phòng x lịch chiếu y đã có những ghế sau được đặt",
+  "idSeats": [
+    {
+      "$oid": "5fe23a300e763e196487e607"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e608"
+    },
+    {
+      "$oid": "5fe23a300e763e196487e609"
+    }
+  ],
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "__v": 1
+}]

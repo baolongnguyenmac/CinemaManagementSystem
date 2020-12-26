@@ -1,0 +1,757 @@
+[{
+  "_id": {
+    "$oid": "5fe6207d30839c05fcb75a0b"
+  },
+  "time": {
+    "$date": "2020-12-25T17:24:46.677Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e609"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6207d30839c05fcb75a0d"
+  },
+  "time": {
+    "$date": "2020-12-25T17:24:46.677Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60a"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6207d30839c05fcb75a0c"
+  },
+  "time": {
+    "$date": "2020-12-25T17:24:46.677Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e608"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6207d30839c05fcb75a0f"
+  },
+  "time": {
+    "$date": "2020-12-25T17:24:46.677Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60c"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6207d30839c05fcb75a0e"
+  },
+  "time": {
+    "$date": "2020-12-25T17:24:46.677Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60b"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe621e63e5d1c10583e4f3d"
+  },
+  "time": {
+    "$date": "2020-12-25T17:30:54.348Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e608"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe621e63e5d1c10583e4f3e"
+  },
+  "time": {
+    "$date": "2020-12-25T17:30:54.348Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e609"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe621e63e5d1c10583e4f3f"
+  },
+  "time": {
+    "$date": "2020-12-25T17:30:54.348Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60a"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe621e63e5d1c10583e4f40"
+  },
+  "time": {
+    "$date": "2020-12-25T17:30:54.348Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60b"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe621e63e5d1c10583e4f41"
+  },
+  "time": {
+    "$date": "2020-12-25T17:30:54.348Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e60c"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe626ce9b8b4938a80f50a9"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20528"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe626ce9b8b4938a80f50aa"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20529"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe626ce9b8b4938a80f50ab"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c2052a"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe627059b8b4938a80f50ad"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fc"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe627059b8b4938a80f50ae"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fd"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe627059b8b4938a80f50af"
+  },
+  "time": {
+    "$date": "2020-12-25T17:50:50.688Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fe"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6280523e6f615e811a3cc"
+  },
+  "time": {
+    "$date": "2020-12-25T17:56:42.229Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e7"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6280523e6f615e811a3cd"
+  },
+  "time": {
+    "$date": "2020-12-25T17:56:42.229Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e8"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6280523e6f615e811a3ce"
+  },
+  "time": {
+    "$date": "2020-12-25T17:56:42.229Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e9"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629434673b123c4f65261"
+  },
+  "time": {
+    "$date": "2020-12-25T18:02:09.510Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20528"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629434673b123c4f65262"
+  },
+  "time": {
+    "$date": "2020-12-25T18:02:09.510Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20529"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629434673b123c4f65263"
+  },
+  "time": {
+    "$date": "2020-12-25T18:02:09.510Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c2052a"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629ab2998ec04fca15d08"
+  },
+  "time": {
+    "$date": "2020-12-25T18:04:03.921Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20507"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629ab2998ec04fca15d09"
+  },
+  "time": {
+    "$date": "2020-12-25T18:04:03.921Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20508"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe629ab2998ec04fca15d0a"
+  },
+  "time": {
+    "$date": "2020-12-25T18:04:03.921Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20509"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6d605ed7ac91c688db40c"
+  },
+  "time": {
+    "$date": "2020-12-26T06:18:47.453Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e4"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6d606ed7ac91c688db40d"
+  },
+  "time": {
+    "$date": "2020-12-26T06:18:47.453Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e5"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6d606ed7ac91c688db40e"
+  },
+  "time": {
+    "$date": "2020-12-26T06:18:47.453Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5e6"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57fee"
+  },
+  "time": {
+    "$date": "2020-12-26T07:32:00.264Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20527"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57fef"
+  },
+  "time": {
+    "$date": "2020-12-26T07:32:00.264Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20528"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57ff0"
+  },
+  "time": {
+    "$date": "2020-12-26T07:32:00.264Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20529"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57ff1"
+  },
+  "time": {
+    "$date": "2020-12-26T07:32:00.264Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c2052a"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57ff2"
+  },
+  "time": {
+    "$date": "2020-12-26T07:32:00.264Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c2052b"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6eae3f3ea29263c431996"
+  },
+  "time": {
+    "$date": "2020-12-26T07:47:11.894Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20506"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6eae3f3ea29263c431997"
+  },
+  "time": {
+    "$date": "2020-12-26T07:47:11.894Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20507"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6eae3f3ea29263c431998"
+  },
+  "time": {
+    "$date": "2020-12-26T07:47:11.894Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idSeat": {
+    "$oid": "5fe4eb77bb793f2564c20508"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe78f173484f3280cfa717a"
+  },
+  "time": {
+    "$date": "2020-12-26T19:28:02.061Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fc"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe78f173484f3280cfa717b"
+  },
+  "time": {
+    "$date": "2020-12-26T19:28:02.061Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fd"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe78f173484f3280cfa717c"
+  },
+  "time": {
+    "$date": "2020-12-26T19:28:02.061Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e5fe"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7ac870ad59243b8c31320"
+  },
+  "time": {
+    "$date": "2020-12-26T21:34:20.183Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e607"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe7a68358d8f633849e8e2b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7ac870ad59243b8c31321"
+  },
+  "time": {
+    "$date": "2020-12-26T21:34:20.183Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e608"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe7a68358d8f633849e8e2b"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7ac870ad59243b8c31322"
+  },
+  "time": {
+    "$date": "2020-12-26T21:34:20.183Z"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "idSeat": {
+    "$oid": "5fe23a300e763e196487e609"
+  },
+  "price": 1,
+  "idUser": {
+    "$oid": "5fe7a68358d8f633849e8e2b"
+  },
+  "__v": 0
+}]

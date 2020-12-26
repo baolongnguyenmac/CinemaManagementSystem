@@ -1,9 +1,15 @@
+<a class="btn btn-primary" href="/" role="button">
+    <i class="fa fa-home" aria-hidden="true"></i>
+    HOME
+</a>
+<a class="btn btn-info" href="/users/updateInfor" role="button">
+    CẬP NHẬT
+</a>
 <div class="container">
-    <h1 class="mt-4">Account</h1>
-    <p class="lead mb-3">Welcome <%= user.name %></p>
+    <h1 class="mt-4">Tài khoản</h1>
+    <p class="lead mb-3">Xin chào <%= user.name %></p>
     <p class="lead mb-3">Your email: <%= user.email %></p>
     <a href="/users/logout" class="btn btn-secondary">Logout</a>
-    <p><img src='<%= user.avatar %>'></p>
-    <p class="lead mb-3">Your avatar: <%= user.avatar %></p>
+    <p><a href="/users/updateAvatar"><img src='<%= user.avatar %>' width="60px" height="60px"></a></p>
     <p class="lead mb-3">Your gender: <%= user.gender %></p>
 </div>

@@ -27,16 +27,14 @@ app.listen(8080, console.log("Server running on Port: 8080"));
 
 // const app = express();
 
-// require('./middlewares/dbLocal')(app);
+// app.use(express.urlencoded());
 
+// require('./middlewares/dbLocal')(app);
 // const LocalUser = require('./models/LocalUser');
 // const FaceBookUser = require('./models/LocalUser');
-// const Payment = require('./models/Payment');
 // const Ticket = require('./models/Ticket');
 // const Schedule = require('./models/Schedule');
 // const Seat = require('./models/Seat');
 // const Room = require('./models/Room');
 // const Film = require('./models/Film');
 // const OccupiedSeat = require('./models/OccupiedSeat');
-
-// OccupiedSeat.insertMany({idSchedule: '5fdf6fad596cfb3ad856c5c7', idSeats: []}).then(console.log('saved'));

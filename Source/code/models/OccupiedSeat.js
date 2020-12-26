@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//OccupiedSeat dùng để đánh dấu những ghế đã được đặt
 const OccupiedSeatSchema = mongoose.Schema({
     name: {
         type: String,

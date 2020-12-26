@@ -10,12 +10,12 @@ const ScheduleSchema = mongoose.Schema({
     },
     idFilm: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Film',
+        ref: 'films',
         required: true
     },
     idRoom: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Room',
+        ref: 'rooms',
         required: true
     }
     

@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "5fe629ab2998ec04fca15d0b"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c9"
+  },
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "seats": "C8,C9,C10",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6d606ed7ac91c688db40f"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c5"
+  },
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "seats": "C3,C4,C5",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6e72f4fc12c37d8f57ff3"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5cb"
+  },
+  "idUser": {
+    "$oid": "5fda6d8d9c83be1f30814c9a"
+  },
+  "seats": "E6,E7,E8,E9,E10",
+  "amount": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe6eae3f3ea29263c431999"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5ca"
+  },
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "seats": "C7,C8,C9",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe78f173484f3280cfa717d"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c6"
+  },
+  "idUser": {
+    "$oid": "5fe30bae7fda6c1b1c3f8009"
+  },
+  "seats": "D10,D11,D12",
+  "amount": 3,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fe7ac870ad59243b8c31323"
+  },
+  "idSchedule": {
+    "$oid": "5fdf6fad596cfb3ad856c5c7"
+  },
+  "idUser": {
+    "$oid": "5fe7a68358d8f633849e8e2b"
+  },
+  "seats": "E4,E5,E6",
+  "amount": 3,
+  "__v": 0
+}]

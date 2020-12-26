@@ -1,0 +1,17 @@
+<a class="btn btn-primary" href="/" role="button">
+    <i class="fa fa-home" aria-hidden="true"></i>
+        HOME
+</a>
+<div class="container">
+    <% for( let i = 0; i < myTickets.length; i++ ) { %>
+        <div>
+            <img src='<%= myTickets[i].poster%>' alt="Cannot load poster" width='100px' height="150px">
+            <p>Phim: <%= myTickets[i].film %> </p>
+            <p>Phòng: <%= myTickets[i].room %> </p>
+            <p>Ngày: <%= myTickets[i].time %> </p>
+            <p>Ghế: <%= myTickets[i].seats %> </p>
+            <p>Tổng cộng: <%= myTickets[i].amount %>.00 USD</p>
+            <hr>
+        </div>
+    <% } %>
+</div>

@@ -18,7 +18,16 @@ const Seat = require("../models/Seat");
 
 const mongoose = require('mongoose');
 
-const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
+const multer = require('multer');
+
+const fs = require('fs');
+
+const path = require('path');
+
+const {
+  ensureAuthenticated,
+  forwardAuthenticated
+} = require("../config/auth");
 const route = require(".");
 const paypal = require("paypal-rest-sdk");
 
@@ -39,7 +48,12 @@ router.get("/account", ensureAuthenticated, (req, res) =>
 
 //users post
 router.post("/register", function (req, res) {
-  const { name, email, password, password2 } = req.body;
+  const {
+    name,
+    email,
+    password,
+    password2
+  } = req.body;
   let errors = [];
 
   if (!name || !email || !password || !password2) {
@@ -105,8 +119,129 @@ router.post(
   })
 );
 
+//Xác thục bởi facebook
+router.get(
+  "/auth/facebook",
+  passport.authenticate("facebook", {
+    scope: ["email", "user_photos"],
+  })
+);
+
+//Redirect từ facebook => web browser
+router.get(
+  "/auth/facebook/callback",
+  passport.authenticate("facebook", {
+    failureRedirect: "/",
+  }),
+  function (req, res, next) {
+    res.redirect("/");
+  }
+);
+
+// Logout
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.flash("success_msg", "You are logged out");
+  res.redirect("/");
+});
+
+//Get Update information
+router.get('/updateInfor', ensureAuthenticated, (req, res) => {
+  res.render('updateinfor', {
+    name: req.user.name
+  });
+});
+
+//Post Update information
+router.post("/updateInfor", ensureAuthenticated, async (req, res) => {
+
+  const name = req.body.name;
+  const newPassword = req.body.newPassword;
+  const confPassword = req.body.confPassword;
+  const gender = req.body.gender;
+
+  let errors = [];
+  if (!name || !newPassword || !confPassword || !gender) {
+    errors.push({
+      msg: "Please enter all fields",
+    });
+  }
+
+  if (newPassword != confPassword) {
+    errors.push({
+      msg: "Passwords do not match",
+    });
+  }
+
+  if (newPassword.length < 6) {
+    errors.push({
+      msg: "Password must be at least 6 characters",
+    });
+  }
+
+  if (errors.length > 0) {
+    res.render("updateinfor", {
+      errors,
+    });
+  } else {
+    await LocalUser.findOne({
+      _id: req.user._id,
+    }).then(async (user) => {
+      user.name = name;
+      user.password = await bcrypt.hash(newPassword, 10);
+      user.gender = gender;
+      user.save().then(() => {
+        console.log('user updated');
+        req.flash("success_msg", "Your are updated");
+        res.redirect('/users/account');
+      });
+    });
+  }
+});
+
+//Get update Avatar
+router.get('/updateAvatar', (req, res) => {
+  res.render('updateAvatar');
+});
+
+//Upload avatar
+router.post('/upload', function (req, res) {
+
+  console.log('dir$:' + __dirname);
+  fs.mkdir(path.join(__dirname, '../public/avatar/'+req.user._id.toString()), () => {
+    console.log('Directory created successfully!');
+  });
+
+  const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/avatar/' + req.user._id);
+    },
+    filename: function (req, file, cb) {
+      let avatar = ('/public/avatar/') + req.user._id.toString() + '/' + file.originalname;
+      console.log('avatar: ' + avatar);
+      LocalUser.findOne({
+        _id: req.user._id
+      }).then((user) => {
+        user.avatar = avatar;
+        user.save();
+      });
+      cb(null, file.originalname);
+    }
+  });
+  const upload = multer({
+    storage
+  });
+  upload.single('fuMain')(req, res, function async (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/users/account');
+    }
+  });
+});
+
 //Phim đang chiếu
-router.get("/nowShowing", ensureAuthenticated, async (req, res) => {
+router.get("/nowShowing", async (req, res) => {
   const films = await Film.find();
   let releaseTimes = [];
   for (let i = 0; i < films.length; i++) {
@@ -115,34 +250,57 @@ router.get("/nowShowing", ensureAuthenticated, async (req, res) => {
 
   res.render("nowShowing", {
     films: films,
-    releaseTimes: releaseTimes,
+    releaseTimes: releaseTimes
   });
 });
 
-//Phim đang chiếu => Lịch chiếu
-router.post("/nowShowingToSchedule", async (req, res) => {
-  req.session.movieID = req.body.movieID;
+//Lịch chiếu
+router.post("/getSchedule", async (req, res) => {
+  const movieID = req.body.movieID;
   const film = await Film.findOne({
-    _id: req.session.movieID,
+    _id: movieID,
   });
-  const schedules = await Schedule.find({
-    idFilm: req.session.movieID,
+
+  let date = res.locals.scheduleDate[0];
+  let dateIndex = 0;
+  if (req.body.dateIndex) {
+    dateIndex = req.body.dateIndex;
+    date = res.locals.scheduleDate[+req.body.dateIndex];
+  }
+
+  let schedules = [];
+
+  await Schedule.find({
+    idFilm: movieID
   }).sort({
-    time: 1,
+    time: 1
+  }).then(async (docs) => {
+
+    for (let i = 0; i < docs.length; i++) {
+      if (docs[i].time.getDate() == date.getDate() &&
+        docs[i].time.getMonth() == date.getMonth() &&
+        docs[i].time.getFullYear() == date.getFullYear()) {
+        await schedules.push(docs[i]);
+      }
+    }
   });
+
   const releaseTimes = [];
   for (let index = 0; index < schedules.length; index++) {
-    const releaseTime =
-      schedules[index].time.getHours() +
-      ":" +
-      schedules[index].time.getMinutes();
+    let minutes;
+    if ((minutes = schedules[index].time.getMinutes()) < 10) {
+      minutes = '0' + minutes.toString();
+    }
+    const releaseTime = schedules[index].time.getHours() + ":" + minutes;
     releaseTimes.push(releaseTime);
   }
 
-  res.render("schedule", {
+  await res.render("schedule", {
     film: film,
     schedules: schedules,
     releaseTimes: releaseTimes,
+    scheduleDay: res.locals.scheduleDay,
+    dateIndex: dateIndex
   });
 });
 
@@ -160,45 +318,22 @@ router.post("/nowShowingToMovieDetail", async (req, res) => {
   });
 });
 
-//Chi tiết phim => Lịch chiếu
-router.post("/movieDetailToSchedule", async (req, res) => {
-  const movieID = req.body.movieID;
-  const film = await Film.findOne({
-    _id: movieID,
-  });
-  const schedules = await Schedule.find({
-    idFilm: movieID,
-  }).sort({
-    time: 1,
-  });
-  const releaseTimes = [];
-  for (let index = 0; index < schedules.length; index++) {
-    const releaseTime =
-      schedules[index].time.getHours() +
-      ":" +
-      schedules[index].time.getMinutes();
-    releaseTimes.push(releaseTime);
-  }
-
-  res.render("schedule", {
-    film: film,
-    schedules: schedules,
-    releaseTimes: releaseTimes,
-  });
-});
-
 //Đặt vé
-router.post("/schedule", async (req, res) => {
+router.post("/Schedule", ensureAuthenticated, async (req, res) => {
   const scheduleID = req.body.scheduleID;
   let occupiedSeatNames = [];
 
   // console.log(scheduleID);
 
-  let occupiedSeat = await OccupiedSeat.findOne({idSchedule: scheduleID});
+  let occupiedSeat = await OccupiedSeat.findOne({
+    idSchedule: scheduleID
+  });
   if (occupiedSeat == null) {
-    await OccupiedSeat.insertMany({idSchedule: scheduleID, idSeats: []});
-  }
-  else {
+    await OccupiedSeat.insertMany({
+      idSchedule: scheduleID,
+      idSeats: []
+    });
+  } else {
     for (let i = 0; i < occupiedSeat.idSeats.length; i++) {
       const seat = await Seat.findOne({
         _id: occupiedSeat.idSeats[i],
@@ -211,16 +346,19 @@ router.post("/schedule", async (req, res) => {
   // await console.log(occupiedSeat);
 
   await res.render("booking", {
-    layout: false,
     occupiedSeatNames: occupiedSeatNames,
     scheduleID: scheduleID,
-    price: 1,
+    price: res.locals.price
   });
 });
 
 //Chọn phương thức thanh toán
 router.post("/checkout", (req, res) => {
-  let { checkedSeats, scheduleID, amount } = req.body;
+  let {
+    checkedSeats,
+    scheduleID,
+    amount
+  } = req.body;
 
   res.render("payment", {
     checkedSeats: checkedSeats,
@@ -231,7 +369,12 @@ router.post("/checkout", (req, res) => {
 
 //Thanh toán
 router.post("/payment", async (req, res) => {
-  let { checkedSeats, scheduleID, amount, paymentMethod } = req.body;
+  let {
+    checkedSeats,
+    scheduleID,
+    amount,
+    paymentMethod
+  } = req.body;
 
   //Cập nhật danh sách ghế đã đặt chỗ
   let checkedSeatList = [];
@@ -258,11 +401,11 @@ router.post("/payment", async (req, res) => {
     seats.push(seat._id);
   }
 
-  // console.log('Schedule ID:' + scheduleID);
-  // console.log('Seats:' + seats);
 
 
-  let occupiedSeat = await OccupiedSeat.findOne({ idSchedule: scheduleID });
+  let occupiedSeat = await OccupiedSeat.findOne({
+    idSchedule: scheduleID
+  });
   // await console.log(occupiedSeat);
   //Chuyển thông tin ghế đã chọn cho thanh toán thành công
   req.session.occupiedSeatID = occupiedSeat._id;
@@ -283,26 +426,22 @@ router.post("/payment", async (req, res) => {
         return_url: "http://localhost:8080/paymentSuccess",
         cancel_url: "http://localhost:8080/paymentFail",
       },
-      transactions: [
-        {
-          item_list: {
-            items: [
-              {
-                name: "Cinema ticket",
-                sku: "001",
-                price: (amount / checkedSeatList.length).toString(),
-                currency: "USD",
-                quantity: checkedSeatList.length.toString(),
-              },
-            ],
-          },
-          amount: {
+      transactions: [{
+        item_list: {
+          items: [{
+            name: "Cinema ticket",
+            sku: "001",
+            price: res.locals.price,
             currency: "USD",
-            total: amount.toString(),
-          },
-          description: "",
+            quantity: checkedSeatList.length.toString(),
+          }, ],
         },
-      ],
+        amount: {
+          currency: "USD",
+          total: amount.toString(),
+        },
+        description: "",
+      }, ],
     };
     paypal.payment.create(create_payment_json, function (error, payment) {
       if (error) {
@@ -319,30 +458,6 @@ router.post("/payment", async (req, res) => {
   }
 });
 
-//Xác thục bởi facebook
-router.get(
-  "/auth/facebook",
-  passport.authenticate("facebook", {
-    scope: ["email", "user_photos"],
-  })
-);
 
-//Redirect từ facebook => web browser
-router.get(
-  "/auth/facebook/callback",
-  passport.authenticate("facebook", {
-    failureRedirect: "/",
-  }),
-  function (req, res, next) {
-    res.redirect("/");
-  }
-);
-
-// Logout
-router.get("/logout", (req, res) => {
-  req.logout();
-  req.flash("success_msg", "You are logged out");
-  res.redirect("/");
-});
 
 module.exports = router;
