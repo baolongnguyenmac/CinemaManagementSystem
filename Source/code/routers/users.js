@@ -191,7 +191,6 @@ router.post("/updateInfor", ensureAuthenticated, async (req, res) => {
       user.password = await bcrypt.hash(newPassword, 10);
       user.gender = gender;
       user.save().then(() => {
-        console.log('user updated');
         req.flash("success_msg", "Your are updated");
         res.redirect('/users/account');
       });
@@ -208,24 +207,21 @@ router.get('/updateAvatar', (req, res) => {
 router.post('/upload', function (req, res) {
 
   console.log('dir$:' + __dirname);
-  fs.mkdir(path.join(__dirname, '../public/avatar/'+req.user._id.toString()), () => {
-    console.log('Directory created successfully!');
-  });
+  fs.mkdir(path.join(__dirname, '../public/avatar/'+req.user._id.toString()), () => {});
 
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './public/avatar/' + req.user._id);
     },
     filename: function (req, file, cb) {
-      let avatar = ('/public/avatar/') + req.user._id.toString() + '/' + file.originalname;
-      console.log('avatar: ' + avatar);
+      let avatar = ('/public/avatar/') + req.user._id.toString() + '/' + 'avatar.png';
       LocalUser.findOne({
         _id: req.user._id
       }).then((user) => {
         user.avatar = avatar;
         user.save();
       });
-      cb(null, file.originalname);
+      cb(null, 'avatar.png');
     }
   });
   const upload = multer({
