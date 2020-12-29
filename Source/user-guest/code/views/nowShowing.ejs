@@ -1,38 +1,110 @@
-<a class="btn btn-primary" href="/" role="button">
-    <i class="fa fa-home" aria-hidden="true"></i>
-        HOME
-</a>
-<div class="container">
-    <% for( let i = 0; i < films.length; i++ ) { %>
-    <a href="javascript:()=>{return false;}">
-        <img class='poster' data-id='<%= films[i]._id %>' src="<%= films[i].poster %>"
-            alt="This image is no longer exist" height="300px" width="200px"><br>
-    </a>
-    <p><%= films[i].name %> </p>
-    <p>Thể loại: <%= films[i].genre %> </p>
-    <p>Thời lượng: <%= films[i].runningTime %> </p>
-    <p>Ngày phát hành: <%= releaseTimes[i] %></p>
-    <button class='booking btn btn-danger' data-id='<%= films[i]._id %>'>Đặt vé</button><hr>
-    <% } %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<form id="myForm1" method="POST" action="/users/nowShowingToMovieDetail">
-    <input type="hidden" name="movieID" id="movieID">
-</form>
-<form id="myForm2" method="POST" action="/users/getSchedule">
-    <input type="hidden" name="movieID" id="movieID">
-</form>
+<head>
+    <title>Phim đang chiếu</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/public/css/showFilm.css">
+</head>
 
-<script type="text/javascript">
-    $('.poster').on('click', (e) => {
-        const ID = $(e.target).data('id');
-        $('#myForm1').children('input#movieID').val(ID);
-        $('#myForm1').submit();
-    });
+<body>
+    <div id="site-content">
+        <!-- header -->
+        <%- include('./partials/headerAuth.ejs') %>
 
-    $('.booking').on('click', (e) => {
-        const ID = $(e.target).data('id');
-        $('#myForm2').children('input#movieID').val(ID);
-        $('#myForm2').submit();
-    });
-</script>
+            <main class="main-container">
+                <div class="container">
+                    <div class="breadcrumbs">
+                        <a href="/">Trang chủ</a>
+                        <span>Phim đang chiếu</span>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <% for( let i=0; i < films.length; i++ ) { %>
+                        <img id="activeForm" data-id='<%= films[i]._id %>'></img>
+                        <a href="javascript:()=>{return false;}">
+                            <div class="movie-card" data-id='<%= films[i]._id %>'> 
+                                <div class="movie-header"
+                                    style='background: url("<%= films[i].poster %>"); background-size: cover;'>
+                                    <div class="header-icon-container">
+                                        <!-- làm gì đó ở đây, có liên quan đén cái form ở dưới -->
+
+                                        <!-- <i class="material-icons header-icon"></i> -->
+
+                                    </div>
+                                </div>
+                                <!--movie-header-->
+                                <div class="movie-content">
+                                    <div class="movie-content-header">
+                                        <a href="#">
+                                            <h3 class="movie-title">
+                                                <%= films[i].name %>
+                                            </h3>
+                                        </a>
+                                        <div class="imax-logo"></div>
+                                    </div>
+                                    <div class="movie-info">
+                                        <div class="info-section">
+                                            <label>Ngày công chiếu</label>
+                                            <span>
+                                                <%= releaseTimes[i] %>
+                                            </span>
+                                        </div>
+                                        <!--date,time-->
+                                        <div class="info-section">
+                                            <label>Screen</label>
+                                            <span>03</span>
+                                        </div>
+                                        <!--screen-->
+                                        <div class="info-section">
+                                            <label>Row</label>
+                                            <span>F</span>
+                                        </div>
+                                        <!--row-->
+                                        <div class="info-section">
+                                            <label>Seat</label>
+                                            <span>21,22</span>
+                                        </div>
+                                        <!--seat-->
+                                    </div>
+                                </div>
+                                <!--movie-content-->
+                            </div>
+                            <!--movie-card-->
+                        </a>
+                        <% } %>
+
+                </div>
+                <!--container-->
+            </main>
+
+            <!-- footer -->
+            <%- include('./partials/footer.ejs') %>
+    </div>
+    <form id="myForm" action="/users/nowShowingToMovieDetail" method="POST">
+        <input type="hidden" name="movieID" id="movieID">
+    </form>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+    <script type='text/javascript'>
+        $('.movie-card').on('click', (e) => {
+            const ID = $('#activeForm').data('id');
+            console.log(ID);
+            $('#myForm').children('input#movieID').val(ID);
+            $('#myForm').submit();
+        });
+    </script>
+</body>
+
+</html>
