@@ -32,7 +32,7 @@ const route = require(".");
 const paypal = require("paypal-rest-sdk");
 
 // Login Page
-router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
+router.get("/login", forwardAuthenticated, (req, res) => res.render("login", {}));
 
 // Register Page
 router.get("/register", forwardAuthenticated, (req, res) =>
@@ -309,6 +309,7 @@ router.post("/nowShowingToMovieDetail", async (req, res) => {
   const releaseTime = film.releaseTime.toDateString();
 
   res.render("movieDetail", {
+    isAuthenticated: req.isAuthenticated(),
     film: film,
     releaseTime: releaseTime,
   });
