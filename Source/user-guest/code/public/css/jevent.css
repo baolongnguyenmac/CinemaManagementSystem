@@ -1,0 +1,151 @@
+#jevents {
+    padding-bottom: 70px;
+}
+
+.ev_prevrepeat a:hover, .ev_nextrepeat a:hover, .jevbootstrap a:hover, .jevbootstrap a:active, #cloakf03ca758ecc53c199a016c534221712ed023cec8a2f279b8611a097bd9c9c81 a:hover, a.ev_link_row:link:hover, .product-title a:hover, a.ev_link_row:visited, a.ev_link_row:hover, .jev_evdt_creatora:hover {
+    color: #333!important;
+}
+
+.at-jevent-right h2 {
+    float: left!important;
+    text-align: left;
+    margin-left: -18px;
+}
+
+div.new-navigation {
+    font-size: 20px;
+}
+
+.at-jevent-right {
+    padding-left: 48px;
+}
+
+.ev_prevrepeat a {
+    padding-left: 0px!important;
+}
+
+.jevbootstrap p {
+    margin: 0 0 10px;
+}
+
+ul.show-times {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.show-times li {
+    display: table;
+    margin-bottom: 10px;
+}
+
+#jevents_body ul.ev_ul li.ev_td_li {
+    padding: 20px;
+}
+
+ul.show-times li i {
+    font-size: 12px;
+    font-style: normal;
+    display: table-cell;
+    width: 75px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+}
+
+ul.show-times li .time.past {
+    opacity: .5;
+}
+
+ul.show-times li .time {
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 7px 10px;
+    letter-spacing: 2px;
+    color: #717171;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+}
+
+ul.show-times li .time {
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 7px 10px;
+    letter-spacing: 2px;
+    color: #717171;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+}
+
+ul.show-times li {
+    display: table;
+    margin-bottom: 10px;
+}
+
+ul.show-times li i {
+    font-size: 12px;
+    font-style: normal;
+    display: table-cell;
+    width: 75px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+}
+
+ul.show-times li.today i {
+    color: #ec7532;
+}
+
+ul.show-times li i {
+    font-size: 12px;
+    font-style: normal;
+    display: table-cell;
+    width: 75px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+}
+
+ul.show-times li .time.past {
+    opacity: .5;
+}
+
+ul.movie-info {
+    padding: 0;
+    list-style: none;
+}
+
+ul.movie-info li {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #f8af58;
+}
+
+ul.movie-info li i {
+    font-size: 12px;
+    font-style: normal;
+    display: inline-block;
+    width: 115px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4c4c4c;
+}
+
+.at-event-item p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.at-event-item h3 {
+    font-weight: 400;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 11px;
+}
+
+.at-event-item img {
+    border-radius: 20px;
+}
