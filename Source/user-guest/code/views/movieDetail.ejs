@@ -1,29 +1,115 @@
-<a class="btn btn-primary" href="/" role="button">
-    <i class="fa fa-home" aria-hidden="true"></i>
-        HOME
-</a>
-<div class="container">
-    <h2><%= film.name %> </h2><br>
-    <img src="<%= film.poster%>" alt="<%= film.poster%>" height="300px" width="200px"><br>
-    <p>Tác giả: <%= film.director %> </p>
-    <p>Diễn viên: <%= film.cast %> </p>
-    <p>Thể loại: <%= film.genre %> </p>
-    <p>Thời lượng: <%= film.runningTime %> </p>
-    <p>Phát hành: <%= releaseTime %> </p>
-    <button class="booking btn btn-primary" data-id='<%= film._id %>' class='btn btn-danger'>Đặt vé</button>
-    <p>Mô tả: <%= film.description %> </p>
-    <iframe width="560" height="315" src="<%= film.trailer%>" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-</div>
-<form id="myForm" action="/users/getSchedule" method="POST">
-    <input type="hidden" name="movieID" id="movieID">
-</form>
+<!DOCTYPE html>
+<html lang="en">
 
-<script type='text/javascript'>
-    $('.booking').on('click', (e)=>{
-        const ID = $(e.target).data('id');
-        $('#myForm').children('input#movieID').val(ID);
-        $('#myForm').submit();
-    });
-</script>
+<head>
+    <title>Thông tin phim</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+    <div id="site-content">
+    <!-- header -->
+    <% if (isAuthenticated) { %>
+        <%- include('./partials/headerAuth.ejs') %>
+    <% } %>
+    <% if (!isAuthenticated) { %>
+        <%- include('./partials/header.ejs') %>
+    <% } %>
+
+    <main class="main-container">
+        <div class="container">
+            <div class="page">
+                <div class="breadcrumbs">
+                    <a href="/">Trang chủ</a>
+                    <a href="/users/nowShowing">Phim đang chiếu</a>
+                    <span>
+                        <%= film.name %>
+                    </span>
+                </div>
+
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="movie-poster"><iframe width="560" height="420"
+                                    src="<%= film.trailer%>" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe></figure>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="movie-title">
+                                <%= film.name %>
+                            </h2>
+                            <div class="movie-summary">
+                                <p>
+                                    <%= film.description %>
+                                </p>
+
+                            </div>
+                            <ul class="movie-meta">
+                                <li><strong>Đánh giá:</strong>
+                                    <div class="star-rating" title="Rated 4.00 out of 5"><span
+                                            style="width:80%"><strong class="rating">4.00</strong> out of
+                                            5</span></div>
+                                </li>
+                                <li><strong>Thời lượng:</strong>
+                                    <%= film.runningTime %>
+                                </li>
+                                <li><strong>Công chiếu:</strong>
+                                    <%= releaseTime %>
+                                </li>
+                                <li><strong>Thể loại:</strong>
+                                    <%= film.genre %>
+                                </li>
+                            </ul>
+
+                            <ul class="starring">
+                                <li><strong>Diễn viên:</strong>
+                                    <%= film.cast %>
+                                </li>
+                                <li><strong>Tác giả:</strong>
+                                    <%= film.director %>
+                                        (screenplay)
+                                </li>
+                                <li><strong>Stars:</strong>
+                                    <%= film.director %>
+                                </li>
+                            </ul>
+
+                            <a data-id='<%= film._id %>' title="" href="javascript:()=>{return false;}"
+                                class="btn btn-outline-success" data-toggle="tooltip"
+                                data-original-title="Save to Wishlist"
+                                style="margin-bottom: 5px; align-items: center; justify-content: center;"> Chọn
+                                lịch chiếu</a>
+                        </div>
+                    </div> <!-- .row -->
+                    <div class="entry-content">
+                        <p>
+                            <%= film.description %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .container -->
+    </div>
+    </main>
+    </div>
+
+    <footer>
+        <%- include('./partials/footer.ejs') %>
+    </footer>
+
+    <form id="myForm" action="/users/getSchedule" method="POST">
+        <input type="hidden" name="movieID" id="movieID">
+    </form>
+
+    <script type='text/javascript'>
+        $('.btn').on('click', (e) => {
+            const ID = $(e.target).data('id');
+            $('#myForm').children('input#movieID').val(ID);
+            $('#myForm').submit();
+        });
+    </script>
+</body>
+
+</html>
