@@ -3,113 +3,118 @@
 
 <head>
     <title>Thông tin phim</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <%- include('./partials/head.ejs') %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 
-<body>
+<body style="background-color: #131a20; color: #84878d;">
     <div id="site-content">
-    <!-- header -->
-    <% if (isAuthenticated) { %>
-        <%- include('./partials/headerAuth.ejs') %>
-    <% } %>
-    <% if (!isAuthenticated) { %>
-        <%- include('./partials/header.ejs') %>
-    <% } %>
+        <!-- header -->
+        <% if (isAuthenticated) { %>
+            <%- include('./partials/headerAuth.ejs') %>
+        <% } %>
+        <% if (!isAuthenticated) { %>
+            <%- include('./partials/header.ejs') %>
+        <% } %>
 
-    <main class="main-container">
-        <div class="container">
-            <div class="page">
-                <div class="breadcrumbs">
-                    <a href="/">Trang chủ</a>
-                    <a href="/users/nowShowing">Phim đang chiếu</a>
-                    <span>
-                        <%= film.name %>
-                    </span>
-                </div>
-
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <figure class="movie-poster"><iframe width="560" height="420"
-                                    src="<%= film.trailer%>" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe></figure>
-                        </div>
-                        <div class="col-md-6">
-                            <h2 class="movie-title">
+            <main class="main-container">
+                <div class="container">
+                    <div class="page">
+                        <div class="breadcrumbs">
+                            <a href="/">Trang chủ</a>
+                            <a href="/users/nowShowing">Phim đang chiếu</a>
+                            <span>
                                 <%= film.name %>
-                            </h2>
-                            <div class="movie-summary">
-                                <p>
-                                    <%= film.description %>
-                                </p>
-
-                            </div>
-                            <ul class="movie-meta">
-                                <li><strong>Đánh giá:</strong>
-                                    <div class="star-rating" title="Rated 4.00 out of 5"><span
-                                            style="width:80%"><strong class="rating">4.00</strong> out of
-                                            5</span></div>
-                                </li>
-                                <li><strong>Thời lượng:</strong>
-                                    <%= film.runningTime %>
-                                </li>
-                                <li><strong>Công chiếu:</strong>
-                                    <%= releaseTime %>
-                                </li>
-                                <li><strong>Thể loại:</strong>
-                                    <%= film.genre %>
-                                </li>
-                            </ul>
-
-                            <ul class="starring">
-                                <li><strong>Diễn viên:</strong>
-                                    <%= film.cast %>
-                                </li>
-                                <li><strong>Tác giả:</strong>
-                                    <%= film.director %>
-                                        (screenplay)
-                                </li>
-                                <li><strong>Stars:</strong>
-                                    <%= film.director %>
-                                </li>
-                            </ul>
-
-                            <a data-id='<%= film._id %>' title="" href="javascript:()=>{return false;}"
-                                class="btn btn-outline-success" data-toggle="tooltip"
-                                data-original-title="Save to Wishlist"
-                                style="margin-bottom: 5px; align-items: center; justify-content: center;"> Chọn
-                                lịch chiếu</a>
+                            </span>
                         </div>
-                    </div> <!-- .row -->
-                    <div class="entry-content">
-                        <p>
-                            <%= film.description %>
-                        </p>
+
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <figure class="movie-poster"><iframe width="560" height="420"
+                                            src="<%= film.trailer %> " frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe></figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <h2 class="movie-title">
+                                        <%= film.name %>
+                                    </h2>
+                                    <div class="movie-summary">
+                                        <p>
+                                            <%= film.description %>
+                                        </p>
+                                    </div>
+                                    <ul class="movie-meta" style="margin-top:  10px;">
+                                        <li><strong>Rating: </strong>
+                                            <div class="star-rating" title="Rated 4.00 out of 5"><span
+                                                    style="width: 80%"><strong class="rating">4.00</strong> out of
+                                                    5</span></div>
+                                        </li>
+                                        <li><strong>Thời lượng: </strong>
+                                            <%= film.runningTime %>
+                                        </li>
+                                        <li><strong>Khởi chiếu: </strong>
+                                            <%= releaseTime %>
+                                        </li>
+                                        <!-- <li><strong>Category: </strong> Animation/Adventure/Comedy</li> -->
+                                    </ul>
+
+                                    <ul class="starring">
+                                        <li><strong>Đạo diễn: </strong>
+                                            <%= film.director %>
+                                        </li>
+                                        <li><strong>Nguyên tác: </strong>
+                                            <%= film.cast %>
+                                        </li>
+                                        <li><strong>Diễn viên: </strong>
+                                            <%= film.cast %>
+                                        </li>
+                                    </ul>
+
+                                    <div class="activeForm" data-id='<%= film._id %>'>
+                                        <a data-id='<%= film._id %>' title="" href="javascript:()=>{return false;}" class="btn btn-outline-success"
+                                            data-toggle="tooltip" data-original-title="Save to Wishlist"
+                                            style="margin-bottom: 5px; align-items: center; justify-content: center;">
+                                            Chọn lịch chiếu
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> <!-- .row -->
+                            <div class="entry-content">
+                                <p>Mô tả:  <%= film.description %></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div> <!-- .container -->
+                </div> 
     </div>
     </main>
     </div>
-
-    <footer>
-        <%- include('./partials/footer.ejs') %>
-    </footer>
 
     <form id="myForm" action="/users/getSchedule" method="POST">
         <input type="hidden" name="movieID" id="movieID">
     </form>
 
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script
+        src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+
     <script type='text/javascript'>
-        $('.btn').on('click', (e) => {
-            const ID = $(e.target).data('id');
+        $('.activeForm').on('click', (e) => {
+            const ID = e.target.getAttribute('data-id');
+            // console.log(ID);
             $('#myForm').children('input#movieID').val(ID);
             $('#myForm').submit();
         });
     </script>
+
+    <!-- footer -->
+    <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>
