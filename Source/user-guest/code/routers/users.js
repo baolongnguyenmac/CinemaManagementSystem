@@ -16,23 +16,18 @@ const OccupiedSeat = require("../models/OccupiedSeat");
 
 const Seat = require("../models/Seat");
 
-const mongoose = require('mongoose');
+const multer = require("multer");
 
-const multer = require('multer');
+const fs = require("fs");
 
-const fs = require('fs');
+const path = require("path");
 
-const path = require('path');
+const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
-const {
-  ensureAuthenticated,
-  forwardAuthenticated
-} = require("../config/auth");
-const route = require(".");
 const paypal = require("paypal-rest-sdk");
 
 // Login Page
-router.get("/login", forwardAuthenticated, (req, res) => res.render("login", {}));
+router.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
 
 // Register Page
 router.get("/register", forwardAuthenticated, (req, res) =>
@@ -48,12 +43,7 @@ router.get("/account", ensureAuthenticated, (req, res) =>
 
 //users post
 router.post("/register", function (req, res) {
-  const {
-    name,
-    email,
-    password,
-    password2
-  } = req.body;
+  const { name, email, password, password2 } = req.body;
   let errors = [];
 
   if (!name || !email || !password || !password2) {
@@ -146,92 +136,116 @@ router.get("/logout", (req, res) => {
 });
 
 //Get Update information
-router.get('/updateInfor', ensureAuthenticated, (req, res) => {
-  res.render('updateinfor', {
-    name: req.user.name
+router.get("/updateInfor", ensureAuthenticated, (req, res) => {
+  res.render("updateinfor", {
+    name: req.user.name,
   });
 });
 
 //Post Update information
-router.post("/updateInfor", ensureAuthenticated, async (req, res) => {
-
+router.post('/updateInfor', async (req, res) => {
   const name = req.body.name;
+  const oldPassword = req.body.oldPassword;
   const newPassword = req.body.newPassword;
   const confPassword = req.body.confPassword;
   const gender = req.body.gender;
 
   let errors = [];
-  if (!name || !newPassword || !confPassword || !gender) {
-    errors.push({
-      msg: "Please enter all fields",
+  //Nếu là localaccount
+  if (req.user.password != undefined) {
+    if (!name || !newPassword || !confPassword || !gender || !oldPassword) {
+      errors.push({
+        msg: "Please enter all fields",
+      });
+    }
+
+    if (newPassword != confPassword) {
+      errors.push({
+        msg: "Passwords do not match",
+      });
+    }
+
+    if (newPassword.length < 6) {
+      errors.push({
+        msg: "Password must be at least 6 characters",
+      });
+    }
+
+    bcrypt.compare(oldPassword, req.user.password).then((isMatch) => {
+      if (!isMatch) {
+        errors.push({
+          msg: 'Old password is uncorrect'
+        });
+      }
     });
   }
-
-  if (newPassword != confPassword) {
-    errors.push({
-      msg: "Passwords do not match",
-    });
-  }
-
-  if (newPassword.length < 6) {
-    errors.push({
-      msg: "Password must be at least 6 characters",
-    });
+  //Nếu không phải Local Account
+  else {
+    if (!name) {
+      errors.push({
+        msg: "Please enter all fields",
+      });
+    }
   }
 
   if (errors.length > 0) {
-    res.render("updateinfor", {
+    res.render("./user/updateinfor", {
+      name: req.user.name,
       errors,
     });
   } else {
-    await LocalUser.findOne({
-      _id: req.user._id,
-    }).then(async (user) => {
-      user.name = name;
-      user.password = await bcrypt.hash(newPassword, 10);
-      user.gender = gender;
-      user.save().then(() => {
-        req.flash("success_msg", "Your are updated");
-        res.redirect('/users/account');
-      });
+    req.user.name = name;
+    req.user.gender = gender;
+    //Không phải account local
+    if (req.user.password != undefined) {
+      req.user.password = await bcrypt.hash(newPassword, 10);
+    }
+
+    req.user.save().then(() => {
+      req.flash("success_msg", "Your are updated");
+      res.redirect("/users/account");
     });
   }
 });
 
 //Get update Avatar
-router.get('/updateAvatar', (req, res) => {
-  res.render('updateAvatar');
+router.get("/updateAvatar", ensureAuthenticated, (req, res) => {
+  res.render("updateAvatar");
 });
 
 //Upload avatar
-router.post('/upload', function (req, res) {
-
-  console.log('dir$:' + __dirname);
-  fs.mkdir(path.join(__dirname, '../public/avatar/'+req.user._id.toString()), () => {});
+router.post("/upload", function (req, res) {
+  console.log("dir$:" + __dirname);
+  fs.mkdir(
+    path.join(__dirname, "../public/avatar/" + req.user._id.toString()), () => { });
 
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './public/avatar/' + req.user._id);
+      cb(null, "./public/avatar/" + req.user._id);
     },
     filename: function (req, file, cb) {
-      let avatar = ('/public/avatar/') + req.user._id.toString() + '/' + 'avatar.png';
-      LocalUser.findOne({
-        _id: req.user._id
-      }).then((user) => {
-        user.avatar = avatar;
-        user.save();
-      });
-      cb(null, 'avatar.png');
-    }
+      let avatar =
+        "/public/avatar/" + req.user._id.toString() + "/" + "avatar.png";
+      req.user.avatar = avatar;
+      req.user.save();
+      cb(null, "avatar.png");
+      // LocalUser.findOne({
+      //   _id: req.user._id,
+      // }).then((user) => {
+      //   user.avatar = avatar;
+      //   user.save();
+      // });
+      // cb(null, "avatar.png");
+    },
   });
   const upload = multer({
-    storage
+    storage,
   });
-  upload.single('fuMain')(req, res, function async (err) {
+  upload.single("fuMain")(req, res, function async(err) {
     if (err) {
       console.log(err);
     } else {
-      res.redirect('/users/account');
+      res.redirect("/users/account");
     }
   });
 });
@@ -246,7 +260,7 @@ router.get("/nowShowing", async (req, res) => {
 
   res.render("nowShowing", {
     films: films,
-    releaseTimes: releaseTimes
+    releaseTimes: releaseTimes,
   });
 });
 
@@ -267,25 +281,28 @@ router.post("/getSchedule", async (req, res) => {
   let schedules = [];
 
   await Schedule.find({
-    idFilm: movieID
-  }).sort({
-    time: 1
-  }).then(async (docs) => {
-
-    for (let i = 0; i < docs.length; i++) {
-      if (docs[i].time.getDate() == date.getDate() &&
-        docs[i].time.getMonth() == date.getMonth() &&
-        docs[i].time.getFullYear() == date.getFullYear()) {
-        await schedules.push(docs[i]);
+    idFilm: movieID,
+  })
+    .sort({
+      time: 1,
+    })
+    .then(async (docs) => {
+      for (let i = 0; i < docs.length; i++) {
+        if (
+          docs[i].time.getDate() == date.getDate() &&
+          docs[i].time.getMonth() == date.getMonth() &&
+          docs[i].time.getFullYear() == date.getFullYear()
+        ) {
+          await schedules.push(docs[i]);
+        }
       }
-    }
-  });
+    });
 
   const releaseTimes = [];
   for (let index = 0; index < schedules.length; index++) {
     let minutes;
     if ((minutes = schedules[index].time.getMinutes()) < 10) {
-      minutes = '0' + minutes.toString();
+      minutes = "0" + minutes.toString();
     }
     const releaseTime = schedules[index].time.getHours() + ":" + minutes;
     releaseTimes.push(releaseTime);
@@ -296,7 +313,7 @@ router.post("/getSchedule", async (req, res) => {
     schedules: schedules,
     releaseTimes: releaseTimes,
     scheduleDay: res.locals.scheduleDay,
-    dateIndex: dateIndex
+    dateIndex: dateIndex,
   });
 });
 
@@ -323,12 +340,12 @@ router.post("/Schedule", ensureAuthenticated, async (req, res) => {
   // console.log(scheduleID);
 
   let occupiedSeat = await OccupiedSeat.findOne({
-    idSchedule: scheduleID
+    idSchedule: scheduleID,
   });
   if (occupiedSeat == null) {
     await OccupiedSeat.insertMany({
       idSchedule: scheduleID,
-      idSeats: []
+      idSeats: [],
     });
   } else {
     for (let i = 0; i < occupiedSeat.idSeats.length; i++) {
@@ -345,17 +362,13 @@ router.post("/Schedule", ensureAuthenticated, async (req, res) => {
   await res.render("booking", {
     occupiedSeatNames: occupiedSeatNames,
     scheduleID: scheduleID,
-    price: res.locals.price
+    price: res.locals.price,
   });
 });
 
 //Chọn phương thức thanh toán
 router.post("/checkout", (req, res) => {
-  let {
-    checkedSeats,
-    scheduleID,
-    amount
-  } = req.body;
+  let { checkedSeats, scheduleID, amount } = req.body;
 
   res.render("payment", {
     checkedSeats: checkedSeats,
@@ -366,12 +379,7 @@ router.post("/checkout", (req, res) => {
 
 //Thanh toán
 router.post("/payment", async (req, res) => {
-  let {
-    checkedSeats,
-    scheduleID,
-    amount,
-    paymentMethod
-  } = req.body;
+  let { checkedSeats, scheduleID, amount, paymentMethod } = req.body;
 
   //Cập nhật danh sách ghế đã đặt chỗ
   let checkedSeatList = [];
@@ -398,17 +406,14 @@ router.post("/payment", async (req, res) => {
     seats.push(seat._id);
   }
 
-
-
   let occupiedSeat = await OccupiedSeat.findOne({
-    idSchedule: scheduleID
+    idSchedule: scheduleID,
   });
   // await console.log(occupiedSeat);
   //Chuyển thông tin ghế đã chọn cho thanh toán thành công
   req.session.occupiedSeatID = occupiedSeat._id;
   req.session.seats = seats;
   req.session.amount = amount;
-
 
   //Tạo thanh toán
   if (paymentMethod == "paypal") {
@@ -423,22 +428,26 @@ router.post("/payment", async (req, res) => {
         return_url: "http://localhost:8080/paymentSuccess",
         cancel_url: "http://localhost:8080/paymentFail",
       },
-      transactions: [{
-        item_list: {
-          items: [{
-            name: "Cinema ticket",
-            sku: "001",
-            price: res.locals.price,
+      transactions: [
+        {
+          item_list: {
+            items: [
+              {
+                name: "Cinema ticket",
+                sku: "001",
+                price: res.locals.price,
+                currency: "USD",
+                quantity: checkedSeatList.length.toString(),
+              },
+            ],
+          },
+          amount: {
             currency: "USD",
-            quantity: checkedSeatList.length.toString(),
-          }, ],
+            total: amount.toString(),
+          },
+          description: "",
         },
-        amount: {
-          currency: "USD",
-          total: amount.toString(),
-        },
-        description: "",
-      }, ],
+      ],
     };
     paypal.payment.create(create_payment_json, function (error, payment) {
       if (error) {
@@ -454,7 +463,5 @@ router.post("/payment", async (req, res) => {
     });
   }
 });
-
-
 
 module.exports = router;
