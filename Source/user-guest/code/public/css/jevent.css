@@ -69,10 +69,15 @@ ul.show-times li .time {
 }
 
 ul.show-times li .time {
+    align-items: center;
     font-size: 14px;
     display: inline-block;
     margin: 0 5px 5px 0;
-    padding: 7px 10px;
+    /* padding: 7px 10px; */
+    /* padding-left: 5px;
+    padding-right: 90px; */
+    height: auto;
+    width: auto;
     letter-spacing: 2px;
     color: #717171;
     border-radius: 5px;
