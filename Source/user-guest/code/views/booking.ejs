@@ -1,186 +1,118 @@
-<style>
-    /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); */
+<!DOCTYPE html>
+<html lang="en">
 
-    * {
-        box-sizing: border-box;
-    }
+<head>
+    <title>Chọn ghế</title>
+    <%- include('./partials/head.ejs') %>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="/public/css/chooseSeat.css">
+</head>
 
-    body {
-        background-color: #242333;
-        color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
+<body style="background-color: #131a20;">
+    <div id="site-content">
+        <!-- header -->
+        <%- include('./partials/header.ejs') %>
 
-    .movie-container {
-        margin: 20px 0;
-    }
+        <main class="main-container">
+            <div class="breadcrumbs">
+                <a href="/">Trang chủ</a>
+                <a href="/showFilm">Phim đang chiếu</a>
+                <span><%= filmName %></span>
+            </div>
 
-    .container {
-        perspective: 1000px;
-        margin-bottom: 30px;
-    }
+            <div class="meomeo">
+                <ul class="showcase" style="margin: auto; padding: auto; width: fit-content;">
+                    <li>
+                        <div class="seat"></div>
+                        <small>Ghế trống</small>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <small>Ghế của bạn</small>
+                    </li>
+                    <li>
+                        <div class="seat occupied"></div>
+                        <small>Ghế của người ta</small>
+                    </li>
+                </ul>
 
-    .movie-container select {
-        background-color: #ffffff;
-        border: 0;
-        border-radius: 5px;
-        font-size: 14px;
-        margin-left: 10px;
-        padding: 5px 15px 5px 15px;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
+                <div class="container1" style="width: fit-content;">
+                    <div class="screen"></div>
 
-    .seat {
-        font-size: small;
-        align-items: center;
-        align-content: center;
+                    <% for( let i = 0; i < 6; i++ ) { %>
+                        <div class="row">
+                            <% for( let j = 0; j < 17; j++ ) { %>
+                            <% let seat = '' %>
+                            <% if (i == 0) { %>
+                            <% seat = 'A'+j; %>
+                            <% } %>
+                            <% if (i == 1) { %>
+                            <% seat = 'B'+j; %>
+                            <% } %>
+                            <% if (i == 2) { %>
+                            <% seat = 'C'+j; %>
+                            <% } %>
+                            <% if (i == 3) { %>
+                            <% seat = 'D'+j; %>
+                            <% } %>
+                            <% if (i == 4) { %>
+                            <% seat = 'E'+j; %>
+                            <% } %>
+                            <% if (i == 5) { %>
+                            <% seat = 'F'+j; %>
+                            <% } %>
+                            <% let isOccupied = 0;%> 
+                            <% for( let i = 0; i < occupiedSeatNames.length; i++ ) { %>
+                                <% if (seat == occupiedSeatNames[i]) { %>
+                                    <% isOccupied = 1; %> 
+                                    <% break; %> 
+                                <% } %>
+                            <% } %>
+                            <% if (isOccupied) { %>
+                                <div data-seat='<%= seat %>' class="seat occupied"><%= seat %></div>
+                            <% } %>
+                            <% if (!isOccupied) { %>
+                                <div data-seat='<%= seat %>' class="seat"><%= seat %></div>
+                            <% } %>
+                            <% } %>
+                        </div>
+                    <% } %>
 
-        background-color: #444451;
-        height: 22px;
-        width: 22px;
-        margin: 3px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
+                    <div style="margin-bottom: 5px; margin: auto; padding-top: 20px; width: fit-content;">
+                        <form action="/users/checkout" method="POST" id='myForm'>
+                            <textarea id="textField" name="checkedSeats" style="display: none;"></textarea>
+                            <input type="hidden" value="<%= scheduleID %>" name="scheduleID">
+                            <input data-price='<%= price %> ' type="hidden" value='' name="amount" id='amount'>
+                            <button id='checkout' type="button" class="btn btn-primary btn-lg">Check out</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    .seat.selected {
-        background-color: aqua;
-    }
-
-    .seat.occupied {
-        background-color: #ffffff;
-    }
-
-    .seat:nth-of-type(2) {
-        margin-right: 18px;
-    }
-
-    .seat:nth-last-of-type(2) {
-        margin-left: 18px;
-    }
-
-    .seat:not(.occupied):hover {
-        cursor: pointer;
-        transform: scale(1.2);
-    }
-
-    .showcase .seat:not(.occupied):hover {
-        cursor: default;
-        transform: scale(1);
-    }
-
-    .showcase {
-        background: rgba(0, 0, 0, 0.1);
-        padding: 5px 10px;
-        border-radius: 5px;
-        color: #777777;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .showcase li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 10px;
-    }
-
-    .showcase li small {
-        margin-left: 2px;
-    }
-
-    .screen {
-        background-color: #ffffff;
-        height: 100px;
-        width: 100%;
-        margin: 15px 0;
-        transform: rotateX(-45deg);
-        box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
-    }
-
-    .row {
-        display: flex;
-    }
-</style>
-
-<body>
-    <a class="btn btn-primary" href="/" role="button">
-        <i class="fa fa-home" aria-hidden="true"></i>
-            HOME
-    </a>
-    <ul class="showcase">
-        <li>
-            <div class="seat"></div>
-            <small>Ghế trống</small>
-        </li>
-        <li>
-            <div class="seat selected"></div>
-            <small>Ghế đã chọn</small>
-        </li>
-        <li>
-            <div class="seat occupied"></div>
-            <small>Ghế đã hết</small>
-        </li>
-    </ul>
-    <div class="container">
-        <div class="screen"></div>
-        <% for( let i = 0; i < 6; i++ ) { %>
-        <div class="row">
-            <% for( let j = 0; j < 17; j++ ) { %>
-            <% let seat = '' %>
-            <% if (i == 0) { %>
-            <% seat = 'A'+j; %>
-            <% } %>
-            <% if (i == 1) { %>
-            <% seat = 'B'+j; %>
-            <% } %>
-            <% if (i == 2) { %>
-            <% seat = 'C'+j; %>
-            <% } %>
-            <% if (i == 3) { %>
-            <% seat = 'D'+j; %>
-            <% } %>
-            <% if (i == 4) { %>
-            <% seat = 'E'+j; %>
-            <% } %>
-            <% if (i == 5) { %>
-            <% seat = 'F'+j; %>
-            <% } %>
-            <% let isOccupied = 0;%> 
-            <% for( let i = 0; i < occupiedSeatNames.length; i++ ) { %>
-                <% if (seat == occupiedSeatNames[i]) { %>
-                    <% isOccupied = 1; %> 
-                    <% break; %> 
-                <% } %>
-            <% } %>
-            <% if (isOccupied) { %>
-                <div data-seat='<%= seat %>' class="seat occupied"><%= seat %></div>
-            <% } %>
-            <% if (!isOccupied) { %>
-                <div data-seat='<%= seat %>' class="seat"><%= seat %></div>
-            <% } %>
-            <% } %>
-        </div>
-        <% } %>
+        <!-- footer -->
+        <%- include('./partials/footer.ejs') %>
     </div>
-    <form action="/users/checkout" method="POST" id='myForm'>
-        <textarea id="textField" name="checkedSeats" style="display: none;"></textarea>
-        <input type="hidden" value="<%= scheduleID %>" name="scheduleID">
-        <input data-price='<%= price %> ' type="hidden" value='' name="amount" id='amount'>
-        <button id='checkout' type="button" class="btn btn-primary btn-lg">CHECKOUT</button>
-    </form>
-    <script type='text/javascript'>
-        const container = document.querySelector('.container');
 
+    <script type='text/javascript'>
+        const container = document.querySelector('.container1');
         let textField = [];
+        container.addEventListener('click', function (e) {
+            if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+                e.target.classList.toggle('selected');
+                let ID = $(e.target).data('seat');
+                if (e.target.classList.contains('selected')) {
+                    console.log('selected');
+                    textField.push(ID);
+                    console.log(textField)
+                } else {
+                    console.log('unselected');
+                    textField.splice(textField.indexOf(ID), 1);
+                    console.log(textField)
+                }
+                $('#textField').text(textField);
+            }
+        });
 
         $('#myForm').children('button#checkout').on('click', (e)=>{
             console.log('click handle');
@@ -188,21 +120,7 @@
             console.log(textField.length * (+$('#amount').data('price')));
             $('#myForm').submit();
         });
-
-        container.addEventListener('click', function (e) {
-            if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
-                e.target.classList.toggle('selected');
-
-                let ID = $(e.target).data('seat');
-                if (e.target.classList.contains('selected')) {
-                    console.log('selected');
-                    textField.push(ID);
-                } else {
-                    console.log('unselected');
-                    textField.splice(textField.indexOf(ID), 1);
-                }
-                $('#textField').text(textField);
-            }
-        });
     </script>
 </body>
+
+</html>
