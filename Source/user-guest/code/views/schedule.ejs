@@ -1,65 +1,114 @@
-<style>
-  .block {
-    border: solid 1px green;
-  }
+<!DOCTYPE html>
+<html lang="en">
 
-  .selected {
-    background-color: aqua;
-  }
-</style>
-<a class="btn btn-primary" href="/" role="button">
-  <i class="fa fa-home" aria-hidden="true"></i>
-  HOME
-</a>
-<div class="container">
-  <div class="scheduleDay"></div>
-  <% for( let i=0; i < scheduleDay.length; i++ ) { %>
-    <% if (i == dateIndex) { %>
-      <button data-id='<%= i %>' class="block"><%= scheduleDay[i] %></button>
-    <% } %>
-    <% if (i != dateIndex) { %>
-      <button data-id='<%= i %>' class="block selected"><%= scheduleDay[i] %></button>
-    <% } %>
-  <% } %>
+<head>
+  <%- include('./partials/head.ejs') %>
+    <title>Chọn lịch chiếu</title>
+    <link rel="stylesheet" href="/public/css/jevent.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
 
-  <h2><%= film.name %></h2>
-  <img data-id='<%= film._id %>'
-    src="<%= film.poster%>"
-    alt="Cannot load poster"
-    height="450px"
-    width="300px"
-    id="poster"
-  />
-  <% for( let index=0; index < releaseTimes.length; index++ ) { %>
-  <button class="click" data-id="<%= schedules[index]._id %>">
-    <%= releaseTimes[index]%>
-  </button>
-  <% } %>
-</div>
+<body style="background-color: #131a20; color: #84878d;">
+  <div id="site-content">
+    <!-- header -->
+    <%- include('./partials/header.ejs') %>
 
-<form id="myForm" method="POST" action="/users/schedule">
-  <input type="hidden" name="scheduleID" id="scheduleID" />
-</form>
-<form action="/users/getSchedule" method="POST" id="myForm1">
-  <input type="hidden" name="movieID" id="movieID">
-  <input type="hidden" name="dateIndex" id="dateIndex">
-</form>
+      <main class="main-container">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="/">Trang chủ</a>
+            <a href="/users/nowShowing">Phim đang chiếu</a>
+            <span>
+              <%= film.name %>
+            </span>
+          </div>
 
-<script type="text/javascript">
-  $(".click").on("click", (e) => {
-    const ID = $(e.target).data("id");
-    $("#myForm").children("input#scheduleID").val(ID);
-    $("#myForm").submit();
-  });
+          <div class="content">
+            <div class="row">
+              <div class=".col-md-6">
+                <figure class="movie-poster"><iframe width="560" height="490" src="<%= film.trailer %> " frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe></figure>
+              </div>
 
-  $(".block").on('click', (e)=>{
-    const dateIndex = $(e.target).data("id");
-    const movieID = $('#poster').data("id");
-    console.log('val date: '+dateIndex);
-    console.log('val movie: '+movieID);
+              <!-- <div id="poster" data-id="<%#= film._id %> "></div> -->
+              <img data-id='<%= film._id %>' id="poster"/>
 
-    $('#myForm1').children("input#movieID").val(movieID);
-    $('#myForm1').children("input#dateIndex").val(dateIndex);
-    $('#myForm1').submit();
-  });
-</script>
+              <div class=".col-md-6" style="padding-left: 30px;">
+                <h2 class="movie-title">
+                  <%= film.name %>
+                </h2>
+                <br>
+                <!-- <h2>Viewing times</h2> -->
+                <ul class="show-times">
+                  <% for( let i=0; i < scheduleDay.length; i++ ) { %>
+                    <% if (i==dateIndex) { %>
+                      <li>
+                        <span class="block">
+                          <a href="javascript:()=>{return false;}">
+                            <i class="time" data-id='<%= i %>'>
+                              <%= scheduleDay[i] %>
+                            </i>
+                          </a>
+                        </span>
+                        <% for( let index=0; index < releaseTimes.length; index++ ) { %>
+                          <a href="javascript:()=>{return false;}">
+                            <span class="click" data-id="<%= schedules[index]._id %>">
+                              <span data-id="<%= schedules[index]._id %>" class="time">
+                                <%= releaseTimes[index]%>
+                              </span>
+                            </span>
+                          </a>
+                        <% } %>
+                      </li>
+                    <% } %>
+                    <% if (i != dateIndex) { %>
+                      <li>
+                        <span class="block" data-id='<%= i %>'>
+                          <a href="javascript:()=>{return false;}">
+                            <i class="time past" data-id='<%= i %>'>
+                              <%= scheduleDay[i] %>
+                            </i>
+                          </a>
+                        </span>
+                      </li>
+                    <% } %>
+                  <% } %>
+                </ul>
+              </div>
+            </div> <!-- .row -->
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      
+  </div>
+
+  <form id="myForm" method="POST" action="/users/schedule">
+    <input type="hidden" name="scheduleID" id="scheduleID" />
+  </form>
+  <form action="/users/getSchedule" method="POST" id="myForm1">
+    <input type="hidden" name="movieID" id="movieID">
+    <input type="hidden" name="dateIndex" id="dateIndex">
+  </form>
+  <%- include('./partials/footer.ejs') %>
+  <script type="text/javascript">
+    $(".click").on("click", (e) => {
+      const ID = $(e.target).data("id");
+      console.log(ID)
+      $("#myForm").children("input#scheduleID").val(ID);
+      $("#myForm").submit();
+    });
+
+    $(".block").on('click', (e) => {
+      const dateIndex = $(e.target).data("id");
+      const movieID = $('#poster').data("id");
+      console.log('val date: ' + dateIndex);
+      console.log('val movie: ' + movieID);
+      $('#myForm1').children("input#movieID").val(movieID);
+      $('#myForm1').children("input#dateIndex").val(dateIndex);
+      $('#myForm1').submit();
+    });
+  </script>
+</body>
