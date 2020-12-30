@@ -25,8 +25,16 @@ const Room = require('../models/Room');
 const Schedule = require("../models/Schedule");
 
 // Home Page
-router.get("/", function (req, res) {
+router.get("/", async (req, res) => {
+  const films = await Film.find();
+  let releaseTimes = [];
+  for (let i = 0; i < films.length; i++) {
+    releaseTimes.push(films[i].releaseTime.toDateString());
+  }
+
   res.render("home", {
+    films: films,
+    releaseTimes: releaseTimes,
     isAuthenticated: req.isAuthenticated(),
   });
 });
