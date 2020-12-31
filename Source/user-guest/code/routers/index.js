@@ -120,18 +120,26 @@ router.get('/myticket', async (req, res) => {
   for (let i = 0; i < historyPayments.length; i++) {
     let myTicket = new Object();
     await Schedule.findOne({ _id: historyPayments[i].idSchedule }).then(async (sche) => {
+      let minute = sche.time.getMinutes();
+      let hour = sche.time.getHours().toString();
+      if (minute < 10) {
+        minute = '0' + minute.toString();
+      }
+
       const room = await Room.findOne({ _id: sche.idRoom });
       const film = await Film.findOne({ _id: sche.idFilm });
       myTicket.room = room.name;
       myTicket.film = film.name;
       myTicket.poster = film.poster;
-      myTicket.time = sche.time.toDateString();
+      myTicket.date = sche.time.getDate() + "/" + (sche.time.getMonth() + 1) + "/" + sche.time.getYear()
+      myTicket.time = hour.toString() +":"+minute.toString()
     });
     myTicket.amount = historyPayments[i].amount;
     myTicket.seats = historyPayments[i].seats;
     myTickets.push(myTicket);
   }
   res.render('myticket', {
+    isAuthenticated: req.isAuthenticated(),
     myTickets: myTickets
   });
 });

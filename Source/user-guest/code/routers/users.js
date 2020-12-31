@@ -259,6 +259,7 @@ router.get("/nowShowing", async (req, res) => {
   }
 
   res.render("nowShowing", {
+    isAuthenticated: req.isAuthenticated(),
     films: films,
     releaseTimes: releaseTimes,
   });
@@ -309,6 +310,7 @@ router.post("/getSchedule", async (req, res) => {
   }
 
   await res.render("schedule", {
+    isAuthenticated: req.isAuthenticated(),
     film: film,
     schedules: schedules,
     releaseTimes: releaseTimes,
@@ -359,22 +361,50 @@ router.post("/Schedule", ensureAuthenticated, async (req, res) => {
   // await console.log(occupiedSeatNames);
   // await console.log(occupiedSeat);
 
-  await res.render("booking", {
-    occupiedSeatNames: occupiedSeatNames,
-    scheduleID: scheduleID,
-    price: res.locals.price,
+  await Schedule.findOne({ _id: scheduleID }).populate('idFilm').then((result) => {
+    res.render("booking", {
+      filmName: result.idFilm.name,
+      occupiedSeatNames: occupiedSeatNames,
+      scheduleID: scheduleID,
+      price: res.locals.price,
+    });
   });
+
+  // await res.render("booking", {
+
+  //   occupiedSeatNames: occupiedSeatNames,
+  //   scheduleID: scheduleID,
+  //   price: res.locals.price,
+  // });
 });
 
 //Chọn phương thức thanh toán
-router.post("/checkout", (req, res) => {
+router.post("/checkout", async (req, res) => {
   let { checkedSeats, scheduleID, amount } = req.body;
-
-  res.render("payment", {
-    checkedSeats: checkedSeats,
-    amount: amount,
-    scheduleID,
-  });
+  // console.log(checkedSeats)
+  Schedule.findOne({_id: scheduleID}).populate('idFilm').then((result)=>{
+    let minute = result.time.getMinutes();
+    let hour = result.time.getHours().toString();
+    if (minute < 10) {
+      minute = '0' + minute.toString();
+    }
+    res.render("payment", {
+      isAuthenticated: req.isAuthenticated(),
+      today: (new Date()).toDateString(),
+      scheduleDate: result.time.toDateString(),
+      time: hour + ":"+minute,
+      price: res.locals.price.toString(),
+      filmName: result.idFilm.name,
+      checkedSeats: checkedSeats,
+      amount: amount,
+      scheduleID,
+    });
+  })
+  // res.render("payment", {
+  //   checkedSeats: checkedSeats,
+  //   amount: amount,
+  //   scheduleID,
+  // });
 });
 
 //Thanh toán
