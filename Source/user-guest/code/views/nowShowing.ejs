@@ -13,7 +13,12 @@
 <body>
     <div id="site-content">
         <!-- header -->
-        <%- include('./partials/headerAuth.ejs') %>
+        <% if (isAuthenticated) { %>
+            <%- include('./partials/headerAuth.ejs') %>
+        <% } %>
+        <% if (!isAuthenticated) { %>
+            <%- include('./partials/header.ejs') %>
+        <% } %>
 
             <main class="main-container">
                 <div class="container">
