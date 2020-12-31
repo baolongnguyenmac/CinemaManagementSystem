@@ -1,58 +1,115 @@
-<div class="row mt-5">
-  <div class="col-md-6 m-auto">
-    <div class="card card-body">
-      <h1 class="text-center mb-3">Register</h1>
-      <%- include ('./partials/messages') %>
-      <form action="/users/register" method="POST">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input  
-            type="name"
-            id="name"
-            name="name"
-            class="form-control"
-            placeholder="Enter Name"
-            value="<%= typeof name != 'undefined' ? name : '' %>"
-          />
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <title>Đăng ký</title>
+        <!--Made with love by Mutiullah Samim -->
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--Bootsrap 4 CDN-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!--Fontawesome CDN-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <!--Custom styles-->
+        <!-- truyền vào /css/login.css -->
+        <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+</head>
+
+<body style="background-color: #131a20;">
+    <div id="site-content">
+    <!-- header -->
+    <%- include('./partials/header.ejs') %>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="/">Trang chủ</a>
+                <span>Đăng ký</span>
+            </div>
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Đăng ký</h3>
+                            <!-- <div class="d-flex justify-content-end social_icon">
+                                <a href="#">
+                                    <span><i class="fab fa-facebook-square"></i></span>
+                                </a>
+                            </div> -->
+                        </div>
+                        <div class="card-body">
+                            <form action="/users/register" method="POST">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="name" id="name" name="name" class="form-control" placeholder="Nhập tên của bạn">
+                                </div>
+
+                                <!-- giới tính right here -->
+                                <div class="input-group form-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                  </div>
+                                  <input type="radio" id="male" name="gender" value="male" style="margin-top: 10px; margin-left: 10px;" checked="checked">
+                                  <label for="male" style="margin-top: 5px; margin-left: 3px;">Nam</label><br>
+                                  <input type="radio" id="female" name="gender" value="female" style="margin-top: 10px; margin-left: 10px;">
+                                  <label for="female" style="margin-top: 5px; margin-left: 3px;">Nữ</label><br>
+                                </div>
+
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Nhập email của bạn">
+                                </div>
+
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
+                                </div>
+
+                                <!-- confirm password right here -->
+                                <div class="input-group form-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                  </div>
+                                  <input type="password" id="password2" name="password2" class="form-control" placeholder="Xác nhận mật khẩu">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Đăng ký" class="btn float-right login_btn">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="card-footer">
+                          <div class="d-flex justify-content-center links">
+                            Already have an account?<a href="/users/login">Login</a>
+                          </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="form-control"
-            placeholder="Enter Email"
-            value="<%= typeof email != 'undefined' ? email : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Create Password"
-            value="<%= typeof password != 'undefined' ? password : '' %>"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password2">Confirm Password</label>
-          <input
-            type="password"
-            id="password2"
-            name="password2"
-            class="form-control"
-            placeholder="Confirm Password"
-            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">
-          Register
-        </button>
-      </form>
-      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer.ejs') %>
     </div>
-  </div>
-</div>
+</body>
+
+</html>
+
+
+<!-- đăng nhập ngược lại href="/users/login" -->
