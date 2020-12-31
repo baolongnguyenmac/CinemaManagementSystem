@@ -11,7 +11,12 @@
 <body style="background-color: #131a20; color: #84878d;">
   <div id="site-content">
     <!-- header -->
-    <%- include('./partials/header.ejs') %>
+    <% if (isAuthenticated) { %>
+      <%- include('./partials/headerAuth.ejs') %>
+    <% } %>
+    <% if (!isAuthenticated) { %>
+        <%- include('./partials/header.ejs') %>
+    <% } %>
 
       <main class="main-container">
         <div class="container">
