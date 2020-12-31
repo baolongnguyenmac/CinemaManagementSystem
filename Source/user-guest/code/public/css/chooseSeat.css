@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
 * {
     box-sizing: border-box;
 }
@@ -19,7 +18,12 @@ body {
     margin: 20px 0;
 }
 
-.container {
+.container1 {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    *zoom: 1;
     perspective: 1000px;
     margin-bottom: 30px;
 }
@@ -38,8 +42,9 @@ body {
 
 .seat {
     background-color: #444451;
-    height: 22px;
-    width: 25px;
+    text-align: center;
+    height: 30px;
+    width: 35px;
     margin: 3px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -72,7 +77,7 @@ body {
 }
 
 .showcase {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     border-radius: 5px;
     color: #777777;
@@ -104,4 +109,3 @@ body {
 .row {
     display: flex;
 }
-
