@@ -1,17 +1,109 @@
-<a class="btn btn-primary" href="/" role="button">
-    <i class="fa fa-home" aria-hidden="true"></i>
-        HOME
-</a>
-<div class="container">
-    <% for( let i = 0; i < myTickets.length; i++ ) { %>
-        <div>
-            <img src='<%= myTickets[i].poster%>' alt="Cannot load poster" width='100px' height="150px">
-            <p>Phim: <%= myTickets[i].film %> </p>
-            <p>Phòng: <%= myTickets[i].room %> </p>
-            <p>Ngày: <%= myTickets[i].time %> </p>
-            <p>Ghế: <%= myTickets[i].seats %> </p>
-            <p>Tổng cộng: <%= myTickets[i].amount %>.00 USD</p>
-            <hr>
-        </div>
-    <% } %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <title>Vé của tôi</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="stylesheet" href="/public/css/myTicket.css">
+</head>
+
+<body style="background-color: #131a20;">
+    <div id="site-content">
+        <!-- header -->
+        <% if (isAuthenticated) { %>
+            <%- include('./partials/headerAuth.ejs') %>
+        <% } %>
+        <% if (!isAuthenticated) { %>
+            <%- include('./partials/header.ejs') %>
+        <% } %>
+
+        <main class="main-container">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="/">Trang chủ</a>
+                    <span>Vé của tôi</span>
+                </div>
+                <div class="container">
+                    <div class="card">
+                        <table class="table table-hover shopping-cart-wrap">
+                            <thead class="text-muted">
+                                <tr>
+                                    <th scope="col">Chi tiết vé</th>
+                                    <!-- <th scope="col" width="120">Quantity</th> -->
+                                    <th scope="col" width="200">Đơn giá</th>
+                                    <th scope="col" width="200" class="text-right">Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let i = 0; i < myTickets.length; i++ ) { %>
+                                    <tr>
+                                        <td>
+                                            <figure class="media">
+                                                <div class="img-wrap"><img
+                                                        src="<%= myTickets[i].poster%>"
+                                                        style="height: 150px; width: 150px;"></div>
+                                                <figcaption class="media-body">
+                                                    <h6 class="title text-truncate"><%= myTickets[i].film %></h6>
+                                                    <dl class="param param-inline small">
+                                                        <dt>Ngày chiếu: </dt>
+                                                        <dd><%= myTickets[i].date %></dd>
+                                                    </dl>
+                                                    <dl class="param param-inline small">
+                                                        <dt>Giờ chiếu: </dt>
+                                                        <dd><%= myTickets[i].time %></dd>
+                                                    </dl>
+                                                    <dl class="param param-inline small">
+                                                        <dt>Phòng: </dt>
+                                                        <dd><%= myTickets[i].room %></dd>
+                                                    </dl>
+                                                    <dl class="param param-inline small">
+                                                        <dt>Số ghế: </dt>
+                                                        <dd><%= myTickets[i].seats %></dd>
+                                                    </dl>
+                                                </figcaption>
+                                            </figure>
+                                        </td>
+                                        <!-- <td>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </td> -->
+                                        <td> 
+                                            <div class="price-wrap">
+                                                <var class="price">$1.00$</var>
+                                                <!-- <small class="text-muted">(USD5 each)</small> -->
+                                            </div> <!-- price-wrap .// -->
+                                        </td>
+                                        <td class="text-right">
+                                            <!-- <a title="" href="/paymentInfo" class="btn btn-outline-success" data-toggle="tooltip"
+                                                data-original-title="Save to Wishlist" style="margin-bottom: 5px;"> Check out</a>
+                                            <a href="" class="btn btn-outline-danger"> × Remove</a> -->
+                                            <div class="price-wrap">
+                                                <var class="price">$<%= myTickets[i].amount %>.00$</var>
+                                                <!-- <small class="text-muted">(USD5 each)</small> -->
+                                            </div> <!-- price-wrap .// -->
+                                        </td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div> <!-- card.// -->
+
+                </div>
+                <!--container end.//-->
+            </div>
+        </main>
+
+        <!-- footer -->
+        <%- include('./partials/footer.ejs') %>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
