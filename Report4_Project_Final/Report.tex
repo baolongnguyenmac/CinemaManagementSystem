@@ -1,0 +1,922 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin = 2cm]{geometry}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+
+\captionsetup[table]{skip=5pt}
+\pagestyle{fancy}
+\fancyhead[L]{Trường Đại học Khoa học Tự nhiên - ĐHQG TP.HCM}
+\fancyhead[R]{Nhóm Just $4^{th}$}
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\vspace*{1cm}
+		\Large\textbf{Báo cáo \#4\\Báo cáo cuối kỳ}\\
+
+		\vfill
+		\line(1,0){450}\\[4mm]
+		\LARGE\textbf{\MakeUppercase{Dự án quản lý rạp chiếu phim}}\\[3mm]
+		\Large{Nhập môn Công nghệ phần mềm (CSC13002)}\\[3mm]
+		\Large{Nhóm Just $4^{th}$}
+		\line(1,0){430}\\
+		\vfill
+
+		\vfill
+		TP Hồ Chí Minh, ngày 31/12/2020
+	\end{center}
+\end{titlepage}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\section{Thông tin nhóm}
+\label{sec:info}
+\begin{enumerate}
+	\item \textbf{Đường link GitHub}: \url{https://github.com/baolongnguyenmac/CinemaManagementSystem}
+	\item \textbf{Đường link Trello}: \url{https://trello.com/b/OmRBLunD/báo-cáo-giao-diện-kiểm-thử}
+	\item \textbf{Danh sách thành viên}
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|l|c|c|}
+				\hline
+				STT & MSSV     & \multicolumn{1}{c|}{Họ tên} & Email                         & SĐT        \\ \hline
+				1   & 18120201 & Nguyễn Bảo Long             & 18120201@student.hcmus.edu.vn & 0919070940 \\ \hline
+				2   & 18120211 & Võ Thế Minh                 & 18120211@student.hcmus.edu.vn & 0981850699 \\ \hline
+				3   & 18120227 & Phạm Văn Minh Phương        & 18120227@student.hcmus.edu.vn & 0343049359 \\ \hline
+				4   & 18120210 & Phạm Tống Bình Minh         & 18120210@student.hcmus.edu.vn & 0971877781 \\ \hline
+				5   & 18120264 & Nguyễn Duy Vũ               & 18120264@student.hcmus.edu.vn & 0911572108 \\ \hline
+			\end{tabular}
+			\caption{Bảng danh sách thành viên nhóm}
+		\end{center}
+	\end{table}
+\end{enumerate}
+\clearpage
+
+\section{Lịch sử cập nhật}
+\label{sec:history}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|l|l|} 
+\hline
+STT & Ngày cập nhật & Phiên bản & \multicolumn{1}{c|}{Mô tả chi tiết}                                                      & \multicolumn{1}{c|}{Tác giả}                                                                                                     \\ 
+\hline
+1   & 31/12/2020    & 1.0       & \begin{tabular}[c]{@{}l@{}}- Tổng hợp từ các phần \\cần thiết từ báo cáo cũ\end{tabular} & Phạm Văn Minh Phương                                                                                                             \\ 
+\hline
+2   & 07/01/2021    & 1.1       & \begin{tabular}[c]{@{}l@{}}- Triển khai kiểm thử sản phẩm\\ \end{tabular}                & \begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}                                                       \\ 
+\hline
+3   & 12/01/2021    & 1.2       & \begin{tabular}[c]{@{}l@{}}- Demo sản phẩm, đánh giá\\- Hướng phát triển\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\Phạm Văn Minh Phương\\Võ Thế Minh\\Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}  \\
+\hline
+\end{tabular}
+\caption {Bảng lịch sử cập nhật các phiên bản của báo cáo}
+\end{table}
+\clearpage
+
+\section{Phân tích đóng góp cá nhân}
+\label{sec:analys}
+\begin{table}
+\centering
+\caption{Bảng phân tích đóng góp cá nhân}
+\begin{tabular}{|c|l|l|c|} 
+\hline
+STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc tham gia}                                                                                  & Phần trăm đóng góp  \\ 
+\hline
+1   & Nguyễn Bảo Long             & \begin{tabular}[c]{@{}l@{}}- Tổng hợp báo cáo\\- Đánh giá sản phẩm\\- Góp ý hướng phát triển\\ \end{tabular}             & 20\%                \\ 
+\hline
+2   & Phạm Văn Minh Phương        & \begin{tabular}[c]{@{}l@{}}- Tổng hợp báo cáo\\- Đánh giá sản phẩm\\- Góp ý hướng phát triển\\ \end{tabular}             & 20\%                \\ 
+\hline
+3   & Võ Thế Minh                 & \begin{tabular}[c]{@{}l@{}}- Đánh giá sản phẩm\\- Góp ý hướng phát triển~\end{tabular}                                   & 20\%                \\ 
+\hline
+4   & Phạm Tống Bình Minh         & \begin{tabular}[c]{@{}l@{}}- Triển khai kiểm thử sản phẩm\\- Đánh giá sản phẩm\\- Góp ý hướng phát triển\\ \end{tabular} & 20\%                \\ 
+\hline
+5   & Nguyễn Duy Vũ               & \begin{tabular}[c]{@{}l@{}}- Triển khai kiểm thử sản phẩm\\- Đánh giá sản phẩm\\- Góp ý hướng phát triển\end{tabular}    & 20\%                \\
+\hline
+\end{tabular}
+\caption {Bảng phân tích đóng góp cá nhân}
+\end{table}
+\clearpage
+
+   \section{Yêu cầu phần mềm}
+    \label{sec:requirement}
+
+    \subsection{Định nghĩa thanh trọng số}
+    \begin{itemize}
+        \item 1: Ưu tiên rất cao 
+        \item 2: Ưu tiên cao 
+        \item 3: Ưu tiên trung bình 
+        \item 4: Ưu tiên thấp 
+    \end{itemize}
+
+    \subsection{Yêu cầu chức năng}
+    \begin{itemize}
+        \item \textbf{Định nghĩa ID}
+        \begin{itemize}
+            \item ID có dạng a.b
+            \item a nhận các giá trị $1, 2, 3$. $a = 1$ ám chỉ những yêu cầu chức năng liên quan đến đối tượng người dùng là \textit{khách hàng của rạp phim}, $a = 2$ ám chỉ những yêu cầu chức năng liên quan đến đối tượng người dùng là \textit{quản lý của rạp phim}, $a = 3$ ám chỉ những yêu cầu liên quan đến đối tượng người dùng là \textit{admin}
+            \item b là số thứ tự
+        \end{itemize}
+
+        \item \textbf{Chi tiết yêu cầu chức năng}
+        \begin{table}[h]
+            \begin{tabular}{|c|c|l|}
+                % tách các chức năng ra thành từng dòng riêng 
+            \hline
+            ID  & Trọng số  & \multicolumn{1}{c|}{Yêu cầu chức năng}                                                                                                          \\ \hline
+            1.1 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng ký} tài khoản của họ     \\ \hline
+            1.2 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng nhập} tài khoản của họ     \\ \hline
+            1.3 &     2     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đăng xuất} tài khoản của họ     \\ \hline
+            1.4 &     1     & Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Đặt vé xem phim} \\ \hline
+            1.5 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Huỷ vé xem phim} (chỉ huỷ\\ được trong TH đã đặt vé trước đó)\end{tabular} \\ \hline
+            1.6 &     1     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{Xem thông tin phim}\\(lịch chiếu, chương trình khuyến mãi)\end{tabular} \\ \hline
+            1.7 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{khách hàng của rạp phim} \textbf{thanh toán} vé đã đặt online\\ \textbf{qua ví điện tử Momo}\end{tabular}  \\ \hline
+            2.1 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng nhập} tài khoản do \textit{admin} cấp\end{tabular}         \\ \hline
+            2.2 &     2     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Đăng xuất} tài khoản do \textit{admin} cấp\end{tabular}         \\ \hline
+            2.3 &     1     & Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý thông tin phim} trong rạp                                                         \\ \hline
+            2.4 &     4     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{quản lý của rạp phim} \textbf{Quản lý các chương trình}\\ \textbf{khuyến mãi} trong rạp\end{tabular}\\ \hline
+            3.1 &     2     & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng nhập} tài khoản của họ                                                                        \\ \hline
+            3.2 &     2     & Hệ thống sẽ cho phép \textit{admin} \textbf{Đăng xuất} tài khoản của họ                                                                        \\ \hline
+            3.3 &     3     & Hệ thống sẽ cho phép \textit{admin} \textbf{Quản lý các quản lý} trong rạp                                                                                \\ \hline
+            3.4 &     4     & \begin{tabular}[c]{@{}l@{}}Hệ thống sẽ cho phép \textit{admin} \textbf{Thực hiện các thống kê về doanh thu} theo\\phim, ngày, tháng, năm\end{tabular}    \\ \hline
+            \end{tabular}
+            \caption{Bảng yêu cầu chức năng của hệ thống}
+        \end{table}
+    \end{itemize}
+
+    \subsection{Yêu cầu phi chức năng}
+    \begin{table}[H]
+        \begin{tabular}{ccl} \hline
+            \multicolumn{1}{|c|}{ID} & \multicolumn{1}{c|}{Trọng số} & \multicolumn{1}{c|}{Yêu cầu phi chức năng} \\ \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phát triển phần mềm gói   gọn trong 16 tuần (tính từ lúc viết báo cáo \\ yêu cầu đến lúc hoàn thiện phần mềm)\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Hệ thống sẽ lưu thông tin về mật khẩu của người dùng trong database sau khi \\được mã hoá\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{3} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Thời gian phản hồi của hệ thống dưới 1s trong mọi chức năng trong môi trường\\ lý tưởng (sẽ định nghĩa lại sau)\end{tabular}} \\ \hline
+            \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{2} & \multicolumn{1}{l|}{Quy trình áp dùng: phát triển dần dần + tái sử dụng}     \\ \hline
+            \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Giao diện đảm bảo người dùng sử dụng được các chức năng cơ bản (đặt vé,\\ thanh toán online, xem lịch chiếu) trong tối đa 10p làm quen.\end{tabular}} \\ \hline
+                                &                               &                                                                             
+        \end{tabular}
+        \caption{Bảng yêu cầu phi chức năng của hệ thống}
+    \end{table}
+    \clearpage
+
+\section{Thiết kế kiến trúc và hệ thống}
+
+\subsection{Kiến trúc hệ thống}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{image/4.1.png}
+		\caption{Kiến trúc tổng thể hệ thống}
+	\end{center}
+\end{figure}
+
+Hệ thống đặt vé xem phim sử dụng kiến trúc Client - Server:
+\begin{itemize}
+	\item Ở phía Client sử dụng Web Browser được mở từ các thiết bị (PC, Laptop, SmartPhone,...) để truy cập vào trang web
+	\item Ở phía Server sẽ xử lý các yêu cầu (HTTP request) được gửi từ Client thông qua các module và trả về các page HTML hiện thị trên Web Browser.Ở hệ thống này nhóm dùng NodeJS để xây dựng hệ thống
+	\item Quá trình xử lý ở Server có thể yêu cầu truy xuất cơ sở dữ liệu (CRUD) được lưu ở hệ quản trị cơ sở dữ liệu. Ở hệ thống này nhóm dùng hệ quản trị cơ sở dữ liệu MongoDB
+\end{itemize}
+
+\subsection{Nhận diện hệ thống con}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.35]{image/4.2.png}
+		\caption{Component Diagram}
+	\end{center}
+\end{figure}
+
+Hệ thống đặt vé xem phim có 2 hệ thống con :
+\begin{itemize}
+	\item Hệ thống con đặt vé xem phim với các component:
+	\begin{enumerate}
+		\item Rạp : cung cấp chức năng xem lịch chiếu. 
+		\item Phim : cung cấp chức năng xem thông tin phim.
+		\item Đặt vé : cung cấp chức năng đặt vé.
+		\item Thanh Toán : cung cấp chức năng thanh toán.
+	\end{enumerate}
+	\item Hệ thống con quản lý với các component
+	\begin{enumerate}
+		\item Rạp : cung cấp chức năng xem lịch chiếu.
+		\item Phim: cung cấp chức năng xem lịch chiếu.
+		\item Đơn hàng:cung cấp chức năng xem quản lý vé đã đặt.
+		\item Thống kê: cung cấp chức năng thống kê doanh thu.
+	\end{enumerate}
+\end{itemize}
+
+\subsection{Ánh xạ các phần của hệ thống với phần cứng}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.5]{image/4.3.png}
+		\caption{Ánh xạ hệ thống tới phần cứng}
+	\end{center}
+\end{figure}
+
+Hệ thống đặt vé xem phim sử dụng mô hình Client - Server thì có các phần cứng :
+\begin{itemize}
+	\item Ở phía Client sẽ sử dụng các thiết bị như Laptop, PC, SmartPhone , Table, ... để truy cập vào hệ thống thông qua Web Browser như Google, Safari, FireFox ...
+	\item Ở phía Server sẽ sử dụng các máy chủ để chạy Server và hệ quản trị cơ sở dữ liệu.
+\end{itemize}
+
+\subsection{Lưu trữ dữ liệu lâu dài}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.5]{image/4.4.png}
+		\caption{Database Diagram}
+	\end{center}
+\end{figure}
+
+Hệ thống đặt vé xem phim sử dụng MongoDB làm hệ quản trị CSDL với các Table:
+\begin{itemize}
+	\item PHIM: lưu thông tin Phim.
+	\item PHONGCHIEU: lưu thông tin phòng chiếu.
+	\item GHE: lưu thông tin về ghế trong PHONGCHIEU.
+	\item LICHCHIEU: lưu thông tin lịch chiếu.
+	\item SUATCHIEU: lưu thông tin suất chiếu.
+	\item DATVE: lưu thông tin đặt vé của khách hàng.
+	\item KHACHHANG\_THANHTOAN: lưu thông tin về thanh toán của vé đã đặt.
+	\item THANHTOANONLINE: lưu thông tin về thanh toán online cho 1 đơn hàng(đặt vé) thông qua KHACHHANG\_THANHTOAN.
+	\item KHACHHANG: lưu thông tin về khách hàng
+	\item USER: lưu thông tin về Quản lý và Admin
+	\item QUANLIPHIM: lưu lịch sử của việc quản lý (thêm, xóa, sửa) phim.
+	\item QUANLILICHCHIEU: lưu lịch sử của việc quản lý (thêm, xóa, sửa) lịch chiếu.
+\end{itemize}	
+
+\subsection{Giao thức mạng}
+
+Hệ thống sử dụng các giao thức mạng như sau:
+\begin{itemize}
+	\item Transmission Control Protocol (TCP): Giao thức điều khiển truyền vận. Chúng là giao thức cốt lõi của Internet Protocol Suite (Bộ giao thức liên mạng). Với nhiệm vụ thực thi mạng, bổ sung cho Internet Protocol. Giao thức này đảm bảo chuyển giao dữ liệu tới nơi nhận một cách đáng tin cậy và đúng thứ tự.
+	\item Internet Protocol (IP): Giao thức chính trong Internet protocol suite. Với khả năng chuyển tiếp dữ liệu qua mạng và giúp thiết lập internet thông qua việc định tuyến  của Internet Protocol. IP cung cấp một dịch vụ gửi dữ liệu không đảm bảo  nên gói dữ liệu có thể đến nơi mà không còn nguyên vẹn, nó có thể đến không theo thứ tự.
+	\item File Transfer Protocol (FTP): Giao thức truyền tập tin để trao đổi tập tin qua mạng lưới truyền thông dùng giao thức TCP/IP.
+	\item Hypertext Transfer Protocol (HTTP): Giao thức truyền tải siêu văn bản. Chúng là một trong năm giao thức chuẩn của mạng Internet. Giao thức này dùng để liên hệ thông tin giữa máy cung cấp dịch vụ (Web server) và Máy sử dụng dịch vụ (Web client). Chúng hoạt trông trong mô hình Client/Server dùng cho World Wide Web.
+	\item Hypertext Transfer Protocol over SSL/TLS (HTTPS): Một giao thức kết hợp giữa giao thức HTTP và giao thức bảo mật SSL hay TLS cho phép trao đổi thông tin một cách bảo mật trên Internet.
+\end{itemize}
+\clearpage
+
+\section{Thiết kế giao diện người dùng}
+
+\subsection{Sơ đồ và điều hướng giữa các màn hình}
+
+\begin{itemize}
+	\item Sơ đồ điều hướng màn hình
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale = 0.3]{Diagram/User Screen-flow diagram.png}
+				\caption{Sơ đồ điều hướng màn hình người dùng}
+			\end{center}
+		\end{figure}
+
+	\clearpage
+
+	\item Mô tả màn hình 
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|c|l|}
+			\hline
+			STT &Tên màn hình &\multicolumn{1}{c|}{Ý nghĩa/Ghi chú} \\ \hline
+			1 &Trang chủ &\begin{tabular}[c]{@{}l@{}}Nơi người dùng sẽ truy cập đầu tiên. Từ đây, người dùng có thể \\ chuyển qua các màn hình Đăng nhập/Đăng kí/Phim đang chiếu\\ /Khuyến mãi/Đặt vé\end{tabular} \\ \hline
+			2 &Đăng nhập &\begin{tabular}[c]{@{}l@{}}Nơi người dùng đăng nhập. Sau khi đăng nhập thành công sẽ \\ chuyển về trang chủ\end{tabular} \\ \hline
+			3 &Đăng kí &Nơi người dùng đăng kí tài khoản \\ \hline
+			4 &Phim đang chiếu &\begin{tabular}[c]{@{}l@{}}Hiển thị danh sách phim đang chiếu và chuyển qua màn hình \\ Đặt vé.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			5 &Khuyến mãi &\begin{tabular}[c]{@{}l@{}}Hiển thị danh sách khuyến mãi.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			6 &Vé của tôi &\begin{tabular}[c]{@{}l@{}}Hiển thị danh sách vé đã đặt và giao diện hủy vé.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			7 &Đặt vé &\begin{tabular}[c]{@{}l@{}}Hiển thị giao diện đặt vé, có thể chuyển qua màn hình Chọn ghế.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			8 &Chọn ghế &\begin{tabular}[c]{@{}l@{}}Hiển thị giao diện chọn ghế xem phim, có thể chuyển về màn hình\\ Đặt vé, chuyển qua màn hình Thanh toán.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			9 &Thanh toán &\begin{tabular}[c]{@{}l@{}}Hiển thị thông tin thanh toán, có thể chuyển về màn hình Chọn ghế.\\ Có thể chuyển qua các màn hình khác thông qua navigation bar.\end{tabular} \\ \hline
+			\end{tabular}
+			\caption{Bảng mô tả màn hình}
+		\end{center}
+	\end{table}
+\end{itemize}
+
+\subsection{Đặc tả màn hình giao diện}
+
+\subsubsection{Màn hình 1: Trang chủ}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{Wireframe/User/Homepage.png}
+		\caption{Màn hình trang chủ}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\item Các thành phần chính
+	\begin{itemize}
+		\item Navigation bar
+		\item Thanh "Đặt vé" nhanh
+		\item Nút "Đăng nhập", "Đăng kí"
+		\item Slideshow danh sách các phim đang chiếu, danh sách các khuyến mãi đang có hiệu lực
+	\end{itemize}
+
+	\item Xử lý các event trên màn hình
+	\begin{itemize}
+		\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+		\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+		\item Event click vào nút mũi tên của slideshow của danh sách phim đang chiếu/khuyến mãi: Chuyển slide theo hướng mũi tên
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Màn hình 2: Phim đang chiếu/Chọn phim (Trạng thái chưa đăng nhập)}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{Wireframe/User/Phim đang chiếu_ Chọn phim.png}
+		\caption{Màn hình phim đang chiếu/Chọn phim}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\item Các thành phần chính
+	\begin{itemize}
+		\item Navigation bar
+		\item Thanh "Đặt vé" nhanh
+		\item Nút "Đăng nhập", "Đăng kí"
+		\item Danh sách các phim đang chiếu cùng nút "Đặt vé"
+	\end{itemize}
+
+	\item Xử lý các event trên màn hình
+	\begin{itemize}
+		\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+		\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+		\item Event click vào nút "Đặt vé" trên danh sách phim. Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển qua màn hình "Đặt vé"
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Màn hình 3: Đặt vé}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{Wireframe/User/Đặt vé.png}
+		\caption{Màn hình Đặt vé}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\item Các thành phần chính
+	\begin{itemize}
+		\item Navigation bar
+		\item Thanh "Đặt vé" nhanh
+		\item Nút "Đăng xuất", "Vé của tôi"
+		\item Trường thông tin về vé đang đặt
+		\item Các combo box, input field cho phép người dùng chỉnh sửa lại thông tin về rạp, phim, suất chiếu.
+	\end{itemize}
+
+	\item Xử lý các event trên màn hình
+	\begin{itemize}
+		\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+		\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì reload màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+		\item Event click vào các combo box: Đổ ra thông tin tương ứng với nhãn cho người dùng chọn
+		\item Event click vào nút "Chọn ghế": Gửi thông tin vé về server, tạo yêu cầu phát sinh vé, chuyển qua màn hình "Chọn ghế"
+		\item Event click vào nút "Chọn phim khác": Chuyển về màn hình "Phim đang chiếu"
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Màn hình 4: Chọn ghế}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{Wireframe/User/Chọn ghế.png}
+		\caption{Màn hình Chọn ghế}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\item Các thành phần chính
+	\begin{itemize}
+		\item Navigation bar
+		\item Thanh "Đặt vé" nhanh
+		\item Nút "Đăng xuất", "Vé của tôi"
+		\item Trường thông tin về vé đang đặt
+		\item Trường chọn ghế
+		\item Đồng hồ chỉ thời gian chọn ghế còn lại
+	\end{itemize}
+
+	\item Xử lý các event trên màn hình
+	\begin{itemize}
+		\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+		\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển về màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+		\item Event click vào các icon ghế: Đổi màu icon sang màu xanh lá cây nếu đó là ghế trống - có thể chọn
+		\item Event click vào nút "Thanh toán": Gửi thông tin ghế về server, bổ sung mã ghế đã chọnvào thông tin vé, chuyển qua màn hình "Thanh toán"
+		\item Event click vào nút "Quay lại": Chuyển về màn hình "Đặt vé"
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Màn hình 5: Thanh toán}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.25]{Wireframe/User/Thanh toán.png}
+		\caption{Màn hình Thanh toán}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+	\item Các thành phần chính
+	\begin{itemize}
+		\item Navigation bar
+		\item Thanh "Đặt vé" nhanh
+		\item Nút "Đăng xuất", "Vé của tôi"
+		\item Trường thông tin về vé đang đặt
+		\item Input field của thông tin thanh toán
+		\item Trường chính sách và điều khoản thanh toán
+	\end{itemize}
+
+	\item Xử lý các event trên màn hình
+	\begin{itemize}
+		\item Load event: Khi màn hình được tải thì phần input field của thông tin thanh toán được điền bởi các thông tin của tài khoản khi đăng kí, có thể thay đổi.
+		\item Event click vào các nút trên Navigation bar, nút "Đăng nhập", nút "Đăng kí": Chuyển qua màn hình tương ứng với tên nút
+		\item Event click vào nút "Đặt vé" trên thanh đặt vé nhanh: Nếu chưa chọn các thông tin về rạp, phim, suất chiếu thì hiện popup nhắc điền thông tin. Nếu đã chọn đủ các thông tin thì chuyển về màn hình "Đặt vé" với thông tin mới chọn về rạp, phim, suất chiếu
+		\item Event click vào các combo box: Đổ ra thông tin tương ứng với nhãn cho người dùng chọn
+		\item Event click vào nút "Thanh toán qua Momo": Lưu thông tin thanh toán, gọi API của Momo Service, hỗ trợ thanh toán qua quét mã QR. Reload màn hình với mã QR được sinh ra từ API, yêu cầu người dùng quét để hoàn thành giao dịch.
+		\item Event click vào nút "Quay lại": Chuyển về màn hình "Chọn ghế"
+	\end{itemize}
+\end{itemize}
+
+\clearpage
+
+\section{Kiểm thử phần mềm}
+
+\subsection{Kế hoạch kiểm thử}
+
+\begin{itemize}
+	\item Nhóm Just $4^{th}$ tiến hành kiểm thử hệ thống với 2 kỹ thuật 
+	\begin{itemize}
+		\item Kiểm thử chức năng
+		\item Kiểm thử giao diện 
+	\end{itemize}
+
+	\item Chiến thuật kiểm thử được sử dụng: Kiểm thử dựa vào chỉ dẫn
+	\item Cách tiến hành
+	\begin{itemize}
+		\item Khi một chức năng nào đó được hoàn thành, hoạt động kiểm thử sẽ được diễn ra trên chức năng đó để đảm bảo chức năng hoạt động tốt sau đó mới được tích hợp vào hệ thống vào tiến hành kiểm thử hệ thống
+		\item Sau khi được tích hợp vào hệ thống, hoạt động kiểm thử trên hệ thống sẽ được diễn ra để đảm bảo các chức năng được cài đặt trước đó hoạt động tốt sau khi tích hợp
+		\item Sau cùng, tiến hành kiểm thử giao diện để đảm bảo sự hợp lý của giao diện cho người sử dụng 
+	\end{itemize}
+\end{itemize}
+
+\subsection{Test case}
+
+\subsubsection{Danh sách test case}
+
+\begin{itemize}
+	\item Chức năng Đăng ký
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 1   & Đăng ký                                                                       & Kiểm tra trường hợp đăng ký thành công                                                                                             \\ 
+		\hline
+		2  & Test case 2  & Đăng ký                                                                       & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đăng ký nhưng không điền đầy \\đủ thông tin \end{tabular}                           \\ 
+		\hline
+		3  & Test case 3  & Đăng ký                                                                       & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đăng ký nhưng tài khoản đã tồn \\tại trong hệ thống \end{tabular}                   \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Đăng ký}
+	\end{table}
+
+	\item Chức năng Đăng nhập 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 4   & Đăng nhập                                                                     & Kiểm tra trường hợp đăng nhập thành công                                                                                           \\ 
+		\hline
+		3  & Test case 5  & Đăng nhập                                                                     & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đăng nhập nhưng không điền \\“Tài khoản” \end{tabular}                              \\ 
+		\hline
+		4  & Test case 6  & Đăng nhập                                                                     & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đăng nhập nhưng không điền \\“Mật khẩu” \end{tabular}                               \\ 
+		\hline
+		5  & Test case 7  & Đăng nhập                                                                     & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đăng nhập với “Tài khoản” không \\tồn tại trong hệ thống \end{tabular}              \\ 
+		\hline
+		6  & Test case 8  & Đăng nhập                                                                     & Kiểm tra trường hợp đăng nhập với “Mật khẩu” sai                                                                                   \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Đăng nhập}
+	\end{table}
+
+	\item Chức năng Đăng xuất 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 9   & Đăng xuất                                                                     & Kiểm tra trường hợp đăng xuất thành công                                                                                           \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Đăng xuất }
+	\end{table}
+
+	\item Chức năng Đặt vé
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 10  & Đặt vé                                                                        & Kiểm tra trường hợp đặt vé thành công                                                                                              \\ 
+		\hline
+		2  & Test case 11  & Đặt vé                                                                        & Kiểm tra trường hợp đặt vé nhưng chưa đăng nhập                                                                                    \\ 
+		\hline
+		3  & Test case 12  & Đặt vé                                                                        & Kiểm tra trường hợp đặt vé nhưng đã hết suất chiếu                                                                                 \\ 
+		\hline
+		4  & Test case 13  & Đặt vé                                                                        & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đặt vé nhưng không điền đầy \\đủ form đặt vé \end{tabular}                          \\ 
+		\hline
+		5  & Test case 14  & Đặt vé                                                                        & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp đặt vé nhưng quá thời gian chờ \\của hệ thống \end{tabular}                         \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Đặt vé}
+	\end{table}
+
+	\item Chức năng Hủy vé 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 15  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé thành công                                                                                              \\ 
+		\hline
+		2  & Test case 16  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé nhưng chưa đăng nhập                                                                                    \\ 
+		\hline
+		3  & Test case 17  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé nhưng chưa mua vé                                                                                       \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Hủy vé }
+	\end{table}
+
+	\item Chức năng Thanh toán online 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 18  & Thanh toán online                                                             & Kiểm tra trường hợp thanh toán online thành công                                                                                   \\ 
+		\hline
+		2  & Test case 19  & Thanh toán online                                                             & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp thanh toán online nhưng nhập \\mã giảm giá sai \end{tabular}                        \\ 
+		\hline
+		3  & Test case 20  & Thanh toán online                                                             & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp thanh toán online nhưng thanh \\toán không thành công \end{tabular}                 \\ 
+		\hline
+		4  & Test case 21  & Thanh toán online                                                             & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp thanh toán online quá thời hạn \\thanh toán \end{tabular}                           \\
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Thanh toán online }
+	\end{table}
+
+	\item Chức năng Xem thông tin phim 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 22  & Xem thông tin phim                                                            & Kiểm tra trường hợp xem thông tin phim thành công                                                                                  \\ 
+		\hline
+		2  & Test case 23  & Xem thông tin phim                                                            & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp xem thông tin phim nhưng phim \\chưa có thông tin phim \end{tabular}                \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Xem thông tin phim }
+	\end{table}
+
+	\item Chức năng Quản lý lịch chiếu 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 24  & Quản lý lịch chiếu                                                            & Kiểm tra trường hợp quản lý lịch chiếu thành công                                                                                  \\ 
+		\hline
+		2  & Test case 25  & Quản lý lịch chiếu                                                            & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp quản lý lịch chiếu nhưng chỉnh \\sửa gây ra xung đột \end{tabular}                  \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Quản lý lịch chiếu }
+	\end{table}
+
+	\item Chức năng Quản lý chương trình khuyến mãi 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1   & Test case 26  & \begin{tabular}[c]{@{}l@{}}Quản lý chương \\trình khuyến mãi \end{tabular}    & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp quản lý chương trình khuyến \\mãi thành công \end{tabular}                          \\ 
+		\hline
+		2  & Test case 27  & \begin{tabular}[c]{@{}l@{}}Quản lý chương\\trình khuyến mãi \end{tabular} & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp quản lý các chương trình khuyến\\mãi nhưng chỉnh sửa gây ra xung đột \end{tabular}  \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Quản lý chương trình khuyến mãi }
+	\end{table}
+
+	\item Chức năng Quản lý các tài khoản của actor Quản lý 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1  & Test case 28  & \begin{tabular}[c]{@{}l@{}}Quản lý các tài \\khoản quản lý \end{tabular}      & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp quản lý các tài khoản quản lý \\thành công \end{tabular}                            \\ 
+		\hline
+		2  & Test case 29  & \begin{tabular}[c]{@{}l@{}}Quản lý các tài \\khoản quản lý \end{tabular}      & \begin{tabular}[c]{@{}l@{}}Kiểm tra trường hợp quản lý các quản lý nhưng phân\\quyền không thành công \end{tabular}                \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Quản lý các tài khoản của actor Quản lý }
+	\end{table}
+
+	\item Chức năng Thống kê doanh thu 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|l|} 
+		\hline
+		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
+		\hline
+		1  & Test case 30  & Thống kê doanh thu                                                            & Kiểm tra trường hợp thống kê doanh thu thành công                                                                                  \\ 
+		\hline
+		\end{tabular}
+		\caption{Bảng test case chức năng Thống kê doanh thu }
+	\end{table}
+\end{itemize}
+
+\clearpage 
+
+\subsubsection{Đặc tả test case}
+
+\begin{enumerate}
+	\item Đặc tả test case Đăng ký
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 1}                                                                                                     \\ 
+		\hline
+		Related Use case                & Đăng ký                                                                                                                              \\ 
+		\hline
+		Context                         & Người dùng đăng ký thành công với “Tài khoản” và “Mật khẩu” hợp lệ                                                                   \\ 
+		\hline
+		Input Data                      & Tài khoản: just4thdangky                                                                                                             \\
+										& Mật khẩu: 123456                                                                                                                     \\
+										& Họ tên: just4th                                                                                                                      \\ 
+		\hline
+		Expected Output                 & \begin{tabular}[c]{@{}l@{}}Xuất hiện cửa sổ thông báo “Đăng ký thành công” và tài khoản được \\cập nhật trong hệ thống\end{tabular}  \\ 
+		\hline
+		Test steps                      & 1. Nhập “Tài khoản”                                                                                                                   \\
+										& 2. Nhập “Mật khẩu”                                                                                                                    \\
+										& 3. Nhập “Họ tên”                                                                                                                      \\
+										& 4. Click nút “Đăng ký”                                                                                                                \\
+		\hline
+		\end{tabular}
+		\caption{Bảng tóm tắt test case của hệ thống}
+	\end{table}
+
+	\item Đặc tả test case Đăng nhập
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 4}                                                                                                             \\ 
+		\hline
+		Related Use case                & Đăng nhập                                                                                                                                    \\ 
+		\hline
+		Context                         & \begin{tabular}[c]{@{}l@{}}Người dùng đăng nhập vào hệ thống thành công với tài khoản và mật\\ khẩu đã tồn tại trong hệ thống \end{tabular}  \\ 
+		\hline
+		Input Data                      & Tài khoản: just4thdangky                                                                                                                     \\
+										& Mật khẩu: 123456                                                                                                                             \\ 
+		\hline
+		Expected Output                 & Xuất hiện cửa sổ thông báo “Đăng nhập thành công”                                                                                            \\ 
+		\hline
+		Test steps                      & 1. Nhập “Tài khoản”                                                                                                                           \\
+										& 2. Nhập “Mật khẩu”                                                                                                                            \\
+										& 3. Click nút “Đăng nhập”                                                                                                                      \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 4}
+	\end{table}
+
+	\item Đặc tả test case Đăng xuất
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 9}                         \\ 
+		\hline
+		Related Use case                & Đăng xuất                                                \\ 
+		\hline
+		Context                         & Người dùng đăng xuất khỏi tài khoản hiện tại thành công  \\ 
+		\hline
+		Input Data                      & Không                                                    \\ 
+		\hline
+		Expected Output                 & Xuất hiện cửa sổ thông báo “Đăng xuất thành công”        \\ 
+		\hline
+		Test steps                      & Click nút “Đăng xuất”                                  \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 9}
+	\end{table}
+
+	\clearpage
+
+	\item Đặc tả test case Đặt vé
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 10}                                                                                                       \\ 
+		\hline
+		Related Use case                & Đặt vé                                                                                                                                  \\ 
+		\hline
+		Context                         & Người dùng đặt vé thành công                                                                                                            \\ 
+		\hline
+		Input Data                      & Không                                                                                                                                   \\ 
+		\hline
+		Expected Output                 & \begin{tabular}[c]{@{}l@{}}Xuất hiện cửa sổ thông báo “Đặt vé thành công”, thông tin đặt vé \\được cập nhật trên hệ thống\end{tabular}  \\ 
+		\hline
+		Test steps                      & 1. Chọn phim muốn xem                                                                                                                    \\
+										& 2. Điền form đặt vé                                                                                                                      \\
+										& 3. Chọn lịch chiếu, ghế                                                                                                                  \\
+										& 4. Click nút “Thanh toán”                                                                                                                \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 10}
+	\end{table}
+
+	\item Đặc tả test case Hủy vé
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 15}                                                                                                      \\ 
+		\hline
+		Related Use case                & Hủy vé                                                                                                                                 \\ 
+		\hline
+		Context                         & Người dùng hủy vé thành công                                                                                                           \\ 
+		\hline
+		Input Data                      & Không                                                                                                                                  \\ 
+		\hline
+		Expected Output                 & \begin{tabular}[c]{@{}l@{}}Xuất hiện cửa sổ thông báo “Hủy vé thành công”, thông tin hủy vé\\được cập nhật trên hệ thống\end{tabular}  \\ 
+		\hline
+		Test steps                      & 1. Chọn phim muốn xem                                                                                                                   \\
+										& 2. Click nút “Hủy vé”                                                                                                                   \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 15}
+	\end{table}
+
+	\item Đặc tả test case Xem thông tin phim
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 22}                \\ 
+		\hline
+		Related Use case                & Xem thông tin phim                               \\ 
+		\hline
+		Context                         & Người dùng xem thông tin phim thành công         \\ 
+		\hline
+		Input Data                      & Không                                            \\ 
+		\hline
+		Expected Output                 & Hiển thị thông tin phim của người dùng muốn xem  \\ 
+		\hline
+		Test steps                      & 1. Chọn phim muốn xem lịch chiếu                  \\
+										& 2. Nhấn nút “Xem lịch chiếu”                      \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 22}
+	\end{table}
+
+	\clearpage
+
+	\item Đặc tả test case Thanh toán online 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 18}                                                                                                                      \\ 
+		\hline
+		Related Use case                & Thanh toán online                                                                                                                                      \\ 
+		\hline
+		Context                         & Người dùng thanh toán online thành công                                                                                                                \\ 
+		\hline
+		Input Data                      & Mã giảm giá: giamgia                                                                                                                                   \\ 
+		\hline
+		Expected Output                 & \begin{tabular}[c]{@{}l@{}}Hiển thị cửa sổ “Thanh toán online thành công”, thông tin thanh toán thành \\công được cập nhật trên hệ thống\end{tabular}  \\ 
+		\hline
+		Test steps                      & 1. Nhập “Mã giảm giá”                                                                                                                                   \\
+										& 2. Click nút kiểm tra mã giảm giá                                                                                                                       \\
+										& 3. Nhấn nút “Tiếp tục”                                                                                                                                  \\
+										& 4. Quét mã thanh toán                                                                                                                                   \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 18}
+	\end{table}
+
+	\item Đặc tả test case Quản lý thông tin phim
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|l|l|} 
+		\hline
+		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 24}                               \\ 
+		\hline
+		Related Use case                & Quản lý thông tin phim                                          \\ 
+		\hline
+		Context                         & Quản lý quản lý các lịch chiếu trong rạp chiếu phim thành công  \\ 
+		\hline
+		Input Data                      & Không                                                           \\ 
+		\hline
+		Expected Output                 & Hiển thị cửa sổ “Chỉnh sửa thành công”                          \\ 
+		\hline
+		Test steps                      & 1. Chọn phim muốn chỉnh sửa                                      \\
+										& 2. Thực hiện chỉnh sửa                                           \\
+										& 3. Click nút “Hoàn tất”                                          \\
+		\hline
+		\end{tabular}
+		\caption{Bảng đặc tả test case 24}
+	\end{table}
+\end{enumerate}
+
+\clearpage
+
+\section{Demo sản phẩm và đánh giá}
+
+\clearpage
+
+\section{Làm việc nhóm}
+
+\subsection{Báo cáo tiến độ}
+
+\begin{itemize}
+	\item Các công việc đã hoàn thành
+	\begin{itemize}
+		\item Toàn bộ nội dung đề ra theo kế hoạch ban đầu
+		\item Chỉnh sửa một số thành phần chưa hợp lý
+	\end{itemize}
+	\item Công việc chưa hoàn thành: Không
+	\item Các thành viên tương tác liên tục với nhau để hoàn thiện sản phẩm
+	\item Mọi công việc đều đang đi đúng theo tiến độ
+	\item Giải pháp làm việc việc đúng tiến độ: Tận dụng thời gian để học công nghệ liên quan đến các công việc cần làm và thực hành nháp để quen với công nghệ mới sau đó bắt tay vào thực hiện công việc
+\end{itemize}
+
+\clearpage 
+
+\subsection{Kế hoạch thực hiện}
+
+\begin{itemize}
+	\item ID của các tác vụ và các milestone được giải thích chi tiết trong báo cáo 1
+	\item Biểu đồ Gantt 
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.45, angle=90]{./image/gantt.png}
+			\caption{Biểu đồ Gantt}
+		\end{center}
+	\end{figure}
+\end{itemize}
+
+\subsection{Phân rã trách nhiệm}
+
+\begin{itemize}
+	\item Từ ngày 18/11/2020 đến ngày 12/12/2020, các thành viên trong nhóm chịu trách nhiệm cho các công việc sau
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c|l|l|}
+			\hline
+			STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc}                         \\ \hline
+			1 & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}- Nguyễn Bảo Long\\ - Phạm Văn Minh Phương\end{tabular}} & Thiết kế giao diện chức năng Huỷ vé    \\ \cline{1-1} \cline{3-3} 
+			2   &                             & Thiết kế giao diện chức năng Đặt vé                    \\ \cline{1-1} \cline{3-3} 
+			3   &                             & Thiết kế giao diện chức năng Quản lý thông tin phim    \\ \hline
+			4 & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}- Võ Thế Minh\\ - Phạm Tống Bình Minh\end{tabular}}      & Thiết kế back-end cho chức năng Đặt vé \\ \cline{1-1} \cline{3-3} 
+			5   &                             & Thiết kế back-end cho chức năng Huỷ vé                 \\ \cline{1-1} \cline{3-3} 
+			6   &                             & Thiết kế back-end cho chức năng Quản lý thông tin phim \\ \hline
+			4   & - Nguyễn Duy Vũ             & Triển khai kiểm thử                                    \\ \hline
+			\end{tabular}
+			\caption{Bảng phân rã trách nhiệm đối với từng công việc cụ thể}
+		\end{center}
+	\end{table}
+
+	\item Thành viên điều phối việc tích hợp: Phạm Tống Bình Minh 
+	\item Thành viên điều phối việc kiểm thử tích hợp: Nguyễn Duy Vũ
+\end{itemize}
+
+\clearpage
+
+\section{Kết luận và hướng phát triển} 
+
+\clearpage
+
+\section{Tham khảo}
+
+\end{document}

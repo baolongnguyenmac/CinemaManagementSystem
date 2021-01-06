@@ -1,0 +1,11 @@
+Đăng kí: Vào trang chủ, nhấn đăng kí --> Nhập thông tin, xác nhận, đăng kí (2 bước)
+Đăng nhập (Đã có tài khoản): Vào trang chủ, nhấn đăng nhập --> nhập tài khoản và mật khẩu và nhấn đăng nhập (2 bước)
+Đăng nhập (Chưa có tài khoản): Vào trang chủ, nhấn đăng nhập --> nhấn đăng kí, nhập thông tin, đăng kí --> nhập tài khoản và mật khẩu đã đăng kí để đăng nhập (3 bước)
+Đặt vé (Đã đăng nhập): Vào trang chủ, chọn rạp, phim, thời gian ở thanh đặt vé nhanh, nhấn đặt vé --> Chọn số lượng vé, chỉnh sửa thông tin vé (nếu cần) --> Chọn ghế --> Thanh toán (4 bước)
+Đặt vé (Chưa đăng nhập): Vào trang chủ, chọn rạp, phim, thời gian ở thanh đặt vé nhanh, nhấn đặt vé --> nhập tài khoản và mật khẩu và nhấn đăng nhập --> Chọn số lượng vé, chỉnh sửa thông tin vé (nếu cần) --> Chọn ghế --> Thanh toán (5 bước)
+Hủy vé (Đã đăng nhập): Chọn "Vé của tôi" --> Chọn vé nằm trong danh sách được hủy, nhấn hủy, nhấn xác nhận hủy (2 bước)
+Xem thông tin phim: Vào trang chủ, chọn "Phim đang chiếu"/"Phim sắp chiếu" --> Chọn phim cần xem thông tin (2 bước)
+Thanh toán online (Bước cuối đặt vé, sau khi chọn ghế): Chọn "Thanh toán qua Momo" --> Quét mã QR, nhấn hoàn tất (2 bước)
+Đăng xuất: Nhấn nút đăng xuất (1 bước)
+
+Ở mỗi bước sẽ có từ 1-5 lần click chuột và nhập thông tin.
