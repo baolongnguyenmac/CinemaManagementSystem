@@ -26,86 +26,95 @@
 
 <body style="background-color: #131a20;">
     <div id="site-content">
-    <!-- header -->
-    <%- include('./partials/header.ejs') %>
+        <!-- header -->
+        <%- include('./partials/header.ejs') %>
 
-    <main class="main-content">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="/">Trang chủ</a>
-                <span>Đăng ký</span>
-            </div>
-            <div class="container">
-                <div class="d-flex justify-content-center h-100">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Đăng ký</h3>
-                            <!-- <div class="d-flex justify-content-end social_icon">
+            <main class="main-content">
+                <div class="container">
+                    <div class="breadcrumbs">
+                        <a href="/">Trang chủ</a>
+                        <span>Đăng ký</span>
+                    </div>
+                    <div class="container">
+                        <%- include('./partials/messages.ejs') %>
+                            <div class="d-flex justify-content-center h-100">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Đăng ký</h3>
+                                        <!-- <div class="d-flex justify-content-end social_icon">
                                 <a href="#">
                                     <span><i class="fab fa-facebook-square"></i></span>
                                 </a>
                             </div> -->
-                        </div>
-                        <div class="card-body">
-                            <form action="/users/register" method="POST">
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input type="name" id="name" name="name" class="form-control" placeholder="Nhập tên của bạn">
-                                </div>
+                                    <div class="card-body">
+                                        <form action="/users/register" method="POST">
+                                            <div class="input-group form-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                </div>
+                                                <input type="name" id="name" name="name" class="form-control"
+                                                    placeholder="Nhập tên của bạn">
+                                            </div>
 
-                                <!-- giới tính right here -->
-                                <div class="input-group form-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                  </div>
-                                  <input type="radio" id="male" name="gender" value="male" style="margin-top: 10px; margin-left: 10px;" checked="checked">
-                                  <label for="male" style="margin-top: 5px; margin-left: 3px;">Nam</label><br>
-                                  <input type="radio" id="female" name="gender" value="female" style="margin-top: 10px; margin-left: 10px;">
-                                  <label for="female" style="margin-top: 5px; margin-left: 3px;">Nữ</label><br>
-                                </div>
+                                            <!-- giới tính right here -->
+                                            <div class="input-group form-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                </div>
+                                                <input type="radio" id="male" name="gender" value="male"
+                                                    style="margin-top: 10px; margin-left: 10px;" checked="checked">
+                                                <label for="male"
+                                                    style="margin-top: 5px; margin-left: 3px;">Nam</label><br>
+                                                <input type="radio" id="female" name="gender" value="female"
+                                                    style="margin-top: 10px; margin-left: 10px;">
+                                                <label for="female"
+                                                    style="margin-top: 5px; margin-left: 3px;">Nữ</label><br>
+                                            </div>
 
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <div class="input-group form-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                </div>
+                                                <input type="email" id="email" name="email" class="form-control"
+                                                    placeholder="Nhập email của bạn">
+                                            </div>
+
+                                            <div class="input-group form-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                </div>
+                                                <input type="password" id="password" name="password"
+                                                    class="form-control" placeholder="Nhập mật khẩu">
+                                            </div>
+
+                                            <!-- confirm password right here -->
+                                            <div class="input-group form-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                </div>
+                                                <input type="password" id="password2" name="password2"
+                                                    class="form-control" placeholder="Xác nhận mật khẩu">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="submit" value="Đăng ký" class="btn float-right login_btn">
+                                            </div>
+                                        </form>
                                     </div>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Nhập email của bạn">
+                                    <!-- <div class="card-footer">
+                                        <div class="d-flex justify-content-center links">
+                                            Already have an account?<a href="/users/login">Login</a>
+                                        </div>
+                                    </div> -->
                                 </div>
-
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                    </div>
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Nhập mật khẩu">
-                                </div>
-
-                                <!-- confirm password right here -->
-                                <div class="input-group form-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="fas fa-key"></i></span>
-                                  </div>
-                                  <input type="password" id="password2" name="password2" class="form-control" placeholder="Xác nhận mật khẩu">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="submit" value="Đăng ký" class="btn float-right login_btn">
-                                </div>
-                            </form>
-                        </div>
-                        <!-- <div class="card-footer">
-                          <div class="d-flex justify-content-center links">
-                            Already have an account?<a href="/users/login">Login</a>
-                          </div>
-                        </div> -->
+                            </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
+            </main>
 
-    <!-- footer -->
-    <%- include('./partials/footer.ejs') %>
+            <!-- footer -->
+            <%- include('./partials/footer.ejs') %>
     </div>
 </body>
 

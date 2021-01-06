@@ -31,7 +31,7 @@ const FilmSchema = mongoose.Schema({
     },
     releaseTime: {
         type: Date,
-        default: new Date('2021-1-1')
+        default: new Date('2021-11-1')
     },
     trailer: {
         type: String,
