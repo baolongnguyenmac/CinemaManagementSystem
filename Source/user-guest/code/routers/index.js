@@ -99,7 +99,7 @@ router.get("/paymentSuccess", async (req, res) => {
       req.session.occupiedSeatID = null;
       req.session.seats = null;
       req.session.amount = null;
-      res.render('successPayment');
+      res.redirect('/myticket');
     }
   );
 });
