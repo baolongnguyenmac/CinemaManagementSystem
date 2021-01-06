@@ -43,7 +43,7 @@ router.get("/account", ensureAuthenticated, (req, res) =>
 
 //users post
 router.post("/register", function (req, res) {
-  const { name, email, password, password2 } = req.body;
+  const { name, email, password, password2, gender } = req.body;
   let errors = [];
 
   if (!name || !email || !password || !password2) {
@@ -84,6 +84,7 @@ router.post("/register", function (req, res) {
           name,
           email,
           password,
+          gender
         });
         newUser.password = await bcrypt.hash(newUser.password, 10);
         //Sử dụng promise
@@ -308,6 +309,7 @@ router.post("/getSchedule", async (req, res) => {
     const releaseTime = schedules[index].time.getHours() + ":" + minutes;
     releaseTimes.push(releaseTime);
   }
+  
 
   await res.render("schedule", {
     isAuthenticated: req.isAuthenticated(),
