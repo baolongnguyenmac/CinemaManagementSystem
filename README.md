@@ -71,16 +71,16 @@
 | 1\.2 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Đăng nhập** tài khoản của họ                                                                  | x                                               |
 | 1\.3 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Đăng xuất** tài khoản của họ                                                                  | x                                               |
 | 1\.4 | 1        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Đặt vé xem phim**                                                                             | x                                               |
-| 1\.5 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Huỷ vé xem phim** (chỉ huỷ <br>  được trong TH đã đặt vé trước đó)                            | Được đổi thành chức năng **Xem lịch sử mua vé** |
-| 1\.6 | 1        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Xem thông tin phim** <br> (lịch chiếu, chương trình khuyến mãi)                               | x                                               |
-| 1\.7 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Thanh toán** vé đã đặt online <br>  **qua ví điện tử Momo**                                   | x                                               |
+| 1\.5 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Huỷ vé xem phim** (chỉ huỷ được trong TH đã đặt vé trước đó)                            | Được đổi thành chức năng **Xem lịch sử mua vé** |
+| 1\.6 | 1        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Xem thông tin phim**  (lịch chiếu, chương trình khuyến mãi)                               | x                                               |
+| 1\.7 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Thanh toán** vé đã đặt online   **qua ví điện tử Momo**                                   | x                                               |
 | 2\.1 | 2        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Đăng nhập** tài khoản do *admin* cấp                                                             | x                                               |
 | 2\.2 | 2        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Đăng xuất** tài khoản do *admin* cấp                                                             | x                                               |
 | 2\.3 | 1        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Quản lý thông tin phim** trong rạp                                                               | x                                               |
-| 2\.4 | 4        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Quản lý các chương trình** <br>  **khuyến mãi** trong rạp                                        |                                                 |
+| 2\.4 | 4        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Quản lý các chương trình**   **khuyến mãi** trong rạp                                        |                                                 |
 | 3\.1 | 2        | Hệ thống sẽ cho phép *admin* **Đăng nhập** tài khoản của họ                                                                                    | x                                               |
 | 3\.2 | 2        | Hệ thống sẽ cho phép *admin* **Đăng xuất** tài khoản của họ                                                                                    | x                                               |
 | 3\.3 | 3        | Hệ thống sẽ cho phép *admin* **Quản lý các quản lý** trong rạp                                                                                 | x                                               |
-| 3\.4 | 4        | Hệ thống sẽ cho phép *admin* **Thực hiện các thống kê về doanh thu** theo <br> phim, ngày, tháng, năm                                          | x                                               |
+| 3\.4 | 4        | Hệ thống sẽ cho phép *admin* **Thực hiện các thống kê về doanh thu** theo  phim, ngày, tháng, năm                                          | x                                               |
 
 ## Demo
