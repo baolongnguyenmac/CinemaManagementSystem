@@ -190,7 +190,7 @@ router.post('/updateInfor', async (req, res) => {
   }
 
   if (errors.length > 0) {
-    res.render("./user/updateinfor", {
+    res.render("./updateinfor", {
       name: req.user.name,
       errors,
     });
