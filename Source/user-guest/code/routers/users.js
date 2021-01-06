@@ -136,13 +136,6 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-//Get Update information
-router.get("/updateInfor", ensureAuthenticated, (req, res) => {
-  res.render("updateinfor", {
-    name: req.user.name,
-  });
-});
-
 //Post Update information
 router.post('/updateInfor', async (req, res) => {
   const name = req.body.name;
@@ -172,7 +165,8 @@ router.post('/updateInfor', async (req, res) => {
       });
     }
 
-    bcrypt.compare(oldPassword, req.user.password).then((isMatch) => {
+    await bcrypt.compare(oldPassword, req.user.password).then((isMatch) => {
+      console.log('isMatch: ' +isMatch);
       if (!isMatch) {
         errors.push({
           msg: 'Old password is uncorrect'
@@ -190,8 +184,8 @@ router.post('/updateInfor', async (req, res) => {
   }
 
   if (errors.length > 0) {
-    res.render("./updateinfor", {
-      name: req.user.name,
+    await res.render("./account", {
+      user: req.user,
       errors,
     });
   } else {
@@ -202,16 +196,11 @@ router.post('/updateInfor', async (req, res) => {
       req.user.password = await bcrypt.hash(newPassword, 10);
     }
 
-    req.user.save().then(() => {
+    await req.user.save().then(() => {
       req.flash("success_msg", "Your are updated");
       res.redirect("/users/account");
     });
   }
-});
-
-//Get update Avatar
-router.get("/updateAvatar", ensureAuthenticated, (req, res) => {
-  res.render("updateAvatar");
 });
 
 //Upload avatar
