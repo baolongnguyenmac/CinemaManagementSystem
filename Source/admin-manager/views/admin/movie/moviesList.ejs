@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, severny admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, my admin design, my admin dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+        content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Danh sách quản lý</title>
+    <%- include('../common/style'); -%>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+            <%- include('../common/header',{user: user}); -%>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+            <%- include('../common/column_left',{user: user}); -%>
+            <!-- /.sidebar-collapse -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-10">
+                        <h4 class="page-title">Danh sách Film</h4>
+                    </div>
+                  
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                    <button class="btn btn-success" id="addMovie">Thêm Films <i class="fa fa-plus"></i></button>
+                <div class="row " style="margin-left:auto;margin-right:auto">
+                    <div class=" col-sm-10 white-box" >
+                            <div class="Movies_list text-center">
+                                <div class="col-sm-12 center ">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                  <td class="text-left"><a>Tên</a></td>
+                                                  <td class="text-left"> Thời gian chiếu</td>
+                                                  <td class="text-left"><a>Thể loại</a></td>
+                                                  <td class="text-left"><a>Đạo diễn</a></td>
+                                                  <td class="text-left"><a>Thao tác</a></td>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <% data.movies.forEach((Movie) => { %>
+                                                    <tr>
+                                                        <td class="text-left"><a> <%=Movie.name %></a></td>
+                                                        <td class="text-left"><a> <%=Movie.runningTime %></a></td>
+                                                        <td class="text-left"><a> <%=Movie.genre %></a></td>
+                                                        <td class="text-left"><a> <%=Movie.director %></a></td>
+                                                        <td class="text-left">
+                                                            <input type="hidden" value="<%=Movie._id %>">
+                                                            <button class="btn btn-primary viewMovie" >
+                                                                <i class="fa fa-pencil"></i>
+                                                            </button>
+                                                            <button class="btn btn-danger deleteMovie" >
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                <% }); %>
+                                              </tbody>
+                                        </table>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+        <footer class="footer text-center"> 2020 &copy; ZeroPP & BaoBao </footer>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <%- include('../common/script'); -%>
+    <script>
+        $(document).ready(function() {
+        $('.viewMovie').on('click', function() {
+            id = $(this).parent().find("input").val();
+            window.location.href = "/admin/Movie/MovieEdit?id=" + id;
+        });
+
+        $('.deleteMovie').on('click', function() {
+            id = $(this).parent().find("input").val();
+            $.getJSON("/admin/Movie/MovieDelete?id=" + id ,function( json ) {
+                if(json === true){
+                    alert("Xóa quản lý thành công");
+                }else{
+                    alert("Xóa quản lý thất bại");
+                }
+                window.location.href = "/admin/Movie/MoviesList";
+            });
+        });
+        $('#addMovie').on('click', function() {
+            window.location.href = "/admin/Movie/MovieAdd";
+        });
+   });
+    </script>
+</body>
+
+</html>

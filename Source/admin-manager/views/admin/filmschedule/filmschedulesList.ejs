@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, severny admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, my admin design, my admin dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+        content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Danh sách quản lý</title>
+    <%- include('../common/style'); -%>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+            <%- include('../common/header',{user: user}); -%>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+            <%- include('../common/column_left',{user: user}); -%>
+            <!-- /.sidebar-collapse -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-10">
+                        <h4 class="page-title">Danh sách quản lý</h4>
+                    </div>
+                  
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                    <button class="btn btn-success" id="addFilmschedule">Thêm lịch chiếu <i class="fa fa-plus"></i></button>
+                <div class="row " style="margin-left:auto;margin-right:auto">
+                    <div class=" col-sm-8 white-box" >
+                            <div class="Filmschedules_list text-center">
+                                <div class="col-sm-10 center ">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                  <td class="text-left"><a>Phim</a></td>
+                                                  <td class="text-left"> Phòng</td>
+                                                  <td class="text-left"><a>Thời gian</a></td>
+                                                  <td class="text-left"><a>Action</a></td>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <% data.filmschedules.forEach((Filmschedule) => { %>
+                                                    <% let movie =  data.movies.find(movie => movie._id == Filmschedule.idFilm ); %>
+                                                    <tr>
+                                                        <td class="text-left"><a> <%=movie%></a></td>
+                                                        <td class="text-left"><a> <%=Filmschedule.email %></a></td>
+                                                        <td class="text-left"><a> <%=Filmschedule.time %></a></td>
+                                                        <td class="text-left">
+                                                            <input type="hidden" value="<%=Filmschedule._id %>">
+                                                            <button class="btn btn-primary viewFilmschedule" >
+                                                                <i class="fa fa-pencil"></i>
+                                                            </button>
+                                                            <button class="btn btn-danger deleteFilmschedule" >
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                  
+                                                <% }) %>
+                                              </tbody>
+                                        </table>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+        <footer class="footer text-center"> 2020 &copy; ZeroPP & BaoBao </footer>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <%- include('../common/script'); -%>
+    <script>
+        $(document).ready(function() {
+        $('.viewFilmschedule').on('click', function() {
+            id = $(this).parent().find("input").val();
+            window.location.href = "/admin/Filmschedule/FilmscheduleEdit?id=" + id;
+        });
+
+        $('.deleteFilmschedule').on('click', function() {
+            id = $(this).parent().find("input").val();
+            $.getJSON("/admin/Filmschedule/FilmscheduleDelete?id=" + id ,function( json ) {
+                if(json === true){
+                    alert("Xóa quản lý thành công");
+                }else{
+                    alert("Xóa quản lý thất bại");
+                }
+                window.location.href = "/admin/Filmschedule/FilmschedulesList";
+            });
+        });
+        $('#addFilmschedule').on('click', function() {
+            window.location.href = "/admin/Filmschedule/FilmscheduleAdd";
+        });
+   });
+    </script>
+</body>
+
+</html>

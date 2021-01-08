@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, severny admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, my admin design, my admin dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+        content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Danh sách quản lý</title>
+    <%- include('../common/style'); -%>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+            <%- include('../common/header',{user: user}); -%>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+            <%- include('../common/column_left',{user: user}); -%>
+            <!-- /.sidebar-collapse -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-10">
+                        <h4 class="page-title">Danh sách quản lý</h4>
+                    </div>
+                  
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- row -->
+                    <button class="btn btn-success" id="editManager">Lưu thông tin <i class="fa fa-save"></i></button>
+                    <% if (data.Manager_info) { %>
+                        <div class="Manager-info">
+                            <form action="" method="post" id="frmUpdateInfoManager">
+                                <div class="user-info">
+                                    <div class="row">
+                                        <div class="col-sm-4 image">
+                                            <img src="<%=data.Manager_info.avatar%>" id="avatar-img">
+                                            <div class="avatar-update">
+                                                <input type="file" name="file" id="file"/>
+                                                <input type="text" name="avatar" id="avatar" value="<%=data.Manager_info.avatar%>" />
+                                                <button class="btn btn-success" id="avartar-upload" > Thay avatar </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8 info">
+                                            <div class="form-group">
+                                                <label class ="col-sm-2 control-label" for="my-input">Name:</label>
+                                                <div class="col-sm-10">
+                                                    <input  class="form-control" type="text" name="name" value="<%=data.Manager_info.name%>" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group hidden">
+                                                <label class ="col-sm-2 control-label" for="my-input">Email:</label>
+                                                <div class="col-sm-10">
+                                                    <input  class="form-control" type="text" name="id" value="<%=data.Manager_info.id%>">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class ="col-sm-2 control-label" for="my-input">Gender:</label>
+                                                <div class="col-sm-10">
+                                                    <select  class="form-control" type="text" name="gender">
+                                                        <%if (data.Manager_info.gender == "nam") { %>
+                                                            <option value="nam" selected="selected"> Nam</option>
+                                                            <option value="nữ"> Nữ</option>
+                                                        <% }else{ %>
+                                                            <option value="nam" > Nam</option>
+                                                            <option value="nữ"  selected="selected"> Nữ</option>
+                                                        <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class ="col-sm-2 control-label" for="my-input">Phone:</label>
+                                                <div class="col-sm-10">
+                                                    <input  class="form-control" type="text" name="phone" value="<%=data.Manager_info.phone%>" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class ="col-sm-2 control-label" for="my-input">Password:</label>
+                                                <div class="col-sm-10">
+                                                    <input  class="form-control" type="password" name="password" value="" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class ="col-sm-2 control-label" for="my-input">Confirm:</label>
+                                                <div class="col-sm-10">
+                                                    <input  class="form-control" type="password" name="confirm" value="" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <% } %>
+               
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+        <footer class="footer text-center"> 2020 &copy; ZeroPP & BaoBao </footer>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <%- include('../common/script'); -%>
+    <script>
+        $(document).ready(function() {
+        $('#avartar-upload').on('click', function() {
+            var fd = new FormData();
+            var files = $('#file')[0].files;
+            var id =  $("input[name='id']").val();
+            var folder = "/image/manager/";
+            // Check file selected or not
+            if(files.length > 0 ){
+            fd.append('file',files[0]);
+            $.ajax({
+                url: '/admin/upload?&id=' + id + '&folder=' + folder,
+                type: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    if(response){
+                        var timestamp = new Date().getTime();     
+                        var el = document.getElementById("avatar-img");     
+                        el.src = response +"?t=" + timestamp; 
+                        $("input#avatar").val(response);
+                    }else{
+                        alert('file not uploaded');
+                    }
+                },
+            });
+            }else{
+            alert("Please select a file.");
+            }
+            return false;
+        });
+        $('#avatar-img').on('click', function() {
+            $('#file').trigger("click");
+        });
+        function validateForm(){
+            password =  $("input[name='password']").val();
+            re_password =  $("input[name='confirm']").val();
+            if(password!==re_password && password !== ""){
+                return "password and confirm is not match";
+            }
+            return "valid";
+        }
+        $('#frmUpdateInfoManager').on('submit', function(e) {
+            e.preventDefault();
+          
+            let check = validateForm();
+            if( check == "valid"){
+                $("#frmUpdateInfoManager").off("submit").submit();
+            }else{
+                alert(check);
+            }
+        });
+        $('#editManager').on('click', function(e) {
+            $("#frmUpdateInfoManager").submit();
+        });
+   });
+    </script>
+</body>
+
+</html>
