@@ -34,12 +34,20 @@
     - Tạo database `NMCNPM` (xem trong file `./Source/user-guest/code/config/key.js` để biết chi tiết)
     - Tạo các collection có tên trùng với tên file trong thư mục `./Source/user-guest/database` (Ví dụ file `films.json` sẽ tương ứng với collection `films`)
     - Import file `*.json` vào từng collection vừa tạo
+  - Đi tới đường dẫn `./Source/user-guest/code` và gõ lệnh `npm install` (tự động cài các yêu cầu trong file `package.json`)
+  - Đi tới đường dẫn `./Source/admin-manager` và gõ lệnh `npm install` (tự động cài các yêu cầu trong file `package.json`)
 
 - Khởi chạy server trang web
-  - Đi tới đường dẫn `./Source/user-guest/code`
-  - Chạy lệnh `node app.js`
-  - Lúc này sẽ có một thông báo xuất hiện trên console cho biết số port mà server đang lắng nghe người dùng connect (cụ thể là port 8080 và có thể được đổi lại trong file `app.js`)
-  - Mở trình duyệt và truy cập vào đường dẫn `http://localhost:8080`
+  - Khởi chạy server cho trang web của khách hàng rạp chiếu phim
+    - Đi tới đường dẫn `./Source/user-guest/code`
+    - Chạy lệnh `node app.js`
+    - Lúc này sẽ có một thông báo xuất hiện trên console cho biết số port mà server đang lắng nghe người dùng connect (cụ thể là port 8080 và có thể được đổi lại trong file `app.js`)
+    - Mở trình duyệt và truy cập vào đường dẫn `http://localhost:8080`
+  - Khởi chạy server cho trang web của admin và quản lý rạp chiếu
+    - Đi tới đường dẫn `./Source/admin-manager`
+    - Chạy lệnh `node app.js`
+    - Lúc này sẽ có một thông báo xuất hiện trên console cho biết số port mà server đang lắng nghe người dùng connect (cụ thể là port 8080 và có thể được đổi lại trong file `app.js`)
+    - Mở trình duyệt và truy cập vào đường dẫn `http://localhost:8080/admin/login`
 
 ## Công nghệ được sử dụng trong đồ án
 
@@ -73,7 +81,7 @@
 | 1\.4 | 1        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Đặt vé xem phim**                                                                             | x                                               |
 | 1\.5 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Huỷ vé xem phim** (chỉ huỷ được trong TH đã đặt vé trước đó)                            | Được đổi thành chức năng **Xem lịch sử mua vé** |
 | 1\.6 | 1        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Xem thông tin phim**  (lịch chiếu, chương trình khuyến mãi)                               | x                                               |
-| 1\.7 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Thanh toán** vé đã đặt online   **qua ví điện tử Momo**                                   | x                                               |
+| 1\.7 | 2        | Hệ thống sẽ cho phép *khách hàng của rạp phim* **Thanh toán** vé đã đặt online   **qua ví điện tử Momo**                                   | Được đổi thành chức năng **Thanh toán vé bằng tài khoản PayPal** |
 | 2\.1 | 2        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Đăng nhập** tài khoản do *admin* cấp                                                             | x                                               |
 | 2\.2 | 2        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Đăng xuất** tài khoản do *admin* cấp                                                             | x                                               |
 | 2\.3 | 1        | Hệ thống sẽ cho phép *quản lý của rạp phim* **Quản lý thông tin phim** trong rạp                                                               | x                                               |
