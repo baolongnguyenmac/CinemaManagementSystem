@@ -69,27 +69,28 @@
 
 \section{Lịch sử cập nhật}
 \label{sec:history}
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|l|l|} 
-\hline
-STT & Ngày cập nhật & Phiên bản & \multicolumn{1}{c|}{Mô tả chi tiết}                                                      & \multicolumn{1}{c|}{Tác giả}                                                                                                     \\ 
-\hline
-1   & 31/12/2020    & 1.0       & \begin{tabular}[c]{@{}l@{}}- Tổng hợp từ các phần \\cần thiết từ báo cáo cũ\end{tabular} & Phạm Văn Minh Phương                                                                                                             \\ 
-\hline
-2   & 07/01/2021    & 1.1       & \begin{tabular}[c]{@{}l@{}}- Triển khai kiểm thử sản phẩm\\ \end{tabular}                & \begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}                                                       \\ 
-\hline
-3   & 12/01/2021    & 1.2       & \begin{tabular}[c]{@{}l@{}}- Demo sản phẩm, đánh giá\\- Hướng phát triển\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\Phạm Văn Minh Phương\\Võ Thế Minh\\Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}  \\
-\hline
-\end{tabular}
-\caption {Bảng lịch sử cập nhật các phiên bản của báo cáo}
-\end{table}
+
+	\begin{table}[H]
+	
+	\begin{tabular}{|c|c|c|l|l|} 
+	\hline
+	STT & Ngày cập nhật & Phiên bản & \multicolumn{1}{c|}{Mô tả chi tiết}                                                      & \multicolumn{1}{c|}{Tác giả}                                                                                                     \\ 
+	\hline
+	1   & 31/12/2020    & 1.0       & \begin{tabular}[c]{@{}l@{}}- Tổng hợp từ các phần \\cần thiết từ báo cáo cũ\end{tabular} & Phạm Văn Minh Phương                                                                                                             \\ 
+	\hline
+	2   & 07/01/2021    & 1.1       & \begin{tabular}[c]{@{}l@{}}- Triển khai kiểm thử sản phẩm\\ \end{tabular}                & \begin{tabular}[c]{@{}l@{}}Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}                                                       \\ 
+	\hline
+	3   & 09/01/2021    & 1.2       & \begin{tabular}[c]{@{}l@{}}- Demo sản phẩm, đánh giá\\- Hướng phát triển\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Nguyễn Bảo Long \\Phạm Văn Minh Phương\\Võ Thế Minh\\Phạm Tống Bình Minh\\Nguyễn Duy Vũ\end{tabular}  \\
+	\hline
+	\end{tabular}
+	\caption {Bảng lịch sử cập nhật các phiên bản của báo cáo}
+	\end{table}
 \clearpage
 
 \section{Phân tích đóng góp cá nhân}
 \label{sec:analys}
-\begin{table}
-\centering
+\begin{table}[H]
+
 \caption{Bảng phân tích đóng góp cá nhân}
 \begin{tabular}{|c|l|l|c|} 
 \hline
@@ -265,7 +266,7 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \clearpage
 
 \section{Thiết kế giao diện người dùng}
-
+Thực tế, giao diện thành phẩm cuối cùng đã được thay đổi rất nhiều nhằm mục đích tiết kiệm chi phí phát triển (sử dụng những thành phần, thiết kế mã nguồn mở có sẵn). Chi tiết xem mục Demo và đánh giá \ref{subsection:demo}
 \subsection{Sơ đồ và điều hướng giữa các màn hình}
 
 \begin{itemize}
@@ -543,23 +544,6 @@ Hệ thống sử dụng các giao thức mạng như sau:
 		\caption{Bảng test case chức năng Đặt vé}
 	\end{table}
 
-	\item Chức năng Hủy vé 
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{|c|c|c|l|} 
-		\hline
-		STT & Tên test case & \multicolumn{1}{c|}{Đối tượng test}                                           & \multicolumn{1}{c|}{Ý nghĩa}                                                                                                       \\ 
-		\hline
-		1   & Test case 15  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé thành công                                                                                              \\ 
-		\hline
-		2  & Test case 16  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé nhưng chưa đăng nhập                                                                                    \\ 
-		\hline
-		3  & Test case 17  & Hủy vé                                                                        & Kiểm tra trường hợp hủy vé nhưng chưa mua vé                                                                                       \\ 
-		\hline
-		\end{tabular}
-		\caption{Bảng test case chức năng Hủy vé }
-	\end{table}
-
 	\item Chức năng Thanh toán online 
 	\begin{table}[H]
 		\centering
@@ -755,28 +739,6 @@ Hệ thống sử dụng các giao thức mạng như sau:
 		\caption{Bảng đặc tả test case 10}
 	\end{table}
 
-	\item Đặc tả test case Hủy vé
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{|l|l|} 
-		\hline
-		\multicolumn{1}{|l|}{Test case} & \multicolumn{1}{l|}{Test case 15}                                                                                                      \\ 
-		\hline
-		Related Use case                & Hủy vé                                                                                                                                 \\ 
-		\hline
-		Context                         & Người dùng hủy vé thành công                                                                                                           \\ 
-		\hline
-		Input Data                      & Không                                                                                                                                  \\ 
-		\hline
-		Expected Output                 & \begin{tabular}[c]{@{}l@{}}Xuất hiện cửa sổ thông báo “Hủy vé thành công”, thông tin hủy vé\\được cập nhật trên hệ thống\end{tabular}  \\ 
-		\hline
-		Test steps                      & 1. Chọn phim muốn xem                                                                                                                   \\
-										& 2. Click nút “Hủy vé”                                                                                                                   \\
-		\hline
-		\end{tabular}
-		\caption{Bảng đặc tả test case 15}
-	\end{table}
-
 	\item Đặc tả test case Xem thông tin phim
 	\begin{table}[H]
 		\centering
@@ -852,6 +814,98 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \clearpage
 
 \section{Demo sản phẩm và đánh giá}
+\label{subsection:demo}
+\subsection{Demo Người dùng}
+\begin{itemize}
+	\item Trang chủ
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_homepage.png}
+			\caption{Trang chủ}
+		\end{center}
+	\end{figure}
+\clearpage
+	\item Đăng nhập
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_userlogin.png}
+			\caption{Đăng nhập}
+		\end{center}
+	\end{figure}
+
+	\item Sau khi đăng nhập
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_userloggedin.png}
+			\caption{Sau khi đăng nhập}
+		\end{center}
+	\end{figure}
+
+	\item Xem thông tin phim
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_movieDetail.png}
+			\caption{Xem thông tin phim}
+		\end{center}
+	\end{figure}
+
+	\item Chọn lịch chiếu
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_movieSchedule.png}
+			\caption{Chọn lịch chiếu}
+		\end{center}
+	\end{figure}
+
+	\item Chọn ghế
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_seatBooking.png}
+			\caption{Chọn ghế}
+		\end{center}
+	\end{figure}
+
+	\item Thanh toán
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_checkout.png}
+			\caption{Thanh toán}
+		\end{center}
+	\end{figure}
+
+	\item Thanh toán qua Paypal
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_paypal1.png}
+			\caption{Đăng nhập Paypal}
+		\end{center}
+	\end{figure}
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_paypal2.png}
+			\caption{Thanh toán bằng tiền trong tài khoản Paypal}
+		\end{center}
+	\end{figure}
+\clearpage
+	\item Vé của tôi
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.5]{./image/demo_myTicket.png}
+			\caption{Xem vé đã từng thanh toán}
+		\end{center}
+	\end{figure}
+
+\end{itemize}
+
+\subsection{Đánh giá}
+\begin{itemize}
+	\item Sản phẩm đã đáp ứng được các chức năng cần thiết nhất để bán vé xem phim, quản lý phim
+	\item Thao tác sử dụng đơn giản, dễ học. Người dùng có thể sử dụng ngay mà không cần đọc qua hướng dẫn.
+	\item Hệ thống phản hồi nhanh, chưa xảy ra lỗi trong quá trình sử dụng.
+	\item Giao diện chưa tối ưu hoàn toàn.
+
+\end{itemize}
 
 \clearpage
 
@@ -889,17 +943,17 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \subsection{Phân rã trách nhiệm}
 
 \begin{itemize}
-	\item Từ ngày 18/11/2020 đến ngày 12/12/2020, các thành viên trong nhóm chịu trách nhiệm cho các công việc sau
+	\item Từ ngày 12/12/2020 đến ngày 10/01/2021, các thành viên trong nhóm chịu trách nhiệm cho các công việc sau
 	\begin{table}[H]
 		\begin{center}
 			\begin{tabular}{|c|l|l|}
 			\hline
 			STT & \multicolumn{1}{c|}{Họ tên} & \multicolumn{1}{c|}{Công việc}                         \\ \hline
-			1 & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}- Nguyễn Bảo Long\\ - Phạm Văn Minh Phương\end{tabular}} & Thiết kế giao diện chức năng Huỷ vé    \\ \cline{1-1} \cline{3-3} 
+			1 & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}- Nguyễn Bảo Long\\ - Phạm Văn Minh Phương\end{tabular}} & Thiết kế giao diện chức năng Thanh toán    \\ \cline{1-1} \cline{3-3} 
 			2   &                             & Thiết kế giao diện chức năng Đặt vé                    \\ \cline{1-1} \cline{3-3} 
 			3   &                             & Thiết kế giao diện chức năng Quản lý thông tin phim    \\ \hline
 			4 & \multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}- Võ Thế Minh\\ - Phạm Tống Bình Minh\end{tabular}}      & Thiết kế back-end cho chức năng Đặt vé \\ \cline{1-1} \cline{3-3} 
-			5   &                             & Thiết kế back-end cho chức năng Huỷ vé                 \\ \cline{1-1} \cline{3-3} 
+			5   &                             & Thiết kế back-end cho chức năng Thanh toán                \\ \cline{1-1} \cline{3-3} 
 			6   &                             & Thiết kế back-end cho chức năng Quản lý thông tin phim \\ \hline
 			4   & - Nguyễn Duy Vũ             & Triển khai kiểm thử                                    \\ \hline
 			\end{tabular}
@@ -914,6 +968,21 @@ Hệ thống sử dụng các giao thức mạng như sau:
 \clearpage
 
 \section{Kết luận và hướng phát triển} 
+\subsection {Kết luận}
+\begin{itemize}
+	\item Sản phẩm đã đảm bảo tất cả các yêu cầu về chức năng và yêu cầu phi chức năng của dự án. Có thể giao cho khách hàng.
+	\item Hệ thống có hiệu suất tốt, ổn định, ít lỗi
+	\item Giao diện thân thiện với người dùng, dễ sử dụng, dễ thao tác
+	\item Có khả năng mở rộng, nâng cấp hệ thống
+	
+\end{itemize}
+
+\subsection {Hướng phát triển}
+\begin{itemize}
+	\item Tối ưu giao diện, giảm bớt thao tác cho người dùng
+	\item Cải thiện các chức năng quản lý.
+	\item Kiểm tra, bảo trì thường xuyên để đảm bảo hệ thống hoạt động liên tục và hiệu quả
+\end{itemize}
 
 \clearpage
 
