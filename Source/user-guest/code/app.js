@@ -9,7 +9,8 @@ app.use('/public',express.static('public'));
 //Body-parser
 app.use(express.urlencoded());
 
-require('./middlewares/dbLocal')(app);
+//require('./middlewares/dbCloud.mdw')(app);
+require('./middlewares/dbLocal.mdw')(app);
 require('./middlewares/session.mdw')(app);
 require('./middlewares/passport.mdw')(app);
 require('./middlewares/local.mdw')(app);

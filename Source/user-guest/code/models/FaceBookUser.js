@@ -11,7 +11,7 @@ const FaceBookUserSchema = mongoose.Schema ({
     },
     avatar: {
         type: String,
-        default: '/public/avatar/default/avatar.png'
+        default: 'https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610700798/nmcnpmctt2/nmcnpmctt2/avatar/default/avatar_mfgikz_wpewj5.png'
     },
     date: {
         type: Date,
