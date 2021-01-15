@@ -46,18 +46,13 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- row -->
-                    <button class="btn btn-success" id="editManager">Lưu thông tin <i class="fa fa-save"></i></button>
+                        <button class="btn btn-success " id="editManager">Lưu thông tin <i class="fa fa-save"></i></button>
                         <div class="Manager-info">
                             <form action="" method="post" id="frmUpdateInfoManager">
                                 <div class="user-info">
                                     <div class="row">
-                                        <div class="col-sm-4 image">
-                                            <img src="" id="avatar-img">
-                                            <div class="avatar-update">
-                                                <input type="file" name="file" id="file"/>
-                                                <input type="text" name="poster" id="avatar" value="" />
-                                                <button class="btn btn-success" id="avartar-upload" > Thay poster </button>
-                                            </div>
+                                        <div class="col-sm-2 image">
+                                           
                                         </div>
                                         <div class="col-sm-8 info">
                                             <div class="form-group row">
@@ -132,7 +127,9 @@
     <%- include('../common/script'); -%>
     <script>
         $(document).ready(function() {
+        
         $('#avartar-upload').on('click', function() {
+
             var fd = new FormData();
             var files = $('#file')[0].files;
             var id =  $("input[name='id']").val();

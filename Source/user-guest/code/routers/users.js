@@ -279,6 +279,7 @@ router.post("/getSchedule", async (req, res) => {
     })
     .then(async (docs) => {
       for (let i = 0; i < docs.length; i++) {
+        console.log(docs);
         if (
           docs[i].time.getDate() == date.getDate() &&
           docs[i].time.getMonth() == date.getMonth() &&
@@ -299,7 +300,6 @@ router.post("/getSchedule", async (req, res) => {
     releaseTimes.push(releaseTime);
   }
   
-
   await res.render("schedule", {
     isAuthenticated: req.isAuthenticated(),
     film: film,

@@ -46,9 +46,9 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- row -->
-                    <button class="btn btn-success" id="editManager">Lưu thông tin <i class="fa fa-save"></i></button>
+                    <button class="btn btn-success" id="editFilm">Lưu thông tin <i class="fa fa-save"></i></button>
                         <div class="Manager-info">
-                            <form action="" method="post" id="frmUpdateInfoManager">
+                            <form action="#" method="post" id="frmUpdateInfoFilm">
                                 <div class="user-info">
                                     <div class="row">
                                         <div class="col-sm-4 image">
@@ -56,7 +56,7 @@
                                             <div class="avatar-update">
                                                 <input type="file" name="file" id="file"/>
                                                 <input type="text" name="poster" id="avatar" value="<%=data.movie_info.poster%>" />
-                                                <button class="btn btn-success" id="avartar-upload" > Thay poster </button>
+                                                <button type="button" class="btn btn-success" id="avartar-upload" > Thay poster </button>
                                             </div>
                                         </div>
                                         <div class="col-sm-8 info">
@@ -133,15 +133,18 @@
     <script>
         $(document).ready(function() {
         $('#avartar-upload').on('click', function() {
+            console.log($('#file').val());
+
             var fd = new FormData();
             var files = $('#file')[0].files;
             var id =  $("input[name='id']").val();
             var folder = "/image/film/";
+            var folder_cloud = "nmcnpmctt2/poster";
             // Check file selected or not
             if(files.length > 0 ){
             fd.append('file',files[0]);
             $.ajax({
-                url: '/admin/upload?&id=' + id + '&folder=' + folder,
+                url: '/admin/upload?&id=' + id + '&folder=' + folder + '&folder_cloud=' + folder_cloud,
                 type: 'post',
                 data: fd,
                 contentType: false,
@@ -152,6 +155,8 @@
                         var el = document.getElementById("avatar-img");     
                         el.src = response +"?t=" + timestamp; 
                         $("input#avatar").val(response);
+                        document.getElementById("file").value = null;
+                        alert('file upload success');
                     }else{
                         alert('file not uploaded');
                     }
@@ -165,8 +170,8 @@
         $('#avatar-img').on('click', function() {
             $('#file').trigger("click");
         });
-        $('#editManager').on('click', function(e) {
-            $("#frmUpdateInfoManager").submit();
+        $('#editFilm').on('click', function(e) {
+            $("#frmUpdateInfoFilm").submit();
         });
    });
     </script>

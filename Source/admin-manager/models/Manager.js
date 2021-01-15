@@ -22,7 +22,7 @@ const ManagerSchema = mongoose.Schema({
     },
     avatar: {
         type: String,
-        default: '/public/avatar/default/avatar.png'
+        default: "https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610729879/nmcnpmctt2/manager/default/download_fmkhae.png"
     },
     roll: {
         type: String,

@@ -16,10 +16,19 @@ require('./middlewares/local.mdw')(app);
 require('./middlewares/view.mdw')(app);
 require('./middlewares/router.mdw')(app);
 require('./middlewares/error.mdw')(app);
-
-
+require('./middlewares/cloudinary.mdw')(app);
 
 //Server
-app.listen(8080, console.log("Server running on Port: 8080"));
+app.listen(3000, console.log("Server running on Port: 3000"));
+
+const cloudinary = require('cloudinary').v2;
 
 
+
+
+// cloudinary.uploader.upload('./avatar.png', {
+//     public_id: ''
+// }, (err, result)=>{
+//     console.log(err);
+//     console.log(result);
+// });

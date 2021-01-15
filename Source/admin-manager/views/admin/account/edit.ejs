@@ -157,12 +157,13 @@
                 var files = $('#file')[0].files;
                 var id = $("input[name='id']").val();
                 var folder = "/image/manager/";
+                var folder_cloud = "nmcnpmctt2/profile";
                 // Check file selected or not
                 if(files.length > 0 ){
                 fd.append('file',files[0]);
     
                 $.ajax({
-                    url: '/admin/upload?&id=' + id + '&folder=' + folder,
+                    url: '/admin/upload?&id=' + id + '&folder=' + folder + '&folder_cloud=' + folder_cloud,
                     type: 'post',
                     data: fd,
                     contentType: false,
@@ -174,6 +175,8 @@
                             var el = document.getElementById("avatar-img");     
                             el.src = response +"?t=" + timestamp; 
                             $("input#avatar").val(response);
+                            alert("Upload ảnh thành công");
+
                         }else{
                             alert('file not uploaded');
                         }

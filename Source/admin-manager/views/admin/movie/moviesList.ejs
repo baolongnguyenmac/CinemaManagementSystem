@@ -10,7 +10,7 @@
     <meta name="description"
         content="My Admin is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Danh sách quản lý</title>
+    <title>Danh sách phim</title>
     <%- include('../common/style'); -%>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,9 +108,9 @@
             id = $(this).parent().find("input").val();
             $.getJSON("/admin/Movie/MovieDelete?id=" + id ,function( json ) {
                 if(json === true){
-                    alert("Xóa quản lý thành công");
+                    alert("Xóa phim thành công");
                 }else{
-                    alert("Xóa quản lý thất bại");
+                    alert("Xóa phim thất bại");
                 }
                 window.location.href = "/admin/Movie/MoviesList";
             });

@@ -57,3 +57,12 @@ app.listen(8080, console.log("Server running on Port: 8080"));
 //     idFilm: '5feda3de104dc7332caa5ced',
 //     idRoom: '5fdf63c2d92ac21fb4ef73ae'
 // }).then(console.log('saved'));
+
+
+
+// Film.find({}).then((docs)=>{
+//     console.log(docs);
+// });
+// Schedule.find({}).then((docs)=>{
+//     console.log(docs);
+// });

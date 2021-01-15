@@ -7,7 +7,7 @@ const FilmSchema = mongoose.Schema({
     },
     poster: {
         type: String,
-        default: '/public/poster/default/poster.png'
+        default: 'https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610729969/nmcnpmctt2/poster/default/download_1_ujhtxf.png'
     },
     description: {
         type: String,

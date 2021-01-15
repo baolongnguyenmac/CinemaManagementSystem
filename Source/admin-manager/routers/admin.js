@@ -10,6 +10,7 @@ const Movie = require("../models/Film.js");
 
 const filmschedule = require("../models/Schedule.js");
 
+const cloudinary = require("cloudinary").v2;
 
 const mongoose = require('mongoose');
 
@@ -31,10 +32,7 @@ const {
 
 // Home Page
 router.get("/", ensureAuthenticated,  (req, res) => {
-    console.log(req.user);
-    res.render("admin/common/home", {
-      user: req.user,
-    })
+   res.redirect("/admin/homepage");
 });
 
 router.get("/homepage", ensureAuthenticated,  (req, res) => {
@@ -63,6 +61,10 @@ router.get("/logout", (req, res) => {
     req.logout();
     req.flash("success_msg", "You are logged out");
     res.redirect("/admin/login");
+});
+
+router.get("/", (req, res) => {
+  res.redirect("/admin/login");
 });
 
 router.get("/is-user-available", ensureAuthenticated, function (req, res) {
@@ -258,46 +260,64 @@ router.get("/movie/moviesList", ensureAuthenticated,  (req, res) => {
 router.get("/movie/movieEdit",ensureAuthenticated, function (req, res) {
 
 
-Movie.findById(req.query.id).then((user)=>{
+Movie.findById(req.query.id).then((movie)=>{
     let data = [];
     let movie_info;
 
-    if(user){
-      movie_info = user;
+    if(movie){
+
+    movie_info ={
+      poster: movie.poster,
+      description: movie.description,
+      director: movie.director,
+      cast: movie.cast,
+      genre: movie.genre,
+      runningTime: movie.runningTime,
+      releaseTime:new Date( movie.releaseTime).toISOString().substr(0,16),
+      trailer: movie.trailer,
+      _id: movie._id,
+      
+      name:movie.name,
     }
-
-    movie_info.releaseTime =  new Date(movie_info.releaseTime).toISOString().replace(/T/, ' ').replace(/\..+/, '').substr(0, 19);
-    console.log(movie_info.releaseTime);
- 
     data["movie_info"] = movie_info;
-
-    data["title"] = "Thông tin giảng viên";
+    
     
     res.render("admin/movie/movieEdit",{
       user:req.user, data:data
     });
+    }
+    
 });
 });
 router.post("/movie/movieEdit",ensureAuthenticated,async function (req, res) {
 const {
   id,
   name,
-  gender,
-  password,
+  poster,
+  genre,
   description,
-  avatar, 
+  runningTime, 
+  releaseTime,
+  cast,
+  director,
+  trailer
 } = req.body; 
 
-movie.findById(id).then(async (user)=>{
-  if(user){
-      if( password !==""){
-        user.password = await bcrypt.hash(req.body.password, 10);
-      }
-      user.name = req.body.name;
-      user.gender = req.body.gender;
-      user.description = req.body.description;
-      user.avatar = req.body.avatar;
-      user.save();
+Movie.findById(id).then(async (movie)=>{
+  if(movie){
+     
+      movie.name = name;
+      movie.poster = poster;
+      movie.genre = genre;
+      movie.description = description;
+      movie.runningTime = runningTime;
+      movie.releaseTime = releaseTime;
+      movie.director = director;
+      movie.trailer = trailer;
+      movie.cast = cast;
+
+
+      movie.save();
   }
 });
 res.redirect("/admin/movie/moviesList");
@@ -317,7 +337,6 @@ router.post("/movie/movieAdd",ensureAuthenticated,async function (req, res) {
 const {
   name,
   description,
-  poster,
   genre,
   runningTime,
   releaseTime,
@@ -325,11 +344,9 @@ const {
   director,
   trailer,
 } = req.body; 
-
   const newmovie = new Movie({
     name,
     description,
-    poster,
     genre,
     runningTime,
     releaseTime,
@@ -356,80 +373,74 @@ Movie.findByIdAndDelete(req.query.id).then( async (user)=>{
 //route for schedules
 
 router.get("/filmschedule/filmschedulesList", ensureAuthenticated, async (req, res) => {
-   
-  filmschedule.find({},async function(err, filmschedules) {
-      let data = [];
-      let filmschedules_arr = [];
-
-  
-      filmschedules.forEach(function(filmschedule) {
-        console.log( filmschedule.time);
-          filmschedule.time = new Date(filmschedule.time).toISOString().replace(/T/, ' ').replace(/\..+/, '').substr(0, 19);
-         
-          filmschedules_arr.push(filmschedule);
-      });
-
-      data['filmschedules'] = filmschedules_arr;
-      data['movies'] = await Movie.find({});
-      data['rooms'] = await Room.find({});
-      console.log(data['movies']);
-
-      res.render("admin/filmschedule/filmschedulesList", {
-          user: req.user, data:data
-      })
+  let data = [];
+  var Schedule_arr = await filmschedule.find({}).populate('idRoom').populate('idFilm');
+  data['filmschedules'] = Schedule_arr;
+  console.log(  data['filmschedules'] );
+  res.render("admin/filmschedule/filmschedulesList", {
+    user: req.user,
+     data:data
   });
-
-  
 });
-router.get("/filmschedule/filmscheduleEdit",ensureAuthenticated, function (req, res) {
+
+router.get("/filmschedule/filmscheduleEdit",ensureAuthenticated, async function (req, res) {
 
 
-filmschedule.findById(req.query.id).then((user)=>{
+filmschedule.findById(req.query.id).then(async(schedule)=>{
     let data = [];
     let filmschedule_info;
 
-    if(user){
-      filmschedule_info = user;
-    }
+    if(schedule){
+      filmschedule_info = schedule;
 
-    data["filmschedule_info"] = filmschedule_info;
+      data["movies"] = await Movie.find({});
+      data["rooms"]  = await Room.find({});
 
-    data["title"] = "Thông tin giảng viên";
+      data["filmschedule_info"] = {
+        _id :filmschedule_info._id,
+        time:new Date( filmschedule_info.time).toISOString().substr(0,16),
+        idFilm :filmschedule_info.idFilm,
+        idRoom :filmschedule_info.idRoom,
+      };
+
     
-    res.render("admin/filmschedule/filmscheduleEdit",{
-      user:req.user, data:data
-    });
+
+
+      data["title"] = "Thông tin giảng viên";
+      
+      res.render("admin/filmschedule/filmscheduleEdit",{
+        user:req.user, data:data
+      });
+    }
 });
 });
 router.post("/filmschedule/filmscheduleEdit",ensureAuthenticated,async function (req, res) {
-const {
-  id,
-  name,
-  gender,
-  password,
-  description,
-  avatar, 
-} = req.body; 
+  const {
+    id,
+    movie,
+    room,
+    time,
+  } = req.body; 
 
-filmschedule.findById(id).then(async (user)=>{
-  if(user){
-      if( password !==""){
-        user.password = await bcrypt.hash(req.body.password, 10);
-      }
-      user.name = req.body.name;
-      user.gender = req.body.gender;
-      user.description = req.body.description;
-      user.avatar = req.body.avatar;
-      user.save();
+filmschedule.findById(id).then( (schedule)=>{
+  if(schedule){
+     
+    schedule.movie = movie;
+    schedule.room = room;
+    schedule.time = time;
+    
+    schedule.save();
   }
 });
 res.redirect("/admin/filmschedule/filmschedulesList");
 });
-router.get("/filmschedule/filmscheduleAdd",ensureAuthenticated, function (req, res) {
+router.get("/filmschedule/filmscheduleAdd",ensureAuthenticated,async function (req, res) {
 
     let data = [];
 
-    data["title"] = "Thông tin giảng viên";
+    data["movies"] = await Movie.find({});
+    data["rooms"]  = await Room.find({});
+    data["title"] = "Thêm lịch chiếu phim";
     
     res.render("admin/filmschedule/filmscheduleAdd",{
       user:req.user, data:data
@@ -437,36 +448,31 @@ router.get("/filmschedule/filmscheduleAdd",ensureAuthenticated, function (req, r
 
 });
 router.post("/filmschedule/filmscheduleAdd",ensureAuthenticated,async function (req, res) {
-const {
-  email,
-  name,
-  gender,
-  password,
-  description,
-} = req.body; 
+
+
+
+  const movie_info = await Movie.findById( req.body.movie);
+  const room_info = await Room.findById(req.body.room);
 
   const newfilmschedule = new filmschedule({
-    email ,
-    password,
-    name,
-    gender,
-    description,
+    time:req.body.time ,
+    idFilm :movie_info._id,
+    idRoom: room_info._id,
+    name: "Phim " + movie_info.name + " " + room_info.name,
   });
 
-  newfilmschedule.password =  await bcrypt.hash(newfilmschedule.password, 10);
-  newfilmschedule.save().then(()=>{
-    console.log("user save");
-  });
+
+  newfilmschedule.save();
 res.redirect("/admin/filmschedule/filmschedulesList");
 });
 router.get("/filmschedule/filmscheduleDelete",ensureAuthenticated,async function (req, res) {
-filmschedule.findByIdAndDelete(req.query.id).then( async (user)=>{
-  if(user){
-    res.json(true);
-  }else{
-    res.json(false);
-  }
-});
+  filmschedule.findByIdAndDelete(req.query.id).then( async (user)=>{
+    if(user){
+      res.json(true);
+    }else{
+      res.json(false);
+    }
+  });
 });
 
 
@@ -493,6 +499,7 @@ router.post('/upload', function (req, res) {
   fs.mkdir(path.join(__dirname, '../public' + folder_name + req.query.id.toString()), () => {});
 
   const storage = multer.diskStorage({
+    
     destination: function (req, file, cb) {
       // cb(null, './public/avatar/' + req.query.id);
       cb(null, './public' + folder_name + req.query.id);
@@ -520,10 +527,20 @@ router.post('/upload', function (req, res) {
       console.log(err);
     } else {
       const avatar =  ('/public') + folder_name  + req.query.id.toString() + '/' + 'avatar.png';
-      res.json(avatar);
+      const file_path = path.dirname(require.main.filename) + avatar;
+     console.log(file_path);
+
+      cloudinary.uploader.upload(file_path, {
+          public_id: req.query.folder_cloud + '/' +req.query.id.toString() + '/avatar.png',
+      }, (err, result)=>{
+          console.log(err);
+          // console.log(result);
+          res.json(result.url);
+      });
     }
   });
 });
+
 
 router.get("/is-manager-available", ensureAuthenticated, function (req, res) {
   Manager.findOne({email:req.query.email}).then((user)=>{
