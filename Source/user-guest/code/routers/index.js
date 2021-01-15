@@ -26,7 +26,7 @@ const Schedule = require("../models/Schedule");
 
 // Home Page
 router.get("/", async (req, res) => {
-  const films = await Film.find();
+  const films = await Film.find({});
   let releaseTimes = [];
   for (let i = 0; i < films.length; i++) {
     releaseTimes.push(films[i].releaseTime.toDateString());
@@ -113,7 +113,7 @@ router.get("/paymentFail", (req, res) => {
 });
 
 //Vé của tôi
-router.get('/myticket', async (req, res) => {
+router.get('/myticket', ensureAuthenticated, async (req, res) => {
   const historyPayments = await HistoryPayment.find({ idUser: req.user._id });
 
   let myTickets = [];
@@ -131,7 +131,7 @@ router.get('/myticket', async (req, res) => {
       myTicket.room = room.name;
       myTicket.film = film.name;
       myTicket.poster = film.poster;
-      myTicket.date = sche.time.getDate() + "/" + (sche.time.getMonth() + 1) + "/" + sche.time.getYear()
+      myTicket.date = sche.time.getDate() + "/" + (sche.time.getMonth() + 1) + "/" + (sche.time.getYear()+1900);
       myTicket.time = hour.toString() +":"+minute.toString()
     });
     myTicket.amount = historyPayments[i].amount;

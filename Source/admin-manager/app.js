@@ -21,14 +21,5 @@ require('./middlewares/cloudinary.mdw')(app);
 //Server
 app.listen(3000, console.log("Server running on Port: 3000"));
 
-const cloudinary = require('cloudinary').v2;
-
-
-
-
-// cloudinary.uploader.upload('./avatar.png', {
-//     public_id: ''
-// }, (err, result)=>{
-//     console.log(err);
-//     console.log(result);
-// });
+//Server
+app.listen(8081, console.log("Server running on Port: 8081"));

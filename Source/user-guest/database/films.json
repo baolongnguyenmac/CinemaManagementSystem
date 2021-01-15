@@ -4,7 +4,7 @@
   },
   "name": "Transformer: Những kẻ chuyển giới",
   "__v": 0,
-  "poster": "/public/poster/transformer/poster.png",
+  "poster": "https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610717542/nmcnpmctt2/poster/transformer/poster_bitng0.jpg",
   "description": "Đây là mô tả phim Transformer",
   "genre": "Hành động, phiêu lưu",
   "runningTime": "100 phút",
@@ -21,7 +21,7 @@
   "name": "Hwang-Chó: Bậc thầy của sự phê pha",
   "__v": 0,
   "description": "Đây là mô tả phim Hwang-Chó",
-  "poster": "/public/poster/hwangcho/poster.png",
+  "poster": "https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610717538/nmcnpmctt2/poster/hwangcho/poster_l5ffzm.jpg",
   "genre": "Hành động, trẻ em",
   "runningTime": "120 phút",
   "releaseTime": {

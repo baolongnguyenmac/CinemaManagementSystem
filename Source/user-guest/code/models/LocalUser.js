@@ -19,7 +19,7 @@ const LocalUserSchema = mongoose.Schema ({
     },
     avatar: {
         type: String,
-        default: '/public/avatar/default/avatar.png'
+        default: 'https://res.cloudinary.com/nmcnpmctt2/image/upload/v1610717547/nmcnpmctt2/avatar/default/avatar_oubqnx.png'
     },
     gender:{
         type: String,
