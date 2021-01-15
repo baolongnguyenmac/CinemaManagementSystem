@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 module.exports = function() {
     //DB config
-    const db = require("../config/key").MongoCloud1;
+    const db = require("../config/key").MongoCloud;
     const mongooseConfig = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
