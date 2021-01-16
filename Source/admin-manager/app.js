@@ -22,4 +22,4 @@ require('./middlewares/cloudinary.mdw')(app);
 app.listen(3000, console.log("Server running on Port: 3000"));
 
 //Server
-app.listen(8081, console.log("Server running on Port: 8081"));
+// app.listen(8081, console.log("Server running on Port: 8081"));

@@ -115,11 +115,13 @@ router.get("/paymentFail", (req, res) => {
 //Vé của tôi
 router.get('/myticket', ensureAuthenticated, async (req, res) => {
   const historyPayments = await HistoryPayment.find({ idUser: req.user._id });
+  // console.log(historyPayments);
 
   let myTickets = [];
   for (let i = 0; i < historyPayments.length; i++) {
     let myTicket = new Object();
     await Schedule.findOne({ _id: historyPayments[i].idSchedule }).then(async (sche) => {
+      // console.log(sche);
       let minute = sche.time.getMinutes();
       let hour = sche.time.getHours().toString();
       if (minute < 10) {
